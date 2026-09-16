@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: rgba(0, 0, 0, 0.6);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system,
+    BlinkMacSystemFont, system-ui, sans-serif;
+  --font-inter: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/*
+ * Each stroke draws in at its own staggered offset within a shared 10s
+ * cycle using a diagonal clip-path sweep (top edge leads, bottom edge
+ * lags) so the reveal reads as an angled pen/brush stroke rather than a
+ * mechanical straight wipe. It then holds fully visible until the very
+ * end of the cycle, where it resets to hidden in a near-instant snap
+ * (no animated wipe-out) just before the next loop redraws it.
+ */
+:root {
+  --logo-stroke-hidden: polygon(0% 0%, -30% 0%, -10% 100%, 0% 100%);
+  --logo-stroke-hidden-vertical: polygon(0% 0%, 100% 0%, 100% -10%, 0% -30%);
+  --logo-stroke-shown: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+@keyframes logo-stroke-0 {
+  0% { clip-path: var(--logo-stroke-hidden); }
+  5% { clip-path: var(--logo-stroke-shown); }
+  99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-1 {
+  0%, 4% { clip-path: var(--logo-stroke-hidden); }
+  9%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-2 {
+  0%, 8% { clip-path: var(--logo-stroke-hidden); }
+  13%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-3 {
+  0%, 12% { clip-path: var(--logo-stroke-hidden); }
+  17%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-4 {
+  0%, 16% { clip-path: var(--logo-stroke-hidden); }
+  21%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-5 {
+  0%, 20% { clip-path: var(--logo-stroke-hidden); }
+  25%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-6 {
+  0%, 24% { clip-path: var(--logo-stroke-hidden); }
+  29%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-7 {
+  0%, 28% { clip-path: var(--logo-stroke-hidden); }
+  33%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+@keyframes logo-stroke-8 {
+  0%, 32% { clip-path: var(--logo-stroke-hidden); }
+  37%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden); }
+}
+/* Last stroke drawn is the tall vertical hook of 午 — sweeps top-to-bottom instead. */
+@keyframes logo-stroke-9 {
+  0%, 36% { clip-path: var(--logo-stroke-hidden-vertical); }
+  41%, 99.8% { clip-path: var(--logo-stroke-shown); }
+  100% { clip-path: var(--logo-stroke-hidden-vertical); }
+}
+
+.logo-draw-on .logo-stroke {
+  animation-duration: 10s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-draw-on .logo-stroke {
+    animation: none;
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+/* Whole-page fade-in, replayed on every route mount. */
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-fade-in {
+  animation: page-fade-in 0.5s ease-out both;
+}
+
+/* About-page main portrait fades in first, before the scattered photos fall. */
+@keyframes main-photo-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main-photo-fade-in {
+  animation: main-photo-fade-in 0.6s ease-out both;
+}
+
+/*
+ * Scattered About-page photos fall out from the main portrait on mount:
+ * they start pulled up over the main image (translateY negative, scaled
+ * down, transparent) and drop into their final rotated position. The
+ * rotation itself stays constant throughout via --photo-rotate so it
+ * doesn't fight with the falling motion.
+ */
+@keyframes photo-fall-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-140%) scale(0.55) rotate(var(--photo-rotate, 0deg));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(var(--photo-rotate, 0deg));
+  }
+}
+
+.photo-fall-in {
+  animation: photo-fall-in 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fade-in,
+  .main-photo-fade-in,
+  .photo-fall-in {
+    animation: none;
+  }
+}
