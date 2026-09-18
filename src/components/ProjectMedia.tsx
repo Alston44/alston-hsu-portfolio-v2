@@ -18,7 +18,13 @@ export function FramedScreenshot({
     <div
       className={`absolute overflow-hidden transition-transform duration-300 ease-out group-hover:scale-[1.025] ${frame}`}
     >
-      <Image src={src} alt={alt} fill className="object-cover object-top" />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        quality={95}
+        className="object-cover object-top"
+      />
     </div>
   );
 }

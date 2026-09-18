@@ -8,7 +8,7 @@ import Logo from "./Logo";
 const NAV_LINKS = [
   { label: "Work", href: "/#work" },
   { label: "About", href: "/about" },
-  { label: "Resume", href: "#resume" },
+  { label: "Resume", href: "/Alston-Hsu-Resume.pdf", external: true },
 ];
 
 export default function Header() {
@@ -48,11 +48,13 @@ export default function Header() {
         </Link>
 
         <ul className="hidden items-center gap-[60px] md:flex">
-          {NAV_LINKS.map(({ label, href }) => (
+          {NAV_LINKS.map(({ label, href, external }) => (
             <li key={label}>
               <Link
                 href={href}
-                className="text-[16px] leading-[21px] text-black/60"
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                className="text-[16px] leading-[21px] text-black/60 transition-colors duration-300 ease-out hover:text-black/80"
                 style={{ fontVariationSettings: '"wdth" 100' }}
               >
                 {label}
@@ -98,10 +100,12 @@ export default function Header() {
             }`}
           >
             <ul className="flex flex-col items-center gap-6">
-              {NAV_LINKS.map(({ label, href }) => (
+              {NAV_LINKS.map(({ label, href, external }) => (
                 <li key={label}>
                   <Link
                     href={href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
                     onClick={() => setOpen(false)}
                     className="text-xl text-black/60"
                     style={{ fontVariationSettings: '"wdth" 100' }}

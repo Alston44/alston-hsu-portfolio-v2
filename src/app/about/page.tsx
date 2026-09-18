@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 export default function AboutPage() {
   return (
@@ -10,6 +11,7 @@ export default function AboutPage() {
         <About />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

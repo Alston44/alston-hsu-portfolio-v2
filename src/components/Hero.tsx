@@ -15,8 +15,8 @@ export default function Hero() {
             className="max-w-[1112px] text-[13px] leading-[1.4] text-black/80 opacity-56 sm:text-[16px] md:text-[20px]"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
-            An aspiring product designer from Vancouver, formerly psychology
-            and commerce, now designing UI/UX with both in mind.
+            An aspiring product designer from Vancouver, formerly psychology and
+            commerce, now designing UI/UX with both in mind.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-4 xl:flex-col xl:flex-nowrap xl:items-start xl:gap-[17px]">

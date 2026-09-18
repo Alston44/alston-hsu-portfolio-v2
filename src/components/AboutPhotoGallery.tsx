@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 
 const SCATTERED_PHOTOS = [
   {
-    src: "/images/about/food.png",
+    src: "/images/about/food.webp",
     alt: "Alston sharing a meal",
     left: "5.05%",
     top: "0%",
@@ -12,7 +12,7 @@ const SCATTERED_PHOTOS = [
     rotate: "-5deg",
   },
   {
-    src: "/images/about/dog.png",
+    src: "/images/about/dog.webp",
     alt: "A dog with a yellow bow",
     left: "49%",
     top: "0%",
@@ -21,7 +21,7 @@ const SCATTERED_PHOTOS = [
     rotate: "6deg",
   },
   {
-    src: "/images/about/workspace.png",
+    src: "/images/about/workspace.webp",
     alt: "Alston's design workspace",
     left: "13.46%",
     top: "44.76%",
@@ -30,7 +30,7 @@ const SCATTERED_PHOTOS = [
     rotate: "5deg",
   },
   {
-    src: "/images/about/beach.png",
+    src: "/images/about/beach.webp",
     alt: "Silhouette on a beach at sunset",
     left: "48%",
     top: "58.89%",
@@ -45,7 +45,7 @@ export default function AboutPhotoGallery() {
     <div className="flex w-full shrink-0 flex-col gap-8 xl:w-[29%] xl:max-w-[560px]">
       <div className="main-photo-fade-in relative aspect-square w-full overflow-hidden rounded-lg">
         <Image
-          src="/images/about/profile.png"
+          src="/images/about/profile.webp"
           alt="Alston Hsu"
           fill
           sizes="(min-width: 1280px) 416px, 100vw"

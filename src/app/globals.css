@@ -8,8 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system,
-    BlinkMacSystemFont, system-ui, sans-serif;
+  --font-sans:
+    "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    system-ui, sans-serif;
   --font-inter: var(--font-inter);
 }
 
@@ -32,56 +33,136 @@ body {
   --logo-stroke-shown: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 @keyframes logo-stroke-0 {
-  0% { clip-path: var(--logo-stroke-hidden); }
-  5% { clip-path: var(--logo-stroke-shown); }
-  99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  5% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-1 {
-  0%, 4% { clip-path: var(--logo-stroke-hidden); }
-  9%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  4% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  9%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-2 {
-  0%, 8% { clip-path: var(--logo-stroke-hidden); }
-  13%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  8% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  13%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-3 {
-  0%, 12% { clip-path: var(--logo-stroke-hidden); }
-  17%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  12% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  17%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-4 {
-  0%, 16% { clip-path: var(--logo-stroke-hidden); }
-  21%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  16% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  21%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-5 {
-  0%, 20% { clip-path: var(--logo-stroke-hidden); }
-  25%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  20% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  25%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-6 {
-  0%, 24% { clip-path: var(--logo-stroke-hidden); }
-  29%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  24% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  29%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-7 {
-  0%, 28% { clip-path: var(--logo-stroke-hidden); }
-  33%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  28% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  33%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 @keyframes logo-stroke-8 {
-  0%, 32% { clip-path: var(--logo-stroke-hidden); }
-  37%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden); }
+  0%,
+  32% {
+    clip-path: var(--logo-stroke-hidden);
+  }
+  37%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden);
+  }
 }
 /* Last stroke drawn is the tall vertical hook of 午 — sweeps top-to-bottom instead. */
 @keyframes logo-stroke-9 {
-  0%, 36% { clip-path: var(--logo-stroke-hidden-vertical); }
-  41%, 99.8% { clip-path: var(--logo-stroke-shown); }
-  100% { clip-path: var(--logo-stroke-hidden-vertical); }
+  0%,
+  36% {
+    clip-path: var(--logo-stroke-hidden-vertical);
+  }
+  41%,
+  99.8% {
+    clip-path: var(--logo-stroke-shown);
+  }
+  100% {
+    clip-path: var(--logo-stroke-hidden-vertical);
+  }
 }
 
 .logo-draw-on .logo-stroke {
@@ -109,6 +190,47 @@ body {
 
 .page-fade-in {
   animation: page-fade-in 0.5s ease-out both;
+}
+
+/*
+ * Route transition: fade + slight upward slide, staggered across each
+ * top-level section (header, hero, main, footer), replayed on every
+ * pathname change via PageTransition's `key={pathname}` remount. Distinct
+ * from page-fade-in above (per-page <main> opacity-only fade). BackToTop
+ * opts out via .no-stagger since it manages its own scroll-based opacity.
+ */
+@keyframes route-transition {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.route-transition > div > *:not(.no-stagger) {
+  animation: route-transition 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.route-transition > div > *:not(.no-stagger):nth-child(1) {
+  animation-delay: 0s;
+}
+.route-transition > div > *:not(.no-stagger):nth-child(2) {
+  animation-delay: 0.08s;
+}
+.route-transition > div > *:not(.no-stagger):nth-child(3) {
+  animation-delay: 0.16s;
+}
+.route-transition > div > *:not(.no-stagger):nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-transition > div > * {
+    animation: none;
+  }
 }
 
 /* About-page main portrait fades in first, before the scattered photos fall. */

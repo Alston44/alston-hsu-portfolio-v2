@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <ProjectGrid />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

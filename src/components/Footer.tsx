@@ -17,7 +17,7 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-6 py-[10px] sm:px-8 xl:px-16">
+    <footer className="border-t border-black/10 bg-white px-6 py-[10px] sm:px-8 xl:px-16">
       <div className="mx-auto flex w-full max-w-[1920px] flex-col items-center justify-between gap-6 py-2 sm:flex-row">
         <div className="flex flex-1 items-center gap-4">
           <Link href="/" aria-label="Alston Hsu, home">
@@ -40,7 +40,7 @@ export default function Footer() {
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="font-inter text-[14px] leading-[21px] text-black/60"
+                className="font-inter text-[14px] leading-[21px] text-black/60 transition-colors duration-300 ease-out hover:text-black/80"
               >
                 {label}
               </Link>

@@ -6,7 +6,7 @@ export default function ProjectGrid() {
     <section id="work" className="px-6 pt-10 pb-24 sm:px-8 sm:pb-32 xl:px-16">
       <div className="mx-auto grid max-w-[1920px] grid-cols-1 gap-x-16 gap-y-[75px] lg:grid-cols-2">
         <ProjectCard
-          href="#"
+          href="/work/heiltsuk"
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."
           company="Burst! Creative Group"
           tags={["2026", "Internship", "Web Design"]}
@@ -15,7 +15,7 @@ export default function ProjectGrid() {
           pillColor="#b8373d"
           media={
             <FramedScreenshot
-              src="/images/projects/heiltsuk-nation.png"
+              src="/images/projects/heiltsuk-nation.webp"
               alt="Heiltsuk Nation website homepage"
               size="lg"
             />
@@ -32,14 +32,14 @@ export default function ProjectGrid() {
           media={
             <Triptych
               images={[
-                { src: "/images/projects/avail-1.png", alt: "Avail app home screen" },
+                { src: "/images/projects/avail-1.webp", alt: "Avail app home screen" },
                 {
-                  src: "/images/projects/avail-2.png",
+                  src: "/images/projects/avail-2.webp",
                   alt: "Avail app benefits screen",
                   stretch: { height: "137.61%", top: "0.09%" },
                 },
                 {
-                  src: "/images/projects/avail-3.png",
+                  src: "/images/projects/avail-3.webp",
                   alt: "Avail app search screen",
                   fit: "contain",
                 },
@@ -58,9 +58,9 @@ export default function ProjectGrid() {
           media={
             <Triptych
               images={[
-                { src: "/images/projects/firewatch-home.png", alt: "Firewatch BC app home screen" },
-                { src: "/images/projects/firewatch-map-2.png", alt: "Firewatch BC app map screen" },
-                { src: "/images/projects/firewatch-map-1.png", alt: "Firewatch BC app alert map screen" },
+                { src: "/images/projects/firewatch-home.webp", alt: "Firewatch BC app home screen" },
+                { src: "/images/projects/firewatch-map-2.webp", alt: "Firewatch BC app map screen" },
+                { src: "/images/projects/firewatch-map-1.webp", alt: "Firewatch BC app alert map screen" },
               ]}
             />
           }
@@ -75,7 +75,7 @@ export default function ProjectGrid() {
           pillColor="#0063c7"
           media={
             <FramedScreenshot
-              src="/images/projects/flui-hackathon.png"
+              src="/images/projects/flui-hackathon.webp"
               alt="FLUI Design Jam landing page"
               size="sm"
             />
