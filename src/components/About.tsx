@@ -72,7 +72,7 @@ function AboutEntry({
 export default function About() {
   return (
     <section className="px-6 pt-16 pb-24 sm:px-8 sm:pt-32 sm:pb-32 xl:px-16">
-      <div className="flex flex-col gap-16 xl:flex-row xl:items-start">
+      <div className="flex flex-col gap-16 md:flex-row md:items-start">
         <AboutPhotoGallery />
 
         <div className="flex w-full flex-1 flex-col gap-10">

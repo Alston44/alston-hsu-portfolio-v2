@@ -42,13 +42,13 @@ const SCATTERED_PHOTOS = [
 
 export default function AboutPhotoGallery() {
   return (
-    <div className="flex w-full shrink-0 flex-col gap-8 xl:w-[29%] xl:max-w-[560px]">
+    <div className="flex w-full shrink-0 flex-col gap-8 md:w-[29%] md:max-w-[560px]">
       <div className="main-photo-fade-in relative aspect-square w-full overflow-hidden rounded-lg">
         <Image
           src="/images/about/profile.webp"
           alt="Alston Hsu"
           fill
-          sizes="(min-width: 1280px) 416px, 100vw"
+          sizes="(min-width: 768px) 416px, 100vw"
           className="object-cover object-[center_75%]"
           priority
         />
@@ -73,7 +73,7 @@ export default function AboutPhotoGallery() {
               src={src}
               alt={alt}
               fill
-              sizes="(min-width: 1280px) 200px, 40vw"
+              sizes="(min-width: 768px) 200px, 40vw"
               className="object-cover"
             />
           </div>
