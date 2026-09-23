@@ -14,7 +14,7 @@ const eyebrowClass =
   "text-[9px] font-semibold leading-none text-black sm:text-[11px] md:text-[14px]";
 
 const headingClass =
-  "text-[26px] leading-[1.1] text-black/60 sm:text-[32px] md:text-[40px]";
+  "font-serif text-[26px] leading-[1.1] text-black/60 sm:text-[32px] md:text-[40px]";
 
 export function CaseStudyEyebrow({ children }: { children: ReactNode }) {
   return (
@@ -188,7 +188,9 @@ export function RedAnnotation({
   );
 }
 
-const TOC_LINKS = [
+type TocLink = { label: string; href: string };
+
+const TOC_LINKS: TocLink[] = [
   { label: "Overview", href: "#overview" },
   { label: "Problem", href: "#problem" },
   { label: "Discovery", href: "#discovery" },
@@ -196,11 +198,17 @@ const TOC_LINKS = [
   { label: "Reflection", href: "#reflection" },
 ];
 
-export function CaseStudyToc({ iconDir }: { iconDir: string }) {
+export function CaseStudyToc({
+  iconDir,
+  links = TOC_LINKS,
+}: {
+  iconDir: string;
+  links?: TocLink[];
+}) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
-    const sections = TOC_LINKS.map(({ href }) =>
+    const sections = links.map(({ href }) =>
       document.getElementById(href.slice(1)),
     ).filter((el): el is HTMLElement => el !== null);
 
@@ -217,7 +225,7 @@ export function CaseStudyToc({ iconDir }: { iconDir: string }) {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [links]);
 
   return (
     <div className="sticky top-28 hidden w-[140px] shrink-0 flex-col items-start gap-6 self-start xl:flex">
@@ -241,7 +249,7 @@ export function CaseStudyToc({ iconDir }: { iconDir: string }) {
         </span>
       </Link>
       <nav className="flex flex-col items-start gap-[22px]">
-        {TOC_LINKS.map(({ label, href }) => {
+        {links.map(({ label, href }) => {
           const isActive = activeId === href.slice(1);
           return (
             <a

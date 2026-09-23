@@ -42,12 +42,12 @@ function MetaColumn({
 
 const OTHER_WORKS = [
   {
-    href: "/#work",
+    href: "/work/avail",
     title:
       "Creating an app that helps BC Students Claim the Benefits they're already owed.",
     company: "Avail",
     tags: ["2026", "BCIT", "School Project"],
-    background: "linear-gradient(to bottom, #d6f4f5, #caf2df)",
+    background: "#F7F7F7",
     pillLabel: "View project",
     pillColor: "#0e9090",
     media: (
@@ -74,10 +74,10 @@ const OTHER_WORKS = [
       "A wildfire alert app built to guide action, not just relay information.",
     company: "Firewatch BC",
     tags: ["2026", "BCIT", "School Project"],
-    background:
-      "linear-gradient(33deg, rgb(246, 229, 207) 23%, rgb(245, 224, 199) 101%)",
+    background: "#F7F7F7",
     pillLabel: "View project",
     pillColor: "#fa9f00",
+    comingSoon: true,
     media: (
       <Triptych
         images={[
@@ -103,10 +103,10 @@ const OTHER_WORKS = [
       "Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff.",
     company: "FLUI Hackathon",
     tags: ["2026", "Hackathon", "Web Design"],
-    background:
-      "linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)",
+    background: "#F7F7F7",
     pillLabel: "Coming soon",
     pillColor: "#0063c7",
+    comingSoon: true,
     media: (
       <FramedScreenshot
         src="/images/projects/flui-hackathon.webp"
@@ -173,7 +173,7 @@ export default function HeiltsukCaseStudy() {
                   Burst! Creative Group
                 </p>
                 <h1
-                  className="max-w-[1428px] text-[35px] leading-[1.1] text-black/60 sm:text-[44px] md:text-[55px]"
+                  className="font-serif max-w-[1428px] text-[35px] leading-[1.1] text-black/60 sm:text-[44px] md:text-[55px]"
                   style={wdth}
                 >
                   Building Heiltsuk Nation&rsquo;s site to grow, not just to be
@@ -214,12 +214,12 @@ export default function HeiltsukCaseStudy() {
               id="overview"
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10 xl:gap-14"
             >
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-6">
                 <CaseStudyEyebrow>Overview</CaseStudyEyebrow>
                 <div className="flex flex-col gap-5 sm:gap-6">
                   <CaseStudyBody
                     paragraphs={[
-                      "Heiltsuk Nation's (Client) website is a single scrolling homepage - as their content grew, they faced challenges in organizing new material and integrating sub-categories into the existing structure. Burst! Creative Group brought me on to this project during my internship to rebuild it as a structured, scalable website using the Client's colours and typefaces. I was appointed to be the lead designer on the project with only a few weeks left before my internship ended. I used Claude Design to speed up the brainstorm-to-mid-fidelity process, then built and tested the pages one at a time. By handoff, I had already incorporated most of the Client's content without needing a redesign. Before I left Burst!, I built a separate set of mobile screens and wrote developer comments so the project could be handed off smoothly to the next Lead.",
+                      "Heiltsuk Nation's (Client) website is a single scrolling homepage — as their content grew, they faced challenges in organizing new material and integrating sub-categories into the existing structure. Burst! Creative Group brought me on to this project during my internship to rebuild it as a structured, scalable website using the Client's colours and typefaces. I was appointed to be the lead designer on the project with only a few weeks left before my internship ended. I used Claude Design to speed up the brainstorm-to-mid-fidelity process, then built and tested the pages one at a time. By handoff, I had already incorporated most of the Client's content without needing a redesign. Before I left Burst!, I built a separate set of mobile screens and wrote developer comments so the project could be handed off smoothly to the next Lead.",
                     ]}
                   />
                   <a
@@ -227,7 +227,7 @@ export default function HeiltsukCaseStudy() {
                     className="group flex w-fit items-center gap-0.5"
                   >
                     <span
-                      className="text-[12px] font-medium tracking-[-0.48px] text-black/60 sm:text-[14px] md:text-[16px]"
+                      className="text-[12px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
                       style={wdth}
                     >
                       Jump to final designs
@@ -237,14 +237,14 @@ export default function HeiltsukCaseStudy() {
                       alt=""
                       width={17}
                       height={17}
-                      className="rotate-[123deg] transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1"
+                      className="rotate-[135deg] transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
                     />
                   </a>
                 </div>
               </div>
               <div
                 className="relative overflow-hidden rounded-[15px] border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
-                style={{ aspectRatio: "1429/546" }}
+                style={{ aspectRatio: "1429/780" }}
               >
                 <div
                   className="absolute overflow-hidden rounded-lg"
@@ -300,15 +300,17 @@ export default function HeiltsukCaseStudy() {
               id="problem"
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
             >
-              <div className="flex flex-col gap-3">
-                <CaseStudyEyebrow>Problem</CaseStudyEyebrow>
-                <CaseStudyHeading>
-                  Every new content added a longer scroll, and the
-                  sub-categories the client wanted outgrew the format.
-                </CaseStudyHeading>
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <CaseStudyEyebrow>Problem</CaseStudyEyebrow>
+                  <CaseStudyHeading>
+                    Every new content added a longer scroll, and the
+                    sub-categories the client wanted outgrew the format.
+                  </CaseStudyHeading>
+                </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "I was first brought in to update sections of the existing site. Each addition made the page longer making it harder to navigate. The client also wanted sub-categories within sections, something a single scrolling page has no way to represent. A user also didn't have the ability to see news and announcements because that section didn't exist. This would have a large impact on the nations website SEO, discoverability, conversion, funnel metrics, Bounce rates, and shareability just to name a few.",
+                    "I was first brought in to update sections of the existing site. Each addition made the page longer making it harder to navigate. The client also wanted sub-categories within sections, something a single scrolling page has no way to represent. A user also didn't have the ability to see news and announcements because that section didn't exist. This would have a large impact on the nation's website SEO, discoverability, conversion, funnel metrics, bounce rates, and shareability just to name a few.",
                     "A giveaway promotion and a visitor announcement both needed a News or Announcements section that simply didn't exist, and there was no sensible way to add one to a page that only scrolled, and already had so many navigation items. So instead, they both became pop-ups. Rebuilding the site meant giving new content an actual section to live in, not another paragraph tacked onto an already-long page.",
                   ]}
                 />
@@ -330,18 +332,20 @@ export default function HeiltsukCaseStudy() {
               id="discovery"
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
             >
-              <div className="flex flex-col gap-3">
-                <CaseStudyEyebrow>Discovery</CaseStudyEyebrow>
-                <CaseStudyHeading>
-                  We gathered requirements from the Heiltsuk Nation, and I
-                  worked with my PM to synthesize.
-                </CaseStudyHeading>
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <CaseStudyEyebrow>Discovery</CaseStudyEyebrow>
+                  <CaseStudyHeading>
+                    We gathered requirements from the Heiltsuk Nation, and I
+                    worked with my PM to synthesize.
+                  </CaseStudyHeading>
+                </div>
+                <CaseStudyBody
+                  paragraphs={[
+                    "My lead and I gathered requirements directly from the Heiltsuk Nation, who wanted to add substantial new content, including departments, emergency readiness information, and more, much of which the current site structure couldn't support. My lead led the calls while I synthesized the findings and rebuilt the sitemap. It quickly became clear that the requested additions didn't fit within the existing structure, which meant the project needed more design thought rather than a simple content update.",
+                  ]}
+                />
               </div>
-              <CaseStudyBody
-                paragraphs={[
-                  "My lead and I gathered requirements directly from the Heiltsuk Nation, who wanted to add substantial new content, including departments, emergency readiness information, and more, much of which the current site structure couldn't support. My lead led the calls while I synthesized the findings and rebuilt the sitemap. It quickly became clear that the requested additions didn't fit within the existing structure, which meant the project needed more design thought rather than a simple content update.",
-                ]}
-              />
               <ContainBox
                 src={`${IMG}/discovery-sitemap.webp`}
                 alt="Rebuilt sitemap for the Heiltsuk Nation site"
@@ -354,19 +358,21 @@ export default function HeiltsukCaseStudy() {
               id="ideation"
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
             >
-              <div className="flex flex-col gap-3">
-                <CaseStudyEyebrow>Ideation</CaseStudyEyebrow>
-                <CaseStudyHeading>
-                  Since I was the main designer, with some direction from our
-                  lead, and the tight timeline, I used AI tooling to brainstorm
-                  and prototype quicker.
-                </CaseStudyHeading>
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <CaseStudyEyebrow>Ideation</CaseStudyEyebrow>
+                  <CaseStudyHeading>
+                    Since I was the main designer, with some direction from our
+                    lead, and the tight timeline, I used AI tooling to
+                    brainstorm and prototype quicker.
+                  </CaseStudyHeading>
+                </div>
+                <CaseStudyBody
+                  paragraphs={[
+                    "My lead was focused on other projects, which put me in the main design seat. With only a few weeks left in the internship, we agreed on using Claude Design to move faster. I explored early directions directly with Claude Design, generated a range of variations to gather feedback, then refined and polished the final work in Figma.",
+                  ]}
+                />
               </div>
-              <CaseStudyBody
-                paragraphs={[
-                  "My lead was focused on other projects, which put me in the main design seat. With only a few weeks left in the internship, we agreed on using Claude Design to move faster. I explored early directions directly with Claude Design, generated a range of variations to gather feedback, then refined and polished the final work in Figma.",
-                ]}
-              />
               <div
                 className="relative w-full overflow-hidden rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
                 style={{ aspectRatio: "1429/598" }}
@@ -390,7 +396,7 @@ export default function HeiltsukCaseStudy() {
                       alt="Early style exploration, left"
                       fill
                       sizes="(min-width: 1280px) 380px, 27vw"
-                      className="object-contain"
+                      className="object-contain object-top"
                     />
                   </LightboxTrigger>
                 </div>
@@ -398,9 +404,9 @@ export default function HeiltsukCaseStudy() {
                   className="absolute overflow-hidden rounded-md bg-[#d9d9d9] p-1.5 sm:p-2"
                   style={{
                     left: "63.3%",
-                    top: "36.6%",
+                    top: "50.5%",
                     width: "26.7%",
-                    height: "74%",
+                    height: "49.5%",
                   }}
                 >
                   <LightboxTrigger
@@ -413,7 +419,7 @@ export default function HeiltsukCaseStudy() {
                       alt="Early style exploration, right"
                       fill
                       sizes="(min-width: 1280px) 380px, 27vw"
-                      className="object-contain"
+                      className="object-contain object-top"
                     />
                   </LightboxTrigger>
                 </div>
@@ -445,19 +451,21 @@ export default function HeiltsukCaseStudy() {
 
             {/* Early feedback */}
             <div className="flex flex-col gap-8 sm:gap-10">
-              <div className="flex flex-col gap-3">
-                <CaseStudyEyebrow>Early feedback</CaseStudyEyebrow>
-                <CaseStudyHeading>
-                  After my designs were reviewed and approved, we started
-                  working directly with the client on the copy to pressure test
-                  the designs.
-                </CaseStudyHeading>
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <CaseStudyEyebrow>Early feedback</CaseStudyEyebrow>
+                  <CaseStudyHeading>
+                    After my designs were reviewed and approved, we started
+                    working directly with the client on the copy to pressure
+                    test the designs.
+                  </CaseStudyHeading>
+                </div>
+                <CaseStudyBody
+                  paragraphs={[
+                    "I built each page as a fully interactive prototype and tested it directly with the client, gathering feedback from both internal team members and the client's side. That feedback was folded back into the prototype iteratively. The payoff came later: the same category-page template held up across completely different sections, proof that the structure wasn't just working for one part of the site.",
+                  ]}
+                />
               </div>
-              <CaseStudyBody
-                paragraphs={[
-                  "I built each page as a fully interactive prototype and tested it directly with the client, gathering feedback from both internal team members and the client's side. That feedback was folded back into the prototype iteratively. The payoff came later: the same category-page template held up across completely different sections, proof that the structure wasn't just working for one part of the site.",
-                ]}
-              />
               <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8 xl:gap-[62px]">
                 <CoverBox
                   src={`${IMG}/feedback-1.webp`}
@@ -478,12 +486,12 @@ export default function HeiltsukCaseStudy() {
 
             {/* Mega menu */}
             <div className="flex flex-col gap-8 sm:gap-10">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-6">
                 <CaseStudyHeading>The mega-menu concept</CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
                     "We discovered a traditional dropdown didn't fit the client's needs. That led to the mega menu concept, designed to showcase land and community imagery alongside the navigation itself rather than treating it as a plain text menu. The client loved the direction and wanted to move forward with it.",
-                    "The structure was also built to scale. Some drop-downs launched with as few as five items, so when the client later asked to add a new topic, it dropped straight into the existing grid without requiring a redesign.",
+                    "The structure was also built to scale. Some dropdowns had as few as five items, so when the client later asked to add a new topic, it dropped straight into the existing grid without requiring a redesign.",
                   ]}
                 />
               </div>
@@ -529,19 +537,24 @@ export default function HeiltsukCaseStudy() {
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
             >
               <CaseStudyHeading>Final design</CaseStudyHeading>
-              <CaseStudyMedia aspect="1429/600">
-                <div className="absolute inset-0 p-4 sm:p-6 xl:p-9">
-                  <div className="h-full w-full rounded-lg bg-[#561010]" />
-                </div>
+              <CaseStudyMedia aspect="1400/1026">
+                <video
+                  src={`${IMG}/heiltsuk-prototype.mp4`}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-contain"
+                />
               </CaseStudyMedia>
             </div>
 
             {/* Handoff */}
             <div className="flex flex-col gap-8 sm:gap-10">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-6">
                 <CaseStudyHeading>
-                  I completed the designs, but my internship ended mid
-                  development.
+                  I completed the designs, but my internship ended
+                  mid-development.
                 </CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
@@ -605,22 +618,25 @@ export default function HeiltsukCaseStudy() {
               id="reflection"
               className="scroll-mt-28 flex flex-col gap-6 sm:gap-8"
             >
-              <div className="flex flex-col gap-3">
-                <CaseStudyEyebrow>Reflection</CaseStudyEyebrow>
-                <CaseStudyHeading>
-                  Even though the site hadn&rsquo;t launched by the end of my
-                  internship, the experience shaped how I think about pacing,
-                  documentation, and where AI fits into a design process.
-                </CaseStudyHeading>
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-3">
+                  <CaseStudyEyebrow>Reflection</CaseStudyEyebrow>
+                  <CaseStudyHeading>
+                    Even though the site hadn&rsquo;t launched by the end of my
+                    internship, the experience shaped how I think about
+                    pacing, documentation, and where AI fits into a design
+                    process.
+                  </CaseStudyHeading>
+                </div>
+                <CaseStudyBody
+                  paragraphs={[
+                    "Knowing from the start that I had a few weeks, I could have worked faster and tightened the feedback loops earlier than I did. This was also my first time leading a project of this scope, being the sole designer on the team meant I was learning that pacing on the fly rather than following an established rhythm.",
+                    "I also learned the value of writing thorough handoff notes. Since the site hadn't launched by the time my internship ended, the next person needed to be able to pick up the project without me there to explain context in person. That meant documenting decisions and reasoning in enough depth that someone unfamiliar with the process could still move forward with it.",
+                    "AI tooling played a real role in expediting the work. It didn't replace design judgment, but it gave me a way to move faster at a stage where I was the only designer driving the process, especially useful given the timeline.",
+                    "The clearest proof point that the work held up: the category structure survived new content without needing a rebuild, even though the site itself hadn't launched by the end of the internship.",
+                  ]}
+                />
               </div>
-              <CaseStudyBody
-                paragraphs={[
-                  "Knowing from the start that I had a few weeks, I could have worked faster and tightened the feedback loops earlier than I did. This was also my first time leading a project of this scope, being the sole designer on the team meant I was learning that pacing on the fly rather than following an established rhythm.",
-                  "I also learned the value of writing thorough handoff notes. Since the site hadn't launched by the time my internship ended, the next person needed to be able to pick up the project without me there to explain context in person. That meant documenting decisions and reasoning in enough depth that someone unfamiliar with the process could still move forward with it.",
-                  "AI tooling played a real role in expediting the work. It didn't replace design judgment, but it gave me a way to move faster at a stage where I was the only designer driving the process, especially useful given the timeline.",
-                  "The clearest proof point that the work held up: the category structure survived new content without needing a rebuild, even though the site itself hadn't launched by the end of the internship.",
-                ]}
-              />
             </div>
 
             {/* Other works */}

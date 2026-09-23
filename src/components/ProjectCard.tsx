@@ -13,6 +13,7 @@ type ProjectCardProps = {
   tags: string[];
   pillLabel: string;
   pillColor: string;
+  comingSoon?: boolean;
 };
 
 function Tag({ children }: { children: ReactNode }) {
@@ -32,9 +33,9 @@ export default function ProjectCard({
   tags,
   pillLabel,
   pillColor,
+  comingSoon = false,
 }: ProjectCardProps) {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
-  const [hovering, setHovering] = useState(false);
   const [instant, setInstant] = useState(false);
 
   const updateCursor = (e: MouseEvent<HTMLDivElement>) => {
@@ -45,7 +46,6 @@ export default function ProjectCard({
   const handleMouseEnter = (e: MouseEvent<HTMLDivElement>) => {
     setInstant(true);
     updateCursor(e);
-    setHovering(true);
   };
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -60,24 +60,32 @@ export default function ProjectCard({
     >
       <div
         className="relative aspect-[624/455] w-full overflow-hidden rounded-lg shadow-none transition-shadow duration-300 ease-out group-hover:shadow-[0_10px_20px_-12px_rgba(0,0,0,0.18)]"
-        style={{ backgroundImage: background }}
+        style={{ background }}
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
-        onMouseLeave={() => setHovering(false)}
       >
         {media}
+        {/* Cursor-follow pill hidden for now — restore the hovering state and pass it as `visible` to re-enable. */}
         <HoverPill
           label={pillLabel}
           color={pillColor}
           x={cursor.x}
           y={cursor.y}
-          visible={hovering}
+          visible={false}
           instant={instant}
         />
+        {comingSoon && (
+          // Hover-capable devices: fades in on hover. Touch devices (no hover): always shown.
+          <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 backdrop-blur-md transition-opacity duration-300 ease-out group-hover:opacity-100 [@media(hover:none)]:opacity-100">
+            <span className="font-inter text-sm font-semibold text-white">
+              Coming soon
+            </span>
+          </div>
+        )}
       </div>
       <div className="flex w-full flex-col gap-3">
         <h3
-          className="text-[13px] leading-[1.4] font-medium tracking-[-0.72px] text-black/60 sm:text-[16px] md:text-[20px]"
+          className="font-serif text-[13px] leading-[1.4] font-medium tracking-[-0.72px] text-black/60 sm:text-[16px] md:text-[20px]"
           style={{ fontVariationSettings: '"wdth" 100' }}
         >
           {title}

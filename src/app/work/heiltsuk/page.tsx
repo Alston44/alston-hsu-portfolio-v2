@@ -27,7 +27,7 @@ export default function HeiltsukPage() {
             <HeiltsukHero />
           </div>
         </div>
-        <main className="flex flex-1 flex-col">
+        <main className="no-stagger route-transition-slide-only flex flex-1 flex-col">
           <HeiltsukCaseStudy />
         </main>
         <Footer />

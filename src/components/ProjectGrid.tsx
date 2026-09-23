@@ -3,14 +3,14 @@ import { FramedScreenshot, Triptych } from "./ProjectMedia";
 
 export default function ProjectGrid() {
   return (
-    <section id="work" className="px-6 pt-10 pb-24 sm:px-8 sm:pb-32 xl:px-16">
+    <section id="work" className="px-6 pt-6 pb-24 sm:px-8 sm:pb-32 xl:px-16">
       <div className="mx-auto grid max-w-[1920px] grid-cols-1 gap-x-16 gap-y-[75px] lg:grid-cols-2">
         <ProjectCard
           href="/work/heiltsuk"
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."
           company="Burst! Creative Group"
           tags={["2026", "Internship", "Web Design"]}
-          background="linear-gradient(-48deg, rgb(250, 194, 197) 1%, rgb(247, 228, 228) 100%)"
+          background="#F7F7F7"
           pillLabel="View project"
           pillColor="#b8373d"
           media={
@@ -18,15 +18,16 @@ export default function ProjectGrid() {
               src="/images/projects/heiltsuk-nation.webp"
               alt="Heiltsuk Nation website homepage"
               size="lg"
+              priority
             />
           }
         />
         <ProjectCard
-          href="#"
+          href="/work/avail"
           title="Creating an app that helps BC Students Claim the Benefits they're already owed."
           company="Avail"
           tags={["2026", "BCIT", "School Project"]}
-          background="linear-gradient(to bottom, #d6f4f5, #caf2df)"
+          background="#F7F7F7"
           pillLabel="View project"
           pillColor="#0e9090"
           media={
@@ -52,9 +53,10 @@ export default function ProjectGrid() {
           title="A wildfire alert app built to guide action, not just relay information."
           company="Firewatch BC"
           tags={["2026", "BCIT", "School Project"]}
-          background="linear-gradient(33deg, rgb(246, 229, 207) 23%, rgb(245, 224, 199) 101%)"
+          background="#F7F7F7"
           pillLabel="View project"
           pillColor="#fa9f00"
+          comingSoon
           media={
             <Triptych
               images={[
@@ -70,9 +72,10 @@ export default function ProjectGrid() {
           title="Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff."
           company="FLUI Hackathon"
           tags={["2026", "Hackathon", "Web Design"]}
-          background="linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)"
+          background="#F7F7F7"
           pillLabel="Coming soon"
           pillColor="#0063c7"
+          comingSoon
           media={
             <FramedScreenshot
               src="/images/projects/flui-hackathon.webp"

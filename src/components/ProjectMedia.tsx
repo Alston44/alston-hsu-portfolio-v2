@@ -4,15 +4,18 @@ export function FramedScreenshot({
   src,
   alt,
   size = "lg",
+  priority = false,
 }: {
   src: string;
   alt: string;
   size?: "lg" | "sm";
+  /** Set for a card that's above the fold so it's preloaded (it's the LCP image). */
+  priority?: boolean;
 }) {
   const frame =
     size === "lg"
-      ? "left-1/2 top-[11%] h-[91%] w-[89%] -translate-x-1/2 rounded-[4px] shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
-      : "left-[6.6%] top-[9%] h-[97%] w-[95%] rounded-[11px] shadow-[0_4px_22px_rgba(0,0,0,0.4)]";
+      ? "left-1/2 top-[11%] h-[91%] w-[89%] -translate-x-1/2 rounded-[4px]"
+      : "left-[6.6%] top-[9%] h-[97%] w-[95%] rounded-[11px]";
 
   return (
     <div
@@ -22,7 +25,9 @@ export function FramedScreenshot({
         src={src}
         alt={alt}
         fill
+        sizes="(min-width: 1024px) 45vw, 92vw"
         quality={95}
+        priority={priority}
         className="object-cover object-top"
       />
     </div>
@@ -58,6 +63,7 @@ export function Triptych({ images }: { images: TriptychImage[] }) {
               src={src}
               alt={alt}
               fill
+              sizes="(min-width: 1024px) 15vw, 30vw"
               className={fit === "contain" ? "object-contain" : "object-cover"}
             />
           )}

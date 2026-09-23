@@ -12,6 +12,7 @@
     "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont,
     system-ui, sans-serif;
   --font-inter: var(--font-inter);
+  --font-serif: var(--font-source-serif-4);
 }
 
 body {
@@ -223,12 +224,38 @@ body {
 .route-transition > div > *:not(.no-stagger):nth-child(3) {
   animation-delay: 0.16s;
 }
+
+/*
+ * Case-study <main> overlaps the hero above it via a negative top margin
+ * (for the rounded-corner card-stacking look), covered by its own opaque
+ * bg-white. Animating its opacity like other top-level sections would make
+ * that covering background translucent mid-transition, flashing the hero's
+ * bottom edge through the overlap — so it only slides (no-stagger opts it
+ * out of the fade above); its inner content's own page-fade-in class
+ * handles the opacity fade instead, without ever exposing the seam.
+ */
+@keyframes route-transition-slide {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.route-transition-slide-only {
+  animation: route-transition-slide 0.6s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation-delay: 0.16s;
+}
+
 .route-transition > div > *:not(.no-stagger):nth-child(4) {
   animation-delay: 0.24s;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .route-transition > div > * {
+  .route-transition > div > *,
+  .route-transition-slide-only {
     animation: none;
   }
 }

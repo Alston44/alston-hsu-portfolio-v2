@@ -78,7 +78,7 @@ export default function About() {
         <div className="flex w-full flex-1 flex-col gap-10">
           <div className="flex flex-col gap-4">
             <h1
-              className="text-[31px] leading-[1.4] text-black/60 sm:text-[38px] md:text-5xl"
+              className="font-serif text-[31px] leading-[1.4] text-black/60 sm:text-[38px] md:text-5xl"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
               Hi, I&rsquo;m Alston.

@@ -36,6 +36,7 @@ export default function ArrowLink({
             alt=""
             width={17}
             height={17}
+            priority
           />
         </span>
       </span>

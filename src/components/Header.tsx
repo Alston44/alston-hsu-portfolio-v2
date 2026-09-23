@@ -37,7 +37,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/70 px-6 py-[10px] backdrop-blur-md md:bg-white/10 sm:px-8 xl:px-16">
+    <header className="sticky top-0 z-50 bg-white/10 px-6 py-[10px] backdrop-blur-md sm:px-8 xl:px-16">
       <nav className="mx-auto flex w-full max-w-[1920px] items-center justify-between py-3">
         <Link
           href="/"

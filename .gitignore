@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large source video exports (use compressed .mp4 in public/ instead)
+*.mov
