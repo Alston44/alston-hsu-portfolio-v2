@@ -3,7 +3,7 @@ import AboutPhotoGallery from "./AboutPhotoGallery";
 
 const BIO_PARAGRAPHS = [
   "I'm a recent graduate from BCIT trying to find my place in the growing world of tech. I've always enjoyed making things, but design pulled me in because it sits at the intersection of people, creativity, and business.",
-  "My path here is a bit unusual.",
+  "My path to get here was a bit unusual.",
   "It started in 2017 at Young Guns arts academy, where I learned the fundamentals of art. For a while design was just a hobby, redesigning basketball jerseys and album art for fun.",
   "Things came together when I started studying psychology at UBC. A friend introduced me to a design club, an unexpected pairing that connected my interests in people, creativity, problem-solving, and business. From there I worked on research papers and case studies covering topics like human perception, social norms, and what makes someone successful at their sport, then picked up product design through BCIT.",
   "To me, good design isn't just about making something look nice. It's about creating something that feels right to use, solves a problem, and works for the people using it and the business behind it.",
