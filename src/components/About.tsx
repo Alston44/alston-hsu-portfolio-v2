@@ -1,14 +1,18 @@
 import ArrowLink from "./ArrowLink";
 import AboutPhotoGallery from "./AboutPhotoGallery";
 
+const BIO_PARAGRAPHS_INTRO = [
+  "I'm a recent BCIT graduate finding my place in tech. Studying psychology, I noticed things were usually labelled as either logic or beauty, rarely both. In research, the beauty was in the logic of the paper, not how it was presented.",
+
+  "Digital design changed that for me. It let me combine logic and art to create beautiful, functional solutions for everyday problems people face with their favourite products. The two don't have to compete, and together they can create something awesome.",
+];
+
 const BIO_PARAGRAPHS = [
-  "I'm a recent graduate from BCIT trying to find my place in the growing world of tech. I've always enjoyed making things, but design pulled me in because it sits at the intersection of people, creativity, and business.",
-  "My path to get here was a bit unusual.",
-  "It started in 2017 at Young Guns arts academy, where I learned the fundamentals of art. For a while design was just a hobby, redesigning basketball jerseys and album art for fun.",
-  "Things came together when I started studying psychology at UBC. A friend introduced me to a design club, an unexpected pairing that connected my interests in people, creativity, problem-solving, and business. From there I worked on research papers and case studies covering topics like human perception, social norms, and what makes someone successful at their sport, then picked up product design through BCIT.",
-  "To me, good design isn't just about making something look nice. It's about creating something that feels right to use, solves a problem, and works for the people using it and the business behind it.",
-  "When I'm not designing, you'll probably find me running, lifting, playing basketball, finding somewhere good to eat, or listening to music.",
-  "Interested in what I'm working on? I'd love to hear from you. Whether it's an opportunity, a project, or just a conversation about design, feel free to reach out.",
+ "My path to get here was a bit unusual. It started in 2017 at Young Guns arts academy, learning the fundamentals of art. For a while design was just a hobby, redesigning basketball jerseys and album art for fun. At UBC, a friend introduced me to a design club, which connected my interests in people, creativity, problem-solving, and business. I went on to research topics like human perception and social norms, then picked up product design at BCIT.",
+
+"To me, good design isn't just about looking nice. It should feel right to use, solve a problem, and work for both the people and the business behind it.",
+
+"When I'm not designing, I'm probably running, lifting, playing basketball, finding good food, or listening to music. Whether it's an opportunity, a project, or just a chat about design, feel free to reach out.",
 ];
 
 const EXPERIENCE = [
@@ -84,6 +88,21 @@ export default function About() {
               Hi, I&rsquo;m Alston.
             </h1>
             <div className="flex max-w-[1400px] flex-col gap-6">
+              {BIO_PARAGRAPHS_INTRO.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className={bodyText}
+                  style={{ fontVariationSettings: '"wdth" 100' }}
+                >
+                  {paragraph}
+                </p>
+              ))}
+              <p
+                className="font-serif text-[20px] leading-[1.3] font-normal text-black/60 sm:text-[24px] md:text-[30px]"
+                style={{ fontVariationSettings: '"wdth" 100' }}
+              >
+                My Story
+              </p>
               {BIO_PARAGRAPHS.map((paragraph) => (
                 <p
                   key={paragraph}
