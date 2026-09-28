@@ -24,9 +24,9 @@ body {
  * Each stroke draws in at its own staggered offset within a shared 10s
  * cycle using a diagonal clip-path sweep (top edge leads, bottom edge
  * lags) so the reveal reads as an angled pen/brush stroke rather than a
- * mechanical straight wipe. It then holds fully visible until the very
- * end of the cycle, where it resets to hidden in a near-instant snap
- * (no animated wipe-out) just before the next loop redraws it.
+ * mechanical straight wipe. The animation plays once: every stroke ends
+ * fully visible and stays that way (no loop, no reset). The 10s timeline
+ * is mostly a hold; the last stroke finishes drawing at ~4.1s.
  */
 :root {
   --logo-stroke-hidden: polygon(0% 0%, -30% 0%, -10% 100%, 0% 100%);
@@ -40,11 +40,8 @@ body {
   5% {
     clip-path: var(--logo-stroke-shown);
   }
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-1 {
@@ -53,11 +50,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   9%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-2 {
@@ -66,11 +60,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   13%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-3 {
@@ -79,11 +70,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   17%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-4 {
@@ -92,11 +80,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   21%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-5 {
@@ -105,11 +90,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   25%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-6 {
@@ -118,11 +100,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   29%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-7 {
@@ -131,11 +110,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   33%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 @keyframes logo-stroke-8 {
@@ -144,11 +120,8 @@ body {
     clip-path: var(--logo-stroke-hidden);
   }
   37%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 /* Last stroke drawn is the tall vertical hook of 午 — sweeps top-to-bottom instead. */
@@ -158,18 +131,16 @@ body {
     clip-path: var(--logo-stroke-hidden-vertical);
   }
   41%,
-  99.8% {
-    clip-path: var(--logo-stroke-shown);
-  }
   100% {
-    clip-path: var(--logo-stroke-hidden-vertical);
+    clip-path: var(--logo-stroke-shown);
   }
 }
 
 .logo-draw-on .logo-stroke {
   animation-duration: 10s;
   animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {

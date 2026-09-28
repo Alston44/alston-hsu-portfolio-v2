@@ -10,7 +10,7 @@ export default function ProjectGrid() {
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."
           company="Burst! Creative Group"
           tags={["2026", "Internship", "Web Design"]}
-          background="#F7F7F7"
+          background="linear-gradient(-48deg, rgb(250, 194, 197) 1%, rgb(247, 228, 228) 100%)"
           pillLabel="View project"
           pillColor="#b8373d"
           media={
@@ -27,7 +27,7 @@ export default function ProjectGrid() {
           title="Creating an app that helps BC Students Claim the Benefits they're already owed."
           company="Avail"
           tags={["2026", "BCIT", "School Project"]}
-          background="#F7F7F7"
+          background="linear-gradient(to bottom, #d6f4f5, #caf2df)"
           pillLabel="View project"
           pillColor="#0e9090"
           media={
@@ -53,7 +53,7 @@ export default function ProjectGrid() {
           title="A wildfire alert app built to guide action, not just relay information."
           company="Firewatch BC"
           tags={["2026", "BCIT", "School Project"]}
-          background="#F7F7F7"
+          background="linear-gradient(33deg, rgb(246, 229, 207) 23%, rgb(245, 224, 199) 101%)"
           pillLabel="View project"
           pillColor="#fa9f00"
           comingSoon
@@ -72,7 +72,7 @@ export default function ProjectGrid() {
           title="Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff."
           company="FLUI Hackathon"
           tags={["2026", "Hackathon", "Web Design"]}
-          background="#F7F7F7"
+          background="linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)"
           pillLabel="Coming soon"
           pillColor="#0063c7"
           comingSoon

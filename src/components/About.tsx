@@ -2,9 +2,11 @@ import ArrowLink from "./ArrowLink";
 import AboutPhotoGallery from "./AboutPhotoGallery";
 
 const BIO_PARAGRAPHS_INTRO = [
-  "I'm a recent graduate from BCIT, trying to find my place in the growing world of tech. When I first went into university pursuing psychology, I noticed that things were often categorized as either logic or beauty, but rarely both. That made sense to me, as I read countless studies where the beauty was in the writing and logic of the paper itself, not necessarily in how it was packaged and presented to readers.",
+  "I'm a recent graduate from BCIT, trying to find my place in the growing world of tech. When I started university in psychology and commerce, the two felt like separate worlds. Psychology asked why people think and feel the way they do. Commerce asked what that means for a business. I was rarely taught how to use them together.", 
   
-  "This was something I grappled with a lot early on in school, until I discovered digital design and realized it gave me a way to combine both logic and art. I could create beautiful and functional solutions for even some of the simplest problems people face when using their favourite products. When structure met creativity, it gave me a new perspective: that the two don't have to compete, and together, they have the ability to create something awesome.",
+  
+  "That gap stuck with me until I found digital design. It was the first place where understanding people and understanding business were part of the same job. I could make things that were both beautiful and useful, for the people using them and for the business behind them, even when the problem was as small as a confusing checkout button. It showed me the two sides don't have to compete, and together, they can create something awesome.",
+
 ];
 
 const BIO_PARAGRAPHS = [
@@ -16,7 +18,9 @@ const BIO_PARAGRAPHS = [
 ];
 
 const EXPERIENCE = [
-  { title: "UI Support", date: "Jul 2026 – Present", org: "FLUI" },
+  { title: "UI Support", 
+    date: "Jul 2026 – Present", 
+    org: "FLUI" },
   {
     title: "Product Designer",
     date: "May 2026 – Jul 2026",

@@ -53,13 +53,21 @@ export default function ProjectCard({
     updateCursor(e);
   };
 
-  return (
-    <Link
-      href={href}
-      className="group flex flex-col gap-3 transition-transform duration-300 ease-out hover:-translate-y-0.5"
-    >
+  // "Coming soon" cards are not links: no navigation, no pointer cursor, and no
+  // lift/shadow hover effect that would suggest they're clickable. The frosted
+  // overlay is their only hover feedback.
+  const cardClassName = `group @container flex flex-col gap-3 ${
+    comingSoon ? "" : "transition-transform duration-300 ease-out hover:-translate-y-0.5"
+  }`;
+
+  const content = (
+    <>
       <div
-        className="relative aspect-[624/455] w-full overflow-hidden rounded-lg shadow-none transition-shadow duration-300 ease-out group-hover:shadow-[0_10px_20px_-12px_rgba(0,0,0,0.18)]"
+        className={`relative aspect-[624/455] w-full overflow-hidden rounded-lg shadow-none ${
+          comingSoon
+            ? ""
+            : "transition-shadow duration-300 ease-out group-hover:shadow-[0_10px_20px_-12px_rgba(0,0,0,0.18)]"
+        }`}
         style={{ background }}
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
@@ -90,7 +98,7 @@ export default function ProjectCard({
         >
           {title}
         </h3>
-        <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex w-full flex-col gap-2 @[440px]:flex-row @[440px]:items-center @[440px]:justify-between">
           <span
             className="text-[10px] font-medium text-black/60 sm:text-[13px] md:text-base"
             style={{ fontVariationSettings: '"wdth" 100' }}
@@ -104,6 +112,14 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
+    </>
+  );
+
+  return comingSoon ? (
+    <div className={cardClassName}>{content}</div>
+  ) : (
+    <Link href={href} className={cardClassName}>
+      {content}
     </Link>
   );
 }

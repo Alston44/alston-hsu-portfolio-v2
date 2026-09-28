@@ -1,0 +1,12 @@
+{
+  // VS Code's built-in CSS validator doesn't know Tailwind v4's at-rules
+  // (@import "tailwindcss", @theme, @custom-variant, @apply, etc.) and
+  // flags every one of them, plus everything inside an unrecognized block,
+  // as an error. That's almost certainly where a large "Problems" count in
+  // globals.css is coming from — the real toolchain (tsc, eslint, next
+  // build) reports zero errors on this project. Turning this off is the
+  // standard fix for Tailwind v4 projects.
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore"
+}

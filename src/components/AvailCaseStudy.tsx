@@ -75,7 +75,7 @@ const OTHER_WORKS = [
       "Building Heiltsuk Nation's site to grow, not just to be patched together.",
     company: "Burst! Creative Group",
     tags: ["2026", "Internship", "Web Design"],
-    background: "#F7F7F7",
+    background: "linear-gradient(-48deg, rgb(250, 194, 197) 1%, rgb(247, 228, 228) 100%)",
     pillLabel: "View project",
     pillColor: "#b8373d",
     media: (
@@ -92,7 +92,7 @@ const OTHER_WORKS = [
       "A wildfire alert app built to guide action, not just relay information.",
     company: "Firewatch BC",
     tags: ["2026", "BCIT", "School Project"],
-    background: "#F7F7F7",
+    background: "linear-gradient(33deg, rgb(246, 229, 207) 23%, rgb(245, 224, 199) 101%)",
     pillLabel: "View project",
     pillColor: "#fa9f00",
     comingSoon: true,
@@ -121,7 +121,7 @@ const OTHER_WORKS = [
       "Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff.",
     company: "FLUI Hackathon",
     tags: ["2026", "Hackathon", "Web Design"],
-    background: "#F7F7F7",
+    background: "linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)",
     pillLabel: "Coming soon",
     pillColor: "#0063c7",
     comingSoon: true,
@@ -163,12 +163,12 @@ export default function AvailCaseStudy() {
             {/* Title + metadata */}
             <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
               <div className="flex flex-col gap-4 xl:gap-6">
-                <p
+                {/* <p
                   className="text-[14px] font-medium tracking-[0.4px] text-black/60 sm:text-[18px] md:text-[22px]"
                   style={wdth}
                 >
                   Avail
-                </p>
+                </p> */}
                 <h1
                   className="font-serif max-w-[1428px] text-[35px] leading-[1.1] text-black/60 sm:text-[44px] md:text-[55px]"
                   style={wdth}
@@ -230,7 +230,7 @@ export default function AvailCaseStudy() {
                       alt=""
                       width={17}
                       height={17}
-                      className="rotate-[135deg] transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"
+                      className="rotate-180 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     />
                   </a>
                 </div>
@@ -714,10 +714,18 @@ export default function AvailCaseStudy() {
             {/* Other works */}
             <div className="flex flex-col gap-8 sm:gap-10">
               <CaseStudyHeading>Other works</CaseStudyHeading>
-              <div className="flex flex-col gap-16 sm:gap-20">
-                {OTHER_WORKS.map((work) => (
-                  <ProjectCard key={work.company} {...work} />
-                ))}
+              {/* Row of 3 that scrolls sideways once the cards would drop below min width. */}
+              <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
+                <div className="flex w-full gap-6 sm:gap-8">
+                  {OTHER_WORKS.map((work) => (
+                    <div
+                      key={work.company}
+                      className="w-[280px] shrink-0 grow basis-[280px]"
+                    >
+                      <ProjectCard {...work} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

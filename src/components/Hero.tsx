@@ -21,7 +21,13 @@ export default function Hero() {
             psychology and commerce to design effortless UI/UX experiences.
           </p>
           <div className="flex flex-wrap items-center gap-4 lg:flex-col lg:flex-nowrap lg:items-start lg:gap-[17px]">
-            <ArrowLink href="/about">Learn more about me</ArrowLink>
+            <ArrowLink
+              href="https://www.linkedin.com/in/alston-hsu88/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View my LinkedIn
+            </ArrowLink>
             <ArrowLink
               href="mailto:alstonhsu88@gmail.com"
               target="_blank"
