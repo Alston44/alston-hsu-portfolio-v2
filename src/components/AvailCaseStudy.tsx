@@ -27,20 +27,20 @@ const TOC_LINKS = [
 // Final screens in flow order. Taller scroll-captures are cropped to one
 // phone screen (393/852) in the grid and shown in full in the lightbox.
 const SCREENS = [
-  { file: "splash", alt: "Splash screen" },
-  { file: "welcome", alt: "Welcome screen: Find student benefits you didn't know existed" },
-  { file: "quiz-1", alt: "Quiz step 1: full-time or part-time" },
-  { file: "quiz-2", alt: "Quiz step 2: type of school" },
-  { file: "quiz-3", alt: "Quiz step 3: annual household income" },
-  { file: "quiz-4", alt: "Quiz step 4: student status" },
-  { file: "quiz-5", alt: "Quiz step 5: a few more questions" },
-  { file: "loading", alt: "Loading screen: Finding your benefits" },
-  { file: "home", alt: "Home screen with estimated annual value and top matches" },
-  { file: "benefits", alt: "Benefits list: 5 benefits found" },
-  { file: "benefit-detail", alt: "Benefit detail: BC Access Grant" },
-  { file: "profile", alt: "Profile screen with answers used to match benefits" },
-  { file: "ask", alt: "Ask Avail chat with guided prompts" },
-  { file: "ask-keyboard", alt: "Ask Avail chat with the keyboard open, typing a question" },
+  { file: "splash", alt: "Splash screen", caption: "App splash screen" },
+  { file: "welcome", alt: "Welcome screen: Find student benefits you didn't know existed", caption: "Welcome: find your benefits" },
+  { file: "quiz-1", alt: "Quiz step 1: full-time or part-time", caption: "Quiz: full-time or part-time" },
+  { file: "quiz-2", alt: "Quiz step 2: type of school", caption: "Quiz: type of school" },
+  { file: "quiz-3", alt: "Quiz step 3: annual household income", caption: "Quiz: annual household income" },
+  { file: "quiz-4", alt: "Quiz step 4: student status", caption: "Quiz: student status details" },
+  { file: "quiz-5", alt: "Quiz step 5: a few more questions", caption: "Quiz: a few more questions" },
+  { file: "loading", alt: "Loading screen: Finding your benefits", caption: "Matching you to benefits" },
+  { file: "home", alt: "Home screen with estimated annual value and top matches", caption: "Home: your matched benefits" },
+  { file: "benefits", alt: "Benefits list: 5 benefits found", caption: "Browsing all matched benefits" },
+  { file: "benefit-detail", alt: "Benefit detail: BC Access Grant", caption: "Benefit detail: BC Access Grant" },
+  { file: "profile", alt: "Profile screen with answers used to match benefits", caption: "Profile: your quiz answers" },
+  { file: "ask", alt: "Ask Avail chat with guided prompts", caption: "Ask Avail: AI chat assistant" },
+  { file: "ask-keyboard", alt: "Ask Avail chat with the keyboard open, typing a question", caption: "Ask Avail: typing a question" },
 ];
 
 function MetaColumn({
@@ -209,10 +209,13 @@ export default function AvailCaseStudy() {
             >
               <div className="flex flex-col gap-6">
                 <CaseStudyEyebrow>Overview</CaseStudyEyebrow>
+                <CaseStudyHeading>
+                  Avail is a mobile-first tool that matches BC students to benefits they didn&rsquo;t know they qualified for, built as a final project for a BCIT app development course.
+                </CaseStudyHeading>
                 <div className="flex flex-col gap-5 sm:gap-6">
                   <CaseStudyBody
                     paragraphs={[
-                      "Avail is a mobile-first tool that matches BC students to benefits they didn't know they qualified for, built as a final project for a BCIT app development course. It walks a student through a short quiz, matches them with BC benefit programs using AI, and provides results they can browse, filter, apply, or ask follow-up questions through Ask Avail, an in-app AI chat assistant. The app is functional, not just a static prototype, and runs on Expo. The demo below is what the running app looks like.",
+                      "Avail walks a student through a short quiz, matches them with BC benefit programs using AI, and provides results they can browse, filter, apply, or ask follow-up questions through Ask Avail, an in-app AI chat assistant. The app is functional, not just a static prototype, and runs on Expo. The demo below is what the running app looks like.",
                     ]}
                   />
                   <a
@@ -623,21 +626,28 @@ export default function AvailCaseStudy() {
                 aspect="372/286"
               />
               <div className="grid w-full grid-cols-3 gap-3 rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
-                {SCREENS.map(({ file, alt }) => (
-                  <LightboxTrigger
-                    key={file}
-                    src={`${IMG}/${file}.webp`}
-                    alt={alt}
-                    className="relative block aspect-[393/852] w-full overflow-hidden rounded-[5%/2.3%] bg-white"
-                  >
-                    <Image
+                {SCREENS.map(({ file, alt, caption }) => (
+                  <div key={file} className="flex flex-col gap-1.5 sm:gap-2">
+                    <LightboxTrigger
                       src={`${IMG}/${file}.webp`}
                       alt={alt}
-                      fill
-                      sizes="(min-width: 1280px) 340px, 30vw"
-                      className="object-cover object-top"
-                    />
-                  </LightboxTrigger>
+                      className="relative block aspect-[393/852] w-full overflow-hidden rounded-[5%/2.3%] bg-white"
+                    >
+                      <Image
+                        src={`${IMG}/${file}.webp`}
+                        alt={alt}
+                        fill
+                        sizes="(min-width: 1280px) 340px, 30vw"
+                        className="object-cover object-top"
+                      />
+                    </LightboxTrigger>
+                    <p
+                      className="text-center text-[9px] leading-[1.3] text-black/60 sm:text-[11px] md:text-sm"
+                      style={wdth}
+                    >
+                      {caption}
+                    </p>
+                  </div>
                 ))}
               </div>
             </div>
