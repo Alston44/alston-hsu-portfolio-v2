@@ -14,7 +14,7 @@ export default function Hero() {
         </h1>
         <div className="grid grid-cols-1 gap-x-16 gap-y-6 sm:gap-y-9 lg:grid-cols-2 lg:items-start">
           <p
-            className="max-w-[1112px] text-[13px] leading-[1.4] text-black/80 opacity-56 sm:text-[16px] md:text-[20px] lg:max-w-[692px]"
+            className="max-w-[1112px] text-[16px] leading-[1.4] text-black/80 opacity-56 md:text-[20px] lg:max-w-[692px]"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             An aspiring product designer from Vancouver, bringing a background in 

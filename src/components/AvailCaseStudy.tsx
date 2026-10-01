@@ -53,13 +53,13 @@ function MetaColumn({
   return (
     <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px]">
       <p
-        className="text-[12px] font-bold leading-[1.4] sm:text-[14px] md:text-[18px]"
+        className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
       >
         {label}
       </p>
       <div
-        className="flex flex-col gap-0.5 text-[12px] leading-[1.3] tracking-[-0.25px] sm:text-[14px] md:text-[18px]"
+        className="flex flex-col gap-0.5 text-[16px] leading-[1.3] tracking-[-0.25px] 2xl:text-[18px]"
         style={wdth}
       >
         {children}
@@ -137,8 +137,11 @@ const OTHER_WORKS = [
 
 export function AvailHero() {
   return (
-    // xl height matches HeiltsukHero: pt-16 + a max-1160px-wide 1120/637 card
-    <div className="relative h-[300px] w-full sm:h-[420px] xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]">
+    // xl height matches HeiltsukHero: pt-16 + a max-1160px-wide 1120/637 card.
+    // Shrinks fluidly between the xl and 2xl breakpoints (same approach as
+    // HeiltsukHero's box) so the title below isn't pushed below the fold on
+    // 1280-1535px laptop screens; restores to the full size at 2xl+.
+    <div className="relative h-[300px] w-full sm:h-[420px] xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]">
       <div className="pointer-events-none absolute inset-x-0 -top-[100px] bottom-0">
         <Image
           src={`${IMG}/case-hero-v4.webp`}
@@ -157,7 +160,7 @@ export default function AvailCaseStudy() {
   return (
     <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-[1920px] flex-col gap-16 sm:gap-20 xl:gap-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-16 xl:flex-row xl:items-start xl:gap-16">
+        <div className="mx-auto flex max-w-6xl flex-col gap-16 xl:flex-row xl:items-start xl:gap-16">
           <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
@@ -170,7 +173,7 @@ export default function AvailCaseStudy() {
                   Avail
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[35px] leading-[1.1] text-black/60 sm:text-[44px] md:text-[55px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] md:text-[46px] 2xl:text-[52px]"
                   style={wdth}
                 >
                   Creating an app that helps BC Students Claim the Benefits
@@ -223,7 +226,7 @@ export default function AvailCaseStudy() {
                     className="group flex w-fit items-center gap-0.5"
                   >
                     <span
-                      className="text-[12px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
+                      className="text-[13px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
                       style={wdth}
                     >
                       Jump to final designs
@@ -277,7 +280,7 @@ export default function AvailCaseStudy() {
                   $9B
                 </p>
                 <div
-                  className="flex flex-col gap-4 text-[12px] leading-[1.7] tracking-[-0.25px] text-white/80 sm:text-[14px] md:text-[18px]"
+                  className="flex flex-col gap-4 text-[16px] leading-[1.7] tracking-[-0.25px] text-white/80 md:text-[18px]"
                   style={wdth}
                 >
                   <p>
@@ -327,7 +330,7 @@ export default function AvailCaseStudy() {
               </div>
               <div className="flex flex-col gap-4 rounded-lg bg-[#0e9090] px-6 py-8 text-white sm:px-10 sm:py-10">
                 <p
-                  className="text-[16px] leading-[1.5] italic sm:text-[18px] md:text-[22px]"
+                  className="text-[16px] leading-[1.5] italic sm:text-[18px] md:text-[23px]"
                   style={wdth}
                 >
                   &ldquo;No single &lsquo;centralized&rsquo; system exists
@@ -336,7 +339,7 @@ export default function AvailCaseStudy() {
                   one population vs. others.&rdquo;
                 </p>
                 <p
-                  className="text-[13px] text-white/70 sm:text-[15px]"
+                  className="text-[13px] text-white/70 sm:text-[14px]"
                   style={wdth}
                 >
                   &mdash; Feedback from government contacts
@@ -554,7 +557,7 @@ export default function AvailCaseStudy() {
                 <div className="flex flex-col gap-4 sm:gap-6">
                   <div className="flex flex-col gap-2 rounded-lg bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                     <p
-                      className="text-[13px] font-bold text-black/60 sm:text-[15px]"
+                      className="text-[13px] font-bold text-black/60 sm:text-[14px]"
                       style={wdth}
                     >
                       Before
@@ -567,7 +570,7 @@ export default function AvailCaseStudy() {
                       ].map((prompt) => (
                         <p
                           key={prompt}
-                          className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[15px]"
+                          className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[16px]"
                           style={wdth}
                         >
                           {prompt}
@@ -577,7 +580,7 @@ export default function AvailCaseStudy() {
                   </div>
                   <div className="flex flex-col gap-2 rounded-lg bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                     <p
-                      className="text-[13px] font-bold text-black/60 sm:text-[15px]"
+                      className="text-[13px] font-bold text-black/60 sm:text-[14px]"
                       style={wdth}
                     >
                       After
@@ -590,7 +593,7 @@ export default function AvailCaseStudy() {
                       ].map((prompt) => (
                         <p
                           key={prompt}
-                          className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[15px]"
+                          className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[16px]"
                           style={wdth}
                         >
                           {prompt}
@@ -642,7 +645,7 @@ export default function AvailCaseStudy() {
                       />
                     </LightboxTrigger>
                     <p
-                      className="text-center text-[9px] leading-[1.3] text-black/60 sm:text-[11px] md:text-sm"
+                      className="text-center text-[11px] leading-[1.3] text-black/60 md:text-sm"
                       style={wdth}
                     >
                       {caption}
@@ -704,13 +707,13 @@ export default function AvailCaseStudy() {
                     </p>
                     <div className="flex flex-col gap-2">
                       <p
-                        className="text-[15px] font-semibold text-black/80 sm:text-[18px]"
+                        className="text-[16px] font-semibold text-black/80 sm:text-[18px]"
                         style={wdth}
                       >
                         {title}
                       </p>
                       <p
-                        className="text-[12px] leading-[1.7] tracking-[-0.25px] text-black/60 sm:text-[14px] md:text-[16px]"
+                        className="text-[16px] leading-[1.7] tracking-[-0.25px] text-black/60"
                         style={wdth}
                       >
                         {body}

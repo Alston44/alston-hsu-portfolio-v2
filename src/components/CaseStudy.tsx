@@ -8,13 +8,13 @@ import { LightboxTrigger } from "./Lightbox";
 export const wdth = { fontVariationSettings: '"wdth" 100' } as const;
 
 export const caseStudyBodyText =
-  "text-[12px] leading-[1.7] tracking-[-0.25px] text-black/60 sm:text-[14px] md:text-[18px]";
+  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/60 2xl:text-[18px]";
 
 const eyebrowClass =
-  "text-[9px] font-semibold leading-none text-black sm:text-[11px] md:text-[14px]";
+  "text-[13px] font-semibold leading-none text-black 2xl:text-[14px]";
 
 const headingClass =
-  "font-serif text-[26px] leading-[1.1] text-black/60 sm:text-[32px] md:text-[40px]";
+  "font-serif text-[26px] leading-[1.1] text-black/60 sm:text-[32px] md:text-[36px] 2xl:text-[41px]";
 
 export function CaseStudyEyebrow({ children }: { children: ReactNode }) {
   return (

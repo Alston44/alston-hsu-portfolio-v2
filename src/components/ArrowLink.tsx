@@ -15,8 +15,8 @@ export default function ArrowLink({
 }: ArrowLinkProps) {
   const textClassName =
     size === "sm"
-      ? "text-[10px] leading-[1.2] tracking-[-0.48px] font-medium sm:text-[13px] md:text-[16px]"
-      : "text-[12px] leading-[1.2] tracking-[-0.54px] sm:text-[14px] md:text-[18px]";
+      ? "text-[13px] leading-[1.2] tracking-[-0.48px] font-medium md:text-[16px]"
+      : "text-[14px] leading-[1.2] tracking-[-0.54px] md:text-[18px]";
 
   return (
     <Link

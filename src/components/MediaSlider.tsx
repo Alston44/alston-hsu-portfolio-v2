@@ -50,7 +50,7 @@ export function MediaSlider({
               type="button"
               onClick={() => setIndex(i)}
               aria-pressed={i === index}
-              className={`rounded-full px-3 py-1 text-[10px] font-medium tracking-[-0.2px] transition-colors sm:text-[12px] ${
+              className={`rounded-full px-3 py-1 text-[11px] font-medium tracking-[-0.2px] transition-colors sm:text-[13px] ${
                 i === index
                   ? "bg-white text-black/80 shadow-sm"
                   : "text-black/45 hover:text-black/70"
@@ -143,7 +143,7 @@ export function MediaSlider({
       </div>
 
       <p
-        className="text-[9px] leading-[1.6] text-black/60 sm:text-[11px] md:text-sm"
+        className="text-[11px] leading-[1.6] text-black/60 md:text-sm"
         style={wdth}
       >
         {slide.caption}

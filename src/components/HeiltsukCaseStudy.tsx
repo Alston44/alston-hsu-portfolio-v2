@@ -34,13 +34,13 @@ function MetaColumn({
   return (
     <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px]">
       <p
-        className="text-[12px] font-bold leading-[1.4] sm:text-[14px] md:text-[18px]"
+        className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
       >
         {label}
       </p>
       <div
-        className="flex flex-col gap-0.5 text-[12px] leading-[1.3] tracking-[-0.25px] sm:text-[14px] md:text-[18px]"
+        className="flex flex-col gap-0.5 text-[16px] leading-[1.3] tracking-[-0.25px] 2xl:text-[18px]"
         style={wdth}
       >
         {children}
@@ -148,7 +148,7 @@ const OTHER_WORKS = [
 export function HeiltsukHero() {
   return (
     <div className="mx-auto w-full max-w-[1920px] px-6 sm:px-8 xl:px-16">
-      <div className="relative mx-auto w-full max-w-[1160px]">
+      <div className="relative mx-auto w-full max-w-[min(900px,58vw)] 2xl:max-w-[1160px]">
         <div
           className="relative w-full overflow-hidden rounded-lg shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
           style={{ aspectRatio: "1120/637" }}
@@ -157,7 +157,7 @@ export function HeiltsukHero() {
             src={`${IMG}/hero-main.webp`}
             alt="Heiltsuk Nation homepage redesign"
             fill
-            sizes="(min-width: 1280px) 1160px, 90vw"
+            sizes="(min-width: 1536px) 1160px, 64vw"
             className="object-cover object-top"
             priority
           />
@@ -171,7 +171,7 @@ export default function HeiltsukCaseStudy() {
   return (
     <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-[1920px] flex-col gap-16 sm:gap-20 xl:gap-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-16 xl:flex-row xl:items-start xl:gap-16">
+        <div className="mx-auto flex max-w-6xl flex-col gap-16 xl:flex-row xl:items-start xl:gap-16">
           <CaseStudyToc iconDir={IMG} links={TOC_LINKS} />
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
@@ -184,7 +184,7 @@ export default function HeiltsukCaseStudy() {
                   Burst! Creative Group
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[35px] leading-[1.1] text-black/60 sm:text-[44px] md:text-[55px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] md:text-[46px] 2xl:text-[52px]"
                   style={wdth}
                 >
                   Building Heiltsuk Nation&rsquo;s site to grow, not just to be
@@ -269,58 +269,58 @@ export default function HeiltsukCaseStudy() {
                   ]}
                 />
               </div>
-              <div
-                className="relative overflow-hidden rounded-[15px] border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
-                style={{ aspectRatio: "1916/878" }}
-              >
+              <div className="flex flex-col gap-5 sm:gap-6">
                 <div
-                  className="absolute overflow-hidden rounded-lg"
-                  style={{
-                    left: "13.3%",
-                    top: "10.8%",
-                    width: "53.8%",
-                    height: "131.7%",
-                  }}
+                  className="relative overflow-hidden rounded-[15px] border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
+                  style={{ aspectRatio: "1916/878" }}
                 >
-                  <LightboxTrigger
-                    src={`${IMG}/overview-1.webp`}
-                    alt="Heiltsuk Nation site redesign, page one"
-                    className="relative block h-full w-full"
+                  <div
+                    className="absolute overflow-hidden rounded-lg"
+                    style={{
+                      left: "13.3%",
+                      top: "10.8%",
+                      width: "53.8%",
+                      height: "131.7%",
+                    }}
                   >
-                    <Image
+                    <LightboxTrigger
                       src={`${IMG}/overview-1.webp`}
                       alt="Heiltsuk Nation site redesign, page one"
-                      fill
-                      sizes="(min-width: 1280px) 1000px, 70vw"
-                      className="object-cover object-top"
-                    />
-                  </LightboxTrigger>
-                </div>
-                <div
-                  className="absolute overflow-hidden rounded-lg shadow-[0_3px_20px_rgba(0,0,0,0.35)]"
-                  style={{
-                    left: "32.8%",
-                    top: "31.9%",
-                    width: "53.9%",
-                    height: "101.5%",
-                  }}
-                >
-                  <LightboxTrigger
-                    src={`${IMG}/overview-2.webp`}
-                    alt="Heiltsuk Nation site redesign, page two"
-                    className="relative block h-full w-full"
+                      className="relative block h-full w-full"
+                    >
+                      <Image
+                        src={`${IMG}/overview-1.webp`}
+                        alt="Heiltsuk Nation site redesign, page one"
+                        fill
+                        sizes="(min-width: 1280px) 1000px, 70vw"
+                        className="object-cover object-top"
+                      />
+                    </LightboxTrigger>
+                  </div>
+                  <div
+                    className="absolute overflow-hidden rounded-lg shadow-[0_3px_20px_rgba(0,0,0,0.35)]"
+                    style={{
+                      left: "32.8%",
+                      top: "31.9%",
+                      width: "53.9%",
+                      height: "101.5%",
+                    }}
                   >
-                    <Image
+                    <LightboxTrigger
                       src={`${IMG}/overview-2.webp`}
                       alt="Heiltsuk Nation site redesign, page two"
-                      fill
-                      sizes="(min-width: 1280px) 1000px, 70vw"
-                      className="object-cover object-top"
-                    />
-                  </LightboxTrigger>
+                      className="relative block h-full w-full"
+                    >
+                      <Image
+                        src={`${IMG}/overview-2.webp`}
+                        alt="Heiltsuk Nation site redesign, page two"
+                        fill
+                        sizes="(min-width: 1280px) 1000px, 70vw"
+                        className="object-cover object-top"
+                      />
+                    </LightboxTrigger>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col gap-5 sm:gap-6">
                 <CaseStudyBody
                   paragraphs={[
                     "Before I left Burst!, a separate set of mobile screens, along with developer comments were left so the project could be handed off smoothly to the next team.",
@@ -331,7 +331,7 @@ export default function HeiltsukCaseStudy() {
                   className="group flex w-fit items-center gap-0.5 self-end"
                 >
                   <span
-                    className="text-[12px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
+                    className="text-[13px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
                     style={wdth}
                   >
                     Jump to final designs
@@ -366,7 +366,7 @@ export default function HeiltsukCaseStudy() {
                     // The page to was so hard to navigate, but they couldn't find 
                     // hard to find things, there was a lot of bandaid solutions.
 
-                    "Heiltsuk Nation was already an existing client of Burst. I was first brought in to update and add new sections to the website, but noticed that each additional content added just made the page longer and harder to navigate. It eventually became more difficult for users to find new content or content that already existed on the page.",
+                    "Heiltsuk Nation was already an existing client of Burst. I was first brought in to add more content to their old website, but noticed that each additional update just made the page longer and harder to navigate.",
 
                     "For example, users can have difficulty finding the latest news about the client due to the lack of a dedicated section for it. Instead, it was implemented as a pop-up on the page. It is bandaid solutions like this that have a large impact on the client's website discoverability, getting new members, relaying other crucial information, and expanding the website.",
                   ]}
@@ -560,7 +560,7 @@ export default function HeiltsukCaseStudy() {
                   className="p-4 sm:p-6 xl:p-9"
                 />
                 <p
-                  className="text-[9px] leading-[1.6] text-black/60 sm:text-[11px] md:text-sm"
+                  className="text-[11px] leading-[1.6] text-black/60 md:text-sm"
                   style={wdth}
                 >
                   Same sidebar instance, shown in a page. Content column allows

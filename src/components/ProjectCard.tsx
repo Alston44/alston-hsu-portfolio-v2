@@ -93,14 +93,14 @@ export default function ProjectCard({
       </div>
       <div className="flex w-full flex-col gap-3">
         <h3
-          className="font-serif text-[13px] leading-[1.4] font-medium tracking-[-0.72px] text-black/60 sm:text-[16px] md:text-[20px]"
+          className="font-serif text-[16px] leading-[1.4] font-medium tracking-[-0.72px] text-black/60 md:text-[20px]"
           style={{ fontVariationSettings: '"wdth" 100' }}
         >
           {title}
         </h3>
         <div className="flex w-full flex-col gap-2 @[440px]:flex-row @[440px]:items-center @[440px]:justify-between">
           <span
-            className="text-[10px] font-medium text-black/60 sm:text-[13px] md:text-base"
+            className="text-[14px] font-medium text-black/60 md:text-base"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             {company}
