@@ -52,19 +52,19 @@ function MetaColumn({
 const REFLECTIONS = [
   {
     heading: "Set the pace early",
-    body: "I knew from the start that I only had a few weeks, and looking back, I could have moved faster and gotten feedback sooner. This was my first time leading a project this big, and as the main designer, there was no one to set the pace for me. I had to figure it out as I went. Next time, I'd plan out my timeline from day one and check in with the team more often, so feedback comes early instead of piling up at the end.",
+    body: "This was my first time leading a project this big, and as the main designer, there was no one to set the pace for me. I had to figure it out as I went. Next time, I'd plan out my timeline from day one and check in with the team more often, so feedback comes early instead of piling up at the end. I knew from the start that I only had a few weeks, and looking back, I could have moved faster and gotten feedback sooner.",
   },
   {
     heading: "Design for the person after you",
-    body: "The website was not launched when my internship ended, so the team or developers who picked up the project after me should be able to continue with my work. I made sure to document decisions and the reasoning behind them in enough depth that someone new to the project could understand.",
+    body: "Since the website was not launched when my internship ended, I had to ensure the team or developers who picked up the project after me were able to understand my work. I did this by documenting decisions and my thought process in enough depth that someone new to the project could understand.",
   },
   {
     heading: "AI as a force multiplier",
-    body: "AI tooling played a real role in expediting the work. It didn't replace design judgment, but it gave me a way to move faster at a stage where I was the only designer driving the process, especially useful given the timeline.",
+    body: "AI tools played a real role in expediting the project. It didn't replace design judgment, but it gave me a way to move faster at a stage where I was the only designer driving the process, especially useful given the timeline.",
   },
   {
-    heading: "Built to hold-up",
-    body: "The best sign that the work held up was the category structure. When new content was added, everything still fit without needing to be rebuilt. The site hadn't launched yet by the time my internship ended, but knowing the structure could grow on its own gave me confidence it was built to last.",
+    heading: "Built to hold up",
+    body: " The moment I felt the redesign really came together was when I developed the category structure. I validated the website's scalability by adding new content and confirming that the structure could accommodate it without needing a redesign, which solved the main issue. The site hadn't launched yet by the time my internship ended, but knowing the structure could grow on its own gave me confidence that it was built to last.",
   },
 ];
 
@@ -194,12 +194,11 @@ export default function HeiltsukCaseStudy() {
 
               <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-y-8">
                 <MetaColumn label="My Contributions">
-                  <p>Research</p>
                   <p>UI Design</p>
                   <p>Usability testing</p>
                   <p>Prototyping</p>
                   <p>User research</p>
-                  <p>Responsiveness</p>
+                  <p>Mobile Responsiveness</p>
                 </MetaColumn>
                 <MetaColumn label="Company">
                   <p>Burst! Creative Group</p>
@@ -265,7 +264,7 @@ export default function HeiltsukCaseStudy() {
                 </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "Burst! Creative Group brought me on to this project during my internship to rebuild it as a structured, scalable website using the Client's colours, community images, and typeface. I was appointed to be the main designer on the project with only a few weeks left before my internship ended. I used Claude Design to speed up the brainstorm-to-mid-fidelity process, then built and tested the pages one at a time. By handoff, I had already incorporated most of the Client's content without needing a redesign."
+                    "Burst! Creative Group brought me on to this project during my internship to rebuild the website to be more structured and scalable, while preserving the client's identity, such as their colours, community images, and typeface. I was appointed to be the main designer on the project, but there were only a few weeks left before my internship ended. To speed up the process, I used Claude AI to support the brainstorm-to-mid-fidelity process, then built and tested the pages one at a time. By handoff, I was able to incorporate most of the client's content and was ready for developing."
                   ]}
                 />
               </div>
@@ -323,7 +322,7 @@ export default function HeiltsukCaseStudy() {
                 </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "Before I left Burst!, a separate set of mobile screens, along with developer comments were left so the project could be handed off smoothly to the next team.",
+                    "Before I left Burst!, I made sure to leave a separate set of mobile screens, along with developer comments so the project could be handed off smoothly to the next team.",
                   ]}
                 />
                 <a
@@ -365,10 +364,11 @@ export default function HeiltsukCaseStudy() {
                     // I was first brought in to update and add new sections to the website, be we noticed that each addtional
                     // The page to was so hard to navigate, but they couldn't find 
                     // hard to find things, there was a lot of bandaid solutions.
+                    //     "For example, users can have difficulty finding the latest news about the client due to the lack of a dedicated section for it. Instead, it was implemented as a pop-up on the page. It is bandaid solutions like this that have a large impact on the client's website discoverability, getting new members, relaying other crucial information, and expanding the website.",
 
-                    "Heiltsuk Nation was already an existing client of Burst. I was first brought in to add more content to their old website, but noticed that each additional update just made the page longer and harder to navigate.",
-
-                    "For example, users can have difficulty finding the latest news about the client due to the lack of a dedicated section for it. Instead, it was implemented as a pop-up on the page. It is bandaid solutions like this that have a large impact on the client's website discoverability, getting new members, relaying other crucial information, and expanding the website.",
+                    "Heiltsuk Nation was already an existing client of Burst. I was first brought in to add more content to their current website, but as I worked with the site, I noticed opportunities to improve its structure and make navigation more intuitive for the users.",
+                    
+                    "For example, some of the additional updates were implemented as pop-ups, or content blocks throughout the page, making it increasingly difficult for users to find or revisit information. I recognized that the current website could pose challenges for the client's discoverability, recruiting new members, relaying other crucial information, and expanding the website.",
                   ]}
                 />
               </div>
@@ -393,7 +393,7 @@ export default function HeiltsukCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <CaseStudyEyebrow>Discovery</CaseStudyEyebrow>
                   <CaseStudyHeading>
-                  My lead designer and I gathered the requirements from Heiltsuk Nation, and after we worked together to synthesize the information.
+                  I gathered the requirements from Heiltsuk Nation, and we worked together to synthesize the information.
                   </CaseStudyHeading>
                 </div>
                 <CaseStudyBody
@@ -405,9 +405,15 @@ export default function HeiltsukCaseStudy() {
 
                     // "We found that our client wanted to add a lot more information to the website, but through this, we also realized that the current website didn’t have the capacity to do so. The conflict we faced was that the website structure could no longer support the client's request anymore. After some back and forth with the client, we found that the change needed was more of a design thought, rather than simple content updates. We kept iterating on their sitemap, and came up with a direction that captured what the client and our team wanted.",
 
-                    "We found that our client wanted to add a lot more information to the website, and once we dug into it, realized the current site didn't have the structure to hold it. The client wanted things like Daycare and Social Development to live under Health & Wellness, which itself sat under Community. That's a real hierarchy, not just more content, and the current site was one long page that couldn't implement this well.",
+                    // "We found that our client wanted to add a lot more information to the website, and once we dug into it, realized the current site didn't have the structure to hold it. The client wanted things like Daycare and Social Development to live under Health & Wellness, which itself sat under Community. That's a real hierarchy, not just more content, and the current site was one long page that couldn't implement this well.",
 
-                    "After some back and forth, we realized the fix wasn't content updates, it was a design problem: the site needed an actual structure to grow into. We kept iterating on their sitemap until we landed on five main sections, each able to hold its own sub-categories without needing a redesign every time the client added one.",
+                    // "After some back and forth, we realized the fix wasn't content updates, it was a design problem: the site needed an actual structure to grow into. We kept iterating on their sitemap until we landed on five main sections, each able to hold its own sub-categories without needing a redesign every time the client added one.",
+
+                    "When I proposed revamping the website, the clients were excited about the idea, sharing that they actually had a lot more content they wanted to add, but had been limited by the same structural issues I noticed. For instance, the client wanted to include sections like daycare, social development, and health & wellness, which didn't fit into any of the existing menu sections. This was something I had to consider moving forward.",
+
+                    "Keeping the content requirements in mind, I made multiple iterations on their sitemap, until I landed on five main sections, each able to hold its own sub-categories without needing a redesign every time the client added more.",
+                    
+                
 
 
                   ]}
@@ -431,12 +437,19 @@ export default function HeiltsukCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <CaseStudyEyebrow>Ideation</CaseStudyEyebrow>
                   <CaseStudyHeading>
-                  As the main designer working under a tight timeline, I used Claude to prototype two real directions.
+                  As the main designer working under a tight timeline, I used Claude AI to prototype two possible directions.
                   </CaseStudyHeading>
                 </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "One leaned into a classic homepage: full-bleed hero, a band of feature cards, then a content grid. The other flipped it into a sidebar-driven interior page, closer to how a news site organizes a category. Being able to prototype both quickly meant I could compare them side by side with the lead, who gave occasional input but wasn't building the screens themselves. The direction we landed on kept the homepage's structure, but carried one idea over from the sidebar exploration: category pages would get their own sidebar, giving us a way to store information without making pages too long.",
+                      // "One leaned into a classic homepage: full-bleed hero, a band of feature cards, then a content grid. The other flipped it into a sidebar-driven interior page, closer to how a news site organizes a category. Being able to prototype both quickly meant I could compare them side by side with the lead, who gave occasional input but wasn't building the screens themselves. The direction we landed on kept the homepage's structure, but carried one idea over from the sidebar exploration: category pages would get their own sidebar, giving us a way to store information without making pages too long.",
+
+
+                    "For the homepage, we weighed two options. Option one leaned into a classic homepage: full-bleed hero, a band of feature cards, then a content grid. Option two was a sidebar-driven interior page, closer to how a typical news site is organized. I built both prototypes, compared them side by side and asked my co-workers for their input to gain a more critical perspective and concluded that using option one's homepage structure was the better choice, as it was less overwhelming, letting users funnel into the content they want to access.",
+                    
+                    
+                    "However, option two's sidebar feature was not fully scrapped. Instead, we decided to restructure this sidebar exploration into one sidebar, not multiple, and implemented it on the individual content pages. This gave us more ways to store information on pages, without making them too long.",
+
                   ]}
                 />
               </div>
@@ -522,7 +535,7 @@ export default function HeiltsukCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <CaseStudyEyebrow>Early feedback</CaseStudyEyebrow>
                   <CaseStudyHeading>
-                    After my designs were reviewed and approved, we started working directly with the client on the copy to test the designs.
+                    Once my designs had been reviewed and approved by the client, I worked together with the client on the copy to refine and test the prototypes.
                   </CaseStudyHeading>
                 </div>
                 <CaseStudyBody
@@ -532,7 +545,7 @@ export default function HeiltsukCaseStudy() {
 
                     // "I prototyped the entire website and tested it, gathering feedback from both internal team members and the client's side. I gathered that feedback and folded it back into the prototype iteratively. Because the side menu was built so each row was just one component in a repeatable auto-layout stack, adding a new section meant duplicating a row and renaming it. Nothing else had to move. That's the structure that made it possible to keep adding sections through the rest of the project without redesigning the menu each time.",
 
-                    "I prototyped the entire website and tested it, gathering feedback from both internal team members and the client's side, and folded that feedback back into the prototype as I went. With the timeline already tight, rebuilding the menu every time a new section came in wasn't an option, so I built it so each row was just one component in a repeatable auto-layout stack. Adding a new section meant duplicating a row and renaming it. Nothing else had to move. That's the structure that made it possible to keep adding sections through the rest of the project without redesigning the menu each time.",
+                    "I prototyped and tested the entire website, incorporating feedback from both internal team members and the client as I went. Given my tight schedule, having to rebuild the menu every time a new section came in wasn't an option. So I built each row as one component in a repeatable auto-layout stack. To add a new section under the menu, we simply had to duplicate a row and rename it, as laid out in the figure below. Nothing else had to move. This made it possible to keep adding sections through the rest of the project without redesigning the menu each time.",
                     
                     // We were also able to add more sections in much easier. Since the prototyping helped establish a re-useable structure, implementing new sections within the side menu bar became much quicker.",
 
@@ -548,6 +561,8 @@ export default function HeiltsukCaseStudy() {
               <CaseStudyBody
                 paragraphs={[
                   "One of the main reasons we decided to go with this side menu was to help guide visitors from a broader entry point, and funnel them towards more specific content. Looking at how other websites handled deep category nesting, the side dropdown made sense, allowing users to view more organized content at their own pace.",
+
+
                 ]}
               />
               <div className="flex flex-col gap-3">
@@ -563,7 +578,7 @@ export default function HeiltsukCaseStudy() {
                   className="text-[11px] leading-[1.6] text-black/60 md:text-sm"
                   style={wdth}
                 >
-                  Same sidebar instance, shown in a page. Content column allows
+                  The figure above displays how the side bar will fit into the content pages. The content column allows
                   the user to drill down into their desired sections.
                 </p>
               </div>
@@ -578,10 +593,11 @@ export default function HeiltsukCaseStudy() {
                     // "A traditional dropdown didn't fit the client's needs, so our lead proposed replacing it with images. Sustainability and a thriving future are central to the client's mission, and an image-based menu gave us a chance to showcase their land and community in a way that reflects those values. I took the idea and designed the concept, which the client approved to move forward.",
 
                     // "However, this non-traditional drop-down did come with some trade-offs. Although more visually appealing, I did note that adding more than six main sections of our main navigation would be a problem. The images themselves could also be difficult as a unique image must be used for each section, and the images themselves could be distracting. All of these we made sure to inform the clients, making sure they were aware of the trade-offs.",
+                    
+                    
+                    "A standard dropdown would have worked fine, but it felt plain. It didn't show off what the client had to offer, like their beautiful land and culture. This wasn't something they asked for, but we saw an opportunity. Our lead threw in an idea: what if we replaced the dropdown with images instead? Sustainability and a thriving future are central to the client's mission, so showcasing their land and community felt like a natural fit.",
 
-                    "A standard dropdown would have worked fine, but it felt boring. It didn't show off what the client had to offer, like their beautiful land and culture. This wasn't something they asked for, but we saw an opportunity. Our lead threw out an idea: what if we replaced the dropdown with images instead? Sustainability and a thriving future are central to the client's mission, so showcasing their land and community felt like a natural fit.",
-
-                    "I went ahead and designed what it could look like. I worked out the overall layout, where the text would sit on each image, and how the hover effects would feel. I also tried to pick images that connected to each navigation heading, so the visuals weren't just decoration. The client loved it and decided to move forward with it.",
+                    "I went ahead and designed what it could look like. I worked out the overall layout, where the text would sit on each image, and how the hover effects would feel. I also tried to pick images that represented each navigation heading. Thankfully, I was met with positive responses from the clients, and they decided to move forward with it.",
 
                     "That said, the image-based menu came with trade-offs. It wouldn't scale well past six main sections, every section needed its own unique image, and the imagery could pull attention away from the navigation itself. We walked the client through all of this, and they were comfortable accepting those trade-offs for the experience it created for their website.",
                   ]}
@@ -595,7 +611,7 @@ export default function HeiltsukCaseStudy() {
                     alt: "Mega menu concept: a header navigation with a grid of image cards and titles",
                     label: "Lo-fi",
                     caption:
-                      "Mega-menu concept that was mock-up for the client to view.",
+                      "Mega-menu concept that was mocked up for the client to view.",
                   },
                   {
                     src: `${IMG}/megamenu-hifi.webp`,
@@ -617,12 +633,12 @@ export default function HeiltsukCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <CaseStudyEyebrow>Final design</CaseStudyEyebrow>
                   <CaseStudyHeading>
-                    Ideation paid off: the final design ties the homepage, mega menu, and category pages into one flow the client and developer could walk through before build.
+                    Ideation paid off: the final design ties the homepage, mega menu, and category pages into one flow the client and developer could walk through before building.
                   </CaseStudyHeading>
                 </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "The final design flowed a lot better, with a strong focus on user flow, navigability, and room to expand down the road. From there, we sent the designs off to the client so they could click through the prototype themselves and share any feedback. We also looped in the developer early to talk through what was feasible to build, so there wouldn't be any surprises later.",
+                    "The final design was a clear improvement over the existing website - it had a much smoother flow, intuitive navigation and room to expand down the road. We also looped in the developer early to talk through what was feasible to build, so there wouldn't be any surprises later. From there, we sent the designs off to the client so they could click through the prototype themselves and share any feedback.",
                   ]}
                 />
               </div>
@@ -661,14 +677,14 @@ export default function HeiltsukCaseStudy() {
             <div className="flex flex-col gap-8 sm:gap-10">
               <div className="flex flex-col gap-6">
                 <CaseStudyHeading>
-                  I completed the designs, but my internship ended mid development.
+                  My internship was coming to an end during development.
                 </CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
                     // Sad that it ended early 
                     // Hand off process was smooth as possible 
 
-                    "I wish I could have stayed to see the developers build from my wireframes. Since I wouldn't be around to answer questions, I annotated the interactions right in Figma. Desktop was straightforward, but mobile needed more explaining, so I put together a separate set of mobile screens to make sure nothing got lost in the handoff.",
+                    "Though I would have loved to see the developers build from my wireframes, my final task was to prepare my work for hand-off. Since I wouldn't be around to answer questions, I annotated the interactions right in Figma, also putting together a separate set of mobile screens to make sure nothing got lost in the handoff.",
 
                   ]}
                 />
