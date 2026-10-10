@@ -24,7 +24,7 @@ export default function Footer() {
             <Logo />
           </Link>
           <div
-            className="text-[16px] leading-[1.55] text-black/60 sm:text-[18px] sm:leading-[27.9px]"
+            className="text-[16px] leading-[1.55] text-black/60 sm:text-[18px] sm:leading-[27.9px] xl:text-[16px] xl:leading-[1.55] 2xl:text-[18px] 2xl:leading-[27.9px]"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             <p>© Alston Hsu</p>

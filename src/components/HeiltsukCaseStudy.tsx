@@ -32,7 +32,7 @@ function MetaColumn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px]">
+    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px] xl:min-w-0">
       <p
         className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
@@ -171,8 +171,11 @@ export default function HeiltsukCaseStudy() {
   return (
     <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-[1920px] flex-col gap-16 sm:gap-20 xl:gap-24">
-        <div className="mx-auto flex max-w-6xl flex-col gap-16 xl:flex-row xl:items-start xl:gap-16">
+        {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
+        <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir={IMG} links={TOC_LINKS} />
+        </div>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-[736px] 2xl:max-w-[832px]">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
             <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
@@ -184,7 +187,7 @@ export default function HeiltsukCaseStudy() {
                   Burst! Creative Group
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] md:text-[46px] 2xl:text-[52px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   Building Heiltsuk Nation&rsquo;s site to grow, not just to be
@@ -192,7 +195,7 @@ export default function HeiltsukCaseStudy() {
                 </h1>
               </div>
 
-              <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-y-8">
+              <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-y-8 xl:flex-nowrap xl:gap-x-6">
                 <MetaColumn label="My Contributions">
                   <p>UI Design</p>
                   <p>Usability testing</p>
@@ -214,7 +217,9 @@ export default function HeiltsukCaseStudy() {
                   <p>6 weeks</p>
                 </MetaColumn>
                 <MetaColumn label="Tools">
-                  <p>Figma, AI, Illustrator</p>
+                  <p>Figma</p>
+                  <p>AI</p>
+                  <p>Illustrator</p>
                 </MetaColumn>
               </div>
             </div>
@@ -256,7 +261,8 @@ export default function HeiltsukCaseStudy() {
                         src={src}
                         alt={alt}
                         fill
-                        sizes="(min-width: 1280px) 520px, 50vw"
+                        sizes="(min-width: 1536px) 400px, (min-width: 1280px) 350px, 46vw"
+                        quality={95}
                         className={`object-cover ${position}`}
                       />
                     </LightboxTrigger>
@@ -276,10 +282,10 @@ export default function HeiltsukCaseStudy() {
                   <div
                     className="absolute overflow-hidden rounded-card"
                     style={{
-                      left: "13.3%",
-                      top: "10.8%",
-                      width: "53.8%",
-                      height: "131.7%",
+                      left: "4%",
+                      top: "8%",
+                      width: "66%",
+                      height: "161.6%",
                     }}
                   >
                     <LightboxTrigger
@@ -291,7 +297,8 @@ export default function HeiltsukCaseStudy() {
                         src={`${IMG}/overview-1.webp`}
                         alt="Heiltsuk Nation site redesign, page one"
                         fill
-                        sizes="(min-width: 1280px) 1000px, 70vw"
+                        sizes="(min-width: 1536px) 550px, (min-width: 1280px) 490px, 68vw"
+                        quality={95}
                         className="object-cover object-top"
                       />
                     </LightboxTrigger>
@@ -299,10 +306,10 @@ export default function HeiltsukCaseStudy() {
                   <div
                     className="absolute overflow-hidden rounded-card shadow-[0_3px_20px_rgba(0,0,0,0.35)]"
                     style={{
-                      left: "32.8%",
-                      top: "31.9%",
-                      width: "53.9%",
-                      height: "101.5%",
+                      left: "30%",
+                      top: "28%",
+                      width: "66%",
+                      height: "124.3%",
                     }}
                   >
                     <LightboxTrigger
@@ -314,7 +321,8 @@ export default function HeiltsukCaseStudy() {
                         src={`${IMG}/overview-2.webp`}
                         alt="Heiltsuk Nation site redesign, page two"
                         fill
-                        sizes="(min-width: 1280px) 1000px, 70vw"
+                        sizes="(min-width: 1536px) 550px, (min-width: 1280px) 490px, 68vw"
+                        quality={95}
                         className="object-cover object-top"
                       />
                     </LightboxTrigger>
@@ -767,7 +775,7 @@ export default function HeiltsukCaseStudy() {
                   {OTHER_WORKS.map((work) => (
                     <div
                       key={work.company}
-                      className="w-[280px] shrink-0 grow basis-[280px]"
+                      className="w-[280px] shrink-0 grow basis-[280px] xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
                     >
                       <ProjectCard {...work} />
                     </div>

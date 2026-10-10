@@ -51,7 +51,7 @@ function MetaColumn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px]">
+    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px] xl:min-w-0">
       <p
         className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
@@ -67,6 +67,25 @@ function MetaColumn({
     </div>
   );
 }
+
+const REFLECTIONS = [
+  {
+    heading: "Build the design system before dividing screens",
+    body: "I used auto-layout from the start, not just at handoff. The Design System section shows the token structure that came out of it. It kept the team consistent, and it's what let the Expo build the developer created match the Figma file with little back-and-forth. That clean handoff also meant more of the four weeks went into getting the matching logic right.",
+  },
+  {
+    heading: "A confident first scope is often the wrong one",
+    body: "The original proposal covered all of Canada. One piece of outside feedback showed that ambition without a real data source just produces answers you can't back up. Narrowing to BC students was the version we could actually execute under limited time.",
+  },
+  {
+    heading: "Testing your own product catches problems fast, and has limits",
+    body: "Walking through the Ask screen ourselves caught prompts that only worked for one kind of match. Cheap and fast, but not a substitute for testing with people who didn't build it, which this project hasn't had yet. If this continued past the course, the next step is putting the quiz and chat in front of 5 to 10 BC students and seeing where the guided prompts still miss what they'd ask.",
+  },
+  {
+    heading: "AI matching is only as trustworthy as what you check it against",
+    body: "Claude's matching was validated against the eligibility criteria we hand-checked, not against edge cases we didn't think to test. With more time, that's where I'd focus next: stress-testing matches against messier student situations before trusting the output.",
+  },
+];
 
 const OTHER_WORKS = [
   {
@@ -160,8 +179,11 @@ export default function AvailCaseStudy() {
   return (
     <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-[1920px] flex-col gap-16 sm:gap-20 xl:gap-24">
-        <div className="mx-auto flex max-w-6xl flex-col gap-16 xl:flex-row xl:items-start xl:gap-16">
+        {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
+        <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
+        </div>
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-[736px] 2xl:max-w-[832px]">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
             <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
@@ -173,7 +195,7 @@ export default function AvailCaseStudy() {
                   Avail
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] md:text-[46px] 2xl:text-[52px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   Creating an app that helps BC Students Claim the Benefits
@@ -181,7 +203,7 @@ export default function AvailCaseStudy() {
                 </h1>
               </div>
 
-              <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-y-8">
+              <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-y-8 xl:flex-nowrap xl:gap-x-6">
                 <MetaColumn label="My Contributions">
                   <p>Research</p>
                   <p>UI/UX Design</p>
@@ -200,7 +222,9 @@ export default function AvailCaseStudy() {
                   <p>1 Developer</p>
                 </MetaColumn>
                 <MetaColumn label="Tools">
-                  <p>React Native, Expo, Anthropic Claude API</p>
+                  <p>React Native</p>
+                  <p>Expo</p>
+                  <p>Anthropic Claude API</p>
                 </MetaColumn>
               </div>
             </div>
@@ -244,7 +268,7 @@ export default function AvailCaseStudy() {
 
               <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
                 <div
-                  className="relative w-[min(300px,100%)] overflow-hidden rounded-[12%/5.5%] sm:w-[380px] md:w-[440px]"
+                  className="relative w-[min(300px,100%,calc((100svh-200px)*0.4613))] overflow-hidden rounded-[12%/5.5%] sm:w-[min(380px,calc((100svh-232px)*0.4613))] md:w-[min(440px,calc((100svh-232px)*0.4613))]"
                   style={{ aspectRatio: "393/852" }}
                 >
                   <video
@@ -658,70 +682,19 @@ export default function AvailCaseStudy() {
             {/* Reflection */}
             <div
               id="reflection"
-              className="scroll-mt-28 flex flex-col gap-6 sm:gap-8"
+              className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
             >
-              <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-3">
-                  <CaseStudyEyebrow>Reflection</CaseStudyEyebrow>
-                  <CaseStudyHeading>
-                    Building the design system before dividing screens changed
-                    how cleanly this translated into real code.
-                  </CaseStudyHeading>
-                </div>
-                <CaseStudyBody
-                  paragraphs={[
-                    "I used auto-layout from the start, not just at handoff. The Design System section shows the token structure that came out of it. It kept the team consistent, and it's what let the Expo build the developer created match the Figma file with little back-and-forth. That clean handoff also meant more of the four weeks went into getting the matching logic right.",
-                    "Some other key takeaways from this project:",
-                  ]}
-                />
-              </div>
-              <div className="flex flex-col gap-4 sm:gap-6">
-                {[
-                  {
-                    number: "01",
-                    title: "A confident first scope is often the wrong one",
-                    body: "The original proposal covered all of Canada. One piece of outside feedback showed that ambition without a real data source just produces answers you can't back up. Narrowing to BC students was the version we could actually execute under limited time.",
-                  },
-                  {
-                    number: "02",
-                    title:
-                      "Testing your own product catches problems fast, and has limits",
-                    body: "Walking through the Ask screen ourselves caught prompts that only worked for one kind of match. Cheap and fast, but not a substitute for testing with people who didn't build it, which this project hasn't had yet. If this continued past the course, the next step is putting the quiz and chat in front of 5 to 10 BC students and seeing where the guided prompts still miss what they'd ask.",
-                  },
-                  {
-                    number: "03",
-                    title:
-                      "AI matching is only as trustworthy as what you check it against",
-                    body: "Claude's matching was validated against the eligibility criteria we hand-checked, not against edge cases we didn't think to test. With more time, that's where I'd focus next: stress-testing matches against messier student situations before trusting the output.",
-                  },
-                ].map(({ number, title, body }) => (
-                  <div
-                    key={number}
-                    className="flex items-center gap-4 rounded-card bg-[#f7f7f7] px-6 py-6 sm:gap-8 sm:px-8 sm:py-8"
-                  >
-                    <p
-                      className="shrink-0 text-[16px] font-medium text-black/40 sm:text-[20px]"
-                      style={wdth}
-                    >
-                      {number}
-                    </p>
-                    <div className="flex flex-col gap-2">
-                      <p
-                        className="text-[16px] font-semibold text-black/80 sm:text-[18px]"
-                        style={wdth}
-                      >
-                        {title}
-                      </p>
-                      <p
-                        className="text-[16px] leading-[1.7] tracking-[-0.25px] text-black/60"
-                        style={wdth}
-                      >
-                        {body}
-                      </p>
-                    </div>
+              {REFLECTIONS.map(({ heading, body }, index) => (
+                <div key={heading} className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-3">
+                    {index === 0 && (
+                      <CaseStudyEyebrow>Reflection</CaseStudyEyebrow>
+                    )}
+                    <CaseStudyHeading>{heading}</CaseStudyHeading>
                   </div>
-                ))}
-              </div>
+                  <CaseStudyBody paragraphs={[body]} />
+                </div>
+              ))}
             </div>
 
             {/* Other works */}
@@ -733,7 +706,7 @@ export default function AvailCaseStudy() {
                   {OTHER_WORKS.map((work) => (
                     <div
                       key={work.company}
-                      className="w-[280px] shrink-0 grow basis-[280px]"
+                      className="w-[280px] shrink-0 grow basis-[280px] xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
                     >
                       <ProjectCard {...work} />
                     </div>

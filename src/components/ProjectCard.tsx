@@ -93,7 +93,7 @@ export default function ProjectCard({
       </div>
       <div className="flex w-full flex-col gap-3">
         <h3
-          className="font-serif text-[16px] leading-[1.4] font-medium tracking-[-0.72px] text-black/60 md:text-[20px]"
+          className="font-serif text-[16px] leading-[1.4] font-medium tracking-[-0.72px] text-black/60 md:text-[20px] xl:text-[18px] 2xl:text-[20px]"
           style={{ fontVariationSettings: '"wdth" 100' }}
         >
           {title}
