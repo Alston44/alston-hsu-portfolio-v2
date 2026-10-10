@@ -43,7 +43,7 @@ const SCATTERED_PHOTOS = [
 export default function AboutPhotoGallery() {
   return (
     <div className="flex w-full shrink-0 flex-col gap-8 md:w-[29%] md:max-w-[560px]">
-      <div className="main-photo-fade-in relative aspect-square w-full overflow-hidden rounded-lg">
+      <div className="main-photo-fade-in relative aspect-square w-full overflow-hidden rounded-card">
         <Image
           src="/images/about/profile.webp"
           alt="Alston Hsu"
@@ -57,7 +57,7 @@ export default function AboutPhotoGallery() {
         {SCATTERED_PHOTOS.map(({ src, alt, left, top, width, height, rotate }, index) => (
           <div
             key={src}
-            className="photo-fall-in absolute overflow-hidden rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+            className="photo-fall-in absolute overflow-hidden rounded-card shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
             style={
               {
                 left,

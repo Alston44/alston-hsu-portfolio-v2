@@ -4,7 +4,7 @@ import { FramedScreenshot, Triptych } from "./ProjectMedia";
 export default function ProjectGrid() {
   return (
     <section id="work" className="px-6 pt-6 pb-24 sm:px-8 sm:pb-32 xl:px-16">
-      <div className="mx-auto grid max-w-[1920px] grid-cols-1 gap-x-16 gap-y-[75px] lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1920px] grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
         <ProjectCard
           href="/work/heiltsuk"
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."

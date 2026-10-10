@@ -14,8 +14,8 @@ export function FramedScreenshot({
 }) {
   const frame =
     size === "lg"
-      ? "left-1/2 top-[11%] h-[91%] w-[89%] -translate-x-1/2 rounded-[4px]"
-      : "left-[6.6%] top-[9%] h-[97%] w-[95%] rounded-[11px]";
+      ? "left-1/2 top-[11%] h-[91%] w-[89%] -translate-x-1/2 rounded-card"
+      : "left-[6.6%] top-[9%] h-[97%] w-[95%] rounded-card";
 
   return (
     <div
@@ -48,7 +48,7 @@ export function Triptych({ images }: { images: TriptychImage[] }) {
       {images.map(({ src, alt, fit = "cover", stretch }) => (
         <div
           key={src}
-          className="relative h-[75%] flex-1 overflow-hidden rounded-lg transition-transform duration-300 ease-out group-hover:scale-[1.025]"
+          className="relative h-[75%] flex-1 overflow-hidden rounded-card transition-transform duration-300 ease-out group-hover:scale-[1.025]"
         >
           {stretch ? (
             // eslint-disable-next-line @next/next/no-img-element -- needs a manual size/offset outside next/image's fill+object-fit model

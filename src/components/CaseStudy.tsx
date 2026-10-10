@@ -61,7 +61,7 @@ export function CaseStudyMedia({
       : "bg-gradient-to-b from-[#ededed] to-[#e5e5e5]";
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-lg border border-black/5 ${bg} ${className ?? ""}`}
+      className={`relative w-full overflow-hidden rounded-card border border-black/5 ${bg} ${className ?? ""}`}
       style={{ aspectRatio: aspect }}
     >
       {children}
@@ -97,7 +97,7 @@ export function CoverBox({
           className={`absolute inset-0 flex items-center justify-center ${className ?? ""}`}
         >
           <div
-            className="relative w-full overflow-hidden rounded-lg"
+            className="relative w-full overflow-hidden rounded-card"
             style={{ aspectRatio: frameAspect }}
           >
             <Image
@@ -121,7 +121,7 @@ export function CoverBox({
         alt={alt}
         className={`absolute inset-0 ${className ?? ""}`}
       >
-        <div className="relative h-full w-full overflow-hidden rounded-lg">
+        <div className="relative h-full w-full overflow-hidden rounded-card">
           <Image
             src={src}
             alt={alt}
@@ -154,7 +154,7 @@ export function ContainBox({
         alt={alt}
         className="absolute inset-0 p-3 sm:p-4 xl:p-[10px]"
       >
-        <div className="relative h-full w-full overflow-hidden rounded-lg">
+        <div className="relative h-full w-full overflow-hidden rounded-card">
           <Image
             src={src}
             alt={alt}

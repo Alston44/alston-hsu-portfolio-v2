@@ -15,6 +15,13 @@
   --font-serif: var(--font-source-serif-4);
 }
 
+/* The one corner radius for cards, image boxes, tags and screenshots
+   (rounded-card). Change it here to restyle them all at once. Phone/device
+   shapes use their own percentage radii, and buttons stay rounded-full. */
+@theme static {
+  --radius-card: 4px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

@@ -242,7 +242,7 @@ export default function AvailCaseStudy() {
                 </div>
               </div>
 
-              <div className="flex w-full items-center justify-center rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
                 <div
                   className="relative w-[min(300px,100%)] overflow-hidden rounded-[12%/5.5%] sm:w-[380px] md:w-[440px]"
                   style={{ aspectRatio: "393/852" }}
@@ -272,7 +272,7 @@ export default function AvailCaseStudy() {
                   programs exist.
                 </CaseStudyHeading>
               </div>
-              <div className="flex flex-col gap-6 rounded-lg bg-[#0d2422] px-6 py-10 text-white sm:px-10 sm:py-14">
+              <div className="flex flex-col gap-6 rounded-card bg-[#0d2422] px-6 py-10 text-white sm:px-10 sm:py-14">
                 <p
                   className="text-[40px] leading-none font-bold sm:text-[56px] md:text-[72px]"
                   style={wdth}
@@ -328,7 +328,7 @@ export default function AvailCaseStudy() {
                   ]}
                 />
               </div>
-              <div className="flex flex-col gap-4 rounded-lg bg-[#0e9090] px-6 py-8 text-white sm:px-10 sm:py-10">
+              <div className="flex flex-col gap-4 rounded-card bg-[#0e9090] px-6 py-8 text-white sm:px-10 sm:py-10">
                 <p
                   className="text-[16px] leading-[1.5] italic sm:text-[18px] md:text-[23px]"
                   style={wdth}
@@ -393,19 +393,19 @@ export default function AvailCaseStudy() {
               />
               <div className="flex flex-wrap items-center gap-3">
                 <span
-                  className="rounded-lg px-5 py-2.5 text-[14px] font-medium sm:text-[16px]"
+                  className="rounded-card px-5 py-2.5 text-[14px] font-medium sm:text-[16px]"
                   style={{ backgroundColor: "#EBF0FF", color: "#3A349E", ...wdth }}
                 >
                   Student Aid
                 </span>
                 <span
-                  className="rounded-lg px-5 py-2.5 text-[14px] font-medium sm:text-[16px]"
+                  className="rounded-card px-5 py-2.5 text-[14px] font-medium sm:text-[16px]"
                   style={{ backgroundColor: "#FFF6EA", color: "#9C442A", ...wdth }}
                 >
                   Health
                 </span>
                 <span
-                  className="rounded-lg px-5 py-2.5 text-[14px] font-medium sm:text-[16px]"
+                  className="rounded-card px-5 py-2.5 text-[14px] font-medium sm:text-[16px]"
                   style={{ backgroundColor: "#FDF0F7", color: "#7B1884", ...wdth }}
                 >
                   Tax Credit
@@ -441,7 +441,7 @@ export default function AvailCaseStudy() {
                         key={sketch.src}
                         src={`${IMG}/${sketch.src}.webp`}
                         alt={sketch.alt}
-                        className="relative h-[80%] overflow-hidden rounded-[10px] bg-white sm:rounded-xl"
+                        className="relative h-[80%] overflow-hidden rounded-card bg-white"
                       >
                         <div
                           className="relative h-full"
@@ -482,7 +482,7 @@ export default function AvailCaseStudy() {
                   <LightboxTrigger
                     src={`${IMG}/sketch-sheet.webp`}
                     alt="Hand-drawn wireframe sketches of every screen"
-                    className="absolute left-1/2 top-1/2 aspect-[2037/1299] w-[85%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[10px] bg-white sm:rounded-xl"
+                    className="absolute left-1/2 top-1/2 aspect-[2037/1299] w-[85%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-card bg-white"
                   >
                     <Image
                       src={`${IMG}/sketch-sheet.webp`}
@@ -534,7 +534,7 @@ export default function AvailCaseStudy() {
                 />
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-9">
-                <div className="mx-auto w-fit rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+                <div className="mx-auto w-fit rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
                   <div
                     className="relative w-[220px] overflow-hidden rounded-[26px] sm:w-[260px] sm:rounded-[31px]"
                     style={{ aspectRatio: "393/852" }}
@@ -555,7 +555,7 @@ export default function AvailCaseStudy() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-6">
-                  <div className="flex flex-col gap-2 rounded-lg bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                  <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                     <p
                       className="text-[13px] font-bold text-black/60 sm:text-[14px]"
                       style={wdth}
@@ -578,7 +578,7 @@ export default function AvailCaseStudy() {
                       ))}
                     </div>
                   </div>
-                  <div className="flex flex-col gap-2 rounded-lg bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                  <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                     <p
                       className="text-[13px] font-bold text-black/60 sm:text-[14px]"
                       style={wdth}
@@ -628,7 +628,7 @@ export default function AvailCaseStudy() {
                 alt="Avail site map: intake, personalization, matching and Ask Avail stages"
                 aspect="372/286"
               />
-              <div className="grid w-full grid-cols-3 gap-3 rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
+              <div className="grid w-full grid-cols-3 gap-3 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
                 {SCREENS.map(({ file, alt, caption }) => (
                   <div key={file} className="flex flex-col gap-1.5 sm:gap-2">
                     <LightboxTrigger
@@ -697,7 +697,7 @@ export default function AvailCaseStudy() {
                 ].map(({ number, title, body }) => (
                   <div
                     key={number}
-                    className="flex items-center gap-4 rounded-lg bg-[#f7f7f7] px-6 py-6 sm:gap-8 sm:px-8 sm:py-8"
+                    className="flex items-center gap-4 rounded-card bg-[#f7f7f7] px-6 py-6 sm:gap-8 sm:px-8 sm:py-8"
                   >
                     <p
                       className="shrink-0 text-[16px] font-medium text-black/40 sm:text-[20px]"

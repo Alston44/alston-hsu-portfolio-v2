@@ -83,7 +83,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
               src={state.src}
               alt={state.alt}
               onClick={(e) => e.stopPropagation()}
-              className="max-h-[85vh] max-w-[90vw] rounded-lg object-contain shadow-2xl"
+              className="max-h-[85vh] max-w-[90vw] rounded-card object-contain shadow-2xl"
             />
           </div>,
           document.body,

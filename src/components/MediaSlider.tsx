@@ -64,7 +64,7 @@ export function MediaSlider({
       )}
 
       <div
-        className={`relative w-full overflow-hidden rounded-lg border border-black/5 ${bg}`}
+        className={`relative w-full overflow-hidden rounded-card border border-black/5 ${bg}`}
         style={{ aspectRatio: aspect }}
       >
         {slide.type === "video" ? (

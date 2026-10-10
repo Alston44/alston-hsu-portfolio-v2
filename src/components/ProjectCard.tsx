@@ -18,7 +18,7 @@ type ProjectCardProps = {
 
 function Tag({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-md border border-black/10 bg-black/5 px-1.5 py-0.5 font-inter text-xs font-semibold text-black opacity-67">
+    <span className="rounded-card border border-black/10 bg-black/5 px-1.5 py-0.5 font-inter text-xs font-semibold text-black opacity-67">
       {children}
     </span>
   );
@@ -63,7 +63,7 @@ export default function ProjectCard({
   const content = (
     <>
       <div
-        className={`relative aspect-[624/455] w-full overflow-hidden rounded-lg shadow-none ${
+        className={`relative aspect-[624/455] w-full overflow-hidden rounded-card shadow-none ${
           comingSoon
             ? ""
             : "transition-shadow duration-300 ease-out group-hover:shadow-[0_10px_20px_-12px_rgba(0,0,0,0.18)]"

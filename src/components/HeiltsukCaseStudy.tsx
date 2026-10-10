@@ -150,7 +150,7 @@ export function HeiltsukHero() {
     <div className="mx-auto w-full max-w-[1920px] px-6 sm:px-8 xl:px-16">
       <div className="relative mx-auto w-full max-w-[min(900px,58vw)] 2xl:max-w-[1160px]">
         <div
-          className="relative w-full overflow-hidden rounded-lg shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
+          className="relative w-full overflow-hidden rounded-card shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
           style={{ aspectRatio: "1120/637" }}
         >
           <Image
@@ -250,7 +250,7 @@ export default function HeiltsukCaseStudy() {
                       key={src}
                       src={src}
                       alt={alt}
-                      className="relative block aspect-[470/437] w-full overflow-hidden rounded-lg"
+                      className="relative block aspect-[470/437] w-full overflow-hidden rounded-card"
                     >
                       <Image
                         src={src}
@@ -270,11 +270,11 @@ export default function HeiltsukCaseStudy() {
               </div>
               <div className="flex flex-col gap-5 sm:gap-6">
                 <div
-                  className="relative overflow-hidden rounded-[15px] border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
+                  className="relative overflow-hidden rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
                   style={{ aspectRatio: "1916/878" }}
                 >
                   <div
-                    className="absolute overflow-hidden rounded-lg"
+                    className="absolute overflow-hidden rounded-card"
                     style={{
                       left: "13.3%",
                       top: "10.8%",
@@ -297,7 +297,7 @@ export default function HeiltsukCaseStudy() {
                     </LightboxTrigger>
                   </div>
                   <div
-                    className="absolute overflow-hidden rounded-lg shadow-[0_3px_20px_rgba(0,0,0,0.35)]"
+                    className="absolute overflow-hidden rounded-card shadow-[0_3px_20px_rgba(0,0,0,0.35)]"
                     style={{
                       left: "32.8%",
                       top: "31.9%",
@@ -454,11 +454,11 @@ export default function HeiltsukCaseStudy() {
                 />
               </div>
               <div
-                className="relative w-full overflow-hidden rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
+                className="relative w-full overflow-hidden rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
                 style={{ aspectRatio: "1429/598" }}
               >
                 <div
-                  className="absolute overflow-hidden rounded-md bg-[#d9d9d9] p-1.5 sm:p-2"
+                  className="absolute overflow-hidden rounded-card bg-[#d9d9d9] p-1.5 sm:p-2"
                   style={{
                     left: "7.9%",
                     top: "36.6%",
@@ -469,7 +469,7 @@ export default function HeiltsukCaseStudy() {
                   <LightboxTrigger
                     src={`${IMG}/ideation-style-1.webp`}
                     alt="Early style exploration, left"
-                    className="relative block h-full w-full overflow-hidden rounded-md"
+                    className="relative block h-full w-full overflow-hidden rounded-card"
                   >
                     <Image
                       src={`${IMG}/ideation-style-1.webp`}
@@ -481,7 +481,7 @@ export default function HeiltsukCaseStudy() {
                   </LightboxTrigger>
                 </div>
                 <div
-                  className="absolute overflow-hidden rounded-md bg-[#d9d9d9] p-1.5 sm:p-2"
+                  className="absolute overflow-hidden rounded-card bg-[#d9d9d9] p-1.5 sm:p-2"
                   style={{
                     left: "63.3%",
                     top: "50.5%",
@@ -492,7 +492,7 @@ export default function HeiltsukCaseStudy() {
                   <LightboxTrigger
                     src={`${IMG}/ideation-style-2.webp`}
                     alt="Early style exploration, right"
-                    className="relative block h-full w-full overflow-hidden rounded-md"
+                    className="relative block h-full w-full overflow-hidden rounded-card"
                   >
                     <Image
                       src={`${IMG}/ideation-style-2.webp`}
@@ -504,7 +504,7 @@ export default function HeiltsukCaseStudy() {
                   </LightboxTrigger>
                 </div>
                 <div
-                  className="absolute overflow-hidden rounded-lg bg-[#d9d9d9] p-2 shadow-[0_4px_2px_rgba(0,0,0,0.45)] sm:p-2.5"
+                  className="absolute overflow-hidden rounded-card bg-[#d9d9d9] p-2 shadow-[0_4px_2px_rgba(0,0,0,0.45)] sm:p-2.5"
                   style={{
                     left: "32.7%",
                     top: "15.4%",
@@ -515,7 +515,7 @@ export default function HeiltsukCaseStudy() {
                   <LightboxTrigger
                     src={`${IMG}/ideation-style-3.webp`}
                     alt="Refined style direction, center"
-                    className="relative block h-full w-full overflow-hidden rounded-lg"
+                    className="relative block h-full w-full overflow-hidden rounded-card"
                   >
                     <Image
                       src={`${IMG}/ideation-style-3.webp`}
@@ -689,7 +689,7 @@ export default function HeiltsukCaseStudy() {
                   ]}
                 />
               </div>
-              <div className="flex items-center justify-center gap-6 rounded-lg border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:gap-10 sm:px-10 sm:py-14 xl:gap-[58px]">
+              <div className="flex items-center justify-center gap-6 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:gap-10 sm:px-10 sm:py-14 xl:gap-[58px]">
                 {[
                   {
                     src: `${IMG}/mobile-1.webp`,
