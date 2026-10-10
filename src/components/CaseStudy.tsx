@@ -168,26 +168,6 @@ export function ContainBox({
   );
 }
 
-/** Absolutely-positioned "look here" callout drawn over a screenshot, matching the reviewer's markup in Figma. */
-export function RedAnnotation({
-  left,
-  top,
-  width,
-  height,
-}: {
-  left: string;
-  top: string;
-  width: string;
-  height: string;
-}) {
-  return (
-    <div
-      className="pointer-events-none absolute border-[3px] border-[#fb1c1c] sm:border-[4px] xl:border-[6px]"
-      style={{ left, top, width, height }}
-    />
-  );
-}
-
 type TocLink = { label: string; href: string };
 
 const TOC_LINKS: TocLink[] = [

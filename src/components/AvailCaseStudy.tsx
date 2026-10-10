@@ -70,19 +70,19 @@ function MetaColumn({
 
 const REFLECTIONS = [
   {
-    heading: "Build the design system before dividing screens",
+    heading: "Build the design system before dividing screens.",
     body: "I used auto-layout from the start, not just at handoff. The Design System section shows the token structure that came out of it. It kept the team consistent, and it's what let the Expo build the developer created match the Figma file with little back-and-forth. That clean handoff also meant more of the four weeks went into getting the matching logic right.",
   },
   {
-    heading: "A confident first scope is often the wrong one",
+    heading: "A confident first scope is often the wrong one.",
     body: "The original proposal covered all of Canada. One piece of outside feedback showed that ambition without a real data source just produces answers you can't back up. Narrowing to BC students was the version we could actually execute under limited time.",
   },
   {
-    heading: "Testing your own product catches problems fast, and has limits",
+    heading: "Testing your own product catches problems fast, and has limits.",
     body: "Walking through the Ask screen ourselves caught prompts that only worked for one kind of match. Cheap and fast, but not a substitute for testing with people who didn't build it, which this project hasn't had yet. If this continued past the course, the next step is putting the quiz and chat in front of 5 to 10 BC students and seeing where the guided prompts still miss what they'd ask.",
   },
   {
-    heading: "AI matching is only as trustworthy as what you check it against",
+    heading: "AI matching is only as trustworthy as what you check it against.",
     body: "Claude's matching was validated against the eligibility criteria we hand-checked, not against edge cases we didn't think to test. With more time, that's where I'd focus next: stress-testing matches against messier student situations before trusting the output.",
   },
 ];
@@ -106,7 +106,7 @@ const OTHER_WORKS = [
     ),
   },
   {
-    href: "#",
+    href: "/work/firewatch",
     title:
       "A wildfire alert app built to guide action, not just relay information.",
     company: "Firewatch BC",
@@ -114,7 +114,6 @@ const OTHER_WORKS = [
     background: "linear-gradient(33deg, rgb(246, 229, 207) 23%, rgb(245, 224, 199) 101%)",
     pillLabel: "View project",
     pillColor: "#fa9f00",
-    comingSoon: true,
     media: (
       <Triptych
         images={[
@@ -199,13 +198,12 @@ export default function AvailCaseStudy() {
                   style={wdth}
                 >
                   Creating an app that helps BC Students Claim the Benefits
-                  they&rsquo;re already owed.
+                  they&rsquo;re unaware of.
                 </h1>
               </div>
 
               <div className="flex flex-col gap-8 sm:flex-row sm:flex-wrap sm:justify-between sm:gap-y-8 xl:flex-nowrap xl:gap-x-6">
                 <MetaColumn label="My Contributions">
-                  <p>Research</p>
                   <p>UI/UX Design</p>
                   <p>Prototyping</p>
                   <p>User research</p>
@@ -446,7 +444,7 @@ export default function AvailCaseStudy() {
             <div className="flex flex-col gap-8 sm:gap-10">
               <div className="flex flex-col gap-6">
                 <CaseStudyHeading>
-                  An early direction we dropped
+                  An early direction we dropped.
                 </CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
@@ -455,83 +453,115 @@ export default function AvailCaseStudy() {
                 />
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-9">
-                <CaseStudyMedia aspect="901/717">
-                  <div className="absolute inset-0 flex items-center justify-center gap-[6%]">
-                    {[
-                      { src: "sketch-icon-grid", alt: "Early sketch: icon grid for quiz answers", w: 310 },
-                      { src: "sketch-list", alt: "Early sketch: list of quiz answers", w: 320 },
-                    ].map((sketch) => (
-                      <LightboxTrigger
-                        key={sketch.src}
-                        src={`${IMG}/${sketch.src}.webp`}
-                        alt={sketch.alt}
-                        className="relative h-[80%] overflow-hidden rounded-card bg-white"
-                      >
-                        <div
-                          className="relative h-full"
-                          style={{ aspectRatio: `${sketch.w}/550` }}
+                <div className="flex flex-col gap-3">
+                  <CaseStudyMedia aspect="901/717">
+                    <div className="absolute inset-0 flex items-center justify-center gap-[6%]">
+                      {[
+                        { src: "sketch-icon-grid", alt: "Early sketch: icon grid for quiz answers", w: 310 },
+                        { src: "sketch-list", alt: "Early sketch: list of quiz answers", w: 320 },
+                      ].map((sketch) => (
+                        <LightboxTrigger
+                          key={sketch.src}
+                          src={`${IMG}/${sketch.src}.webp`}
+                          alt={sketch.alt}
+                          className="relative h-[80%] overflow-hidden rounded-card bg-white"
                         >
+                          <div
+                            className="relative h-full"
+                            style={{ aspectRatio: `${sketch.w}/550` }}
+                          >
+                            <Image
+                              src={`${IMG}/${sketch.src}.webp`}
+                              alt={sketch.alt}
+                              fill
+                              sizes="(min-width: 1280px) 300px, 40vw"
+                              className="object-cover"
+                            />
+                          </div>
+                        </LightboxTrigger>
+                      ))}
+                    </div>
+                  </CaseStudyMedia>
+                  <p
+                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    style={wdth}
+                  >
+                    Two early sketches of the quiz answers: an icon grid (left) and a plain list (right). Income brackets and immigration status have no obvious icon, which is why the list won.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <CaseStudyMedia aspect="901/717">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <LightboxTrigger
+                        src={`${IMG}/quiz-school-type.webp`}
+                        alt="Final quiz screen: What type of school are you attending?"
+                        className="relative h-[84%] overflow-hidden rounded-[12%/5.5%] bg-white"
+                      >
+                        <div className="relative h-full" style={{ aspectRatio: "393/852" }}>
                           <Image
-                            src={`${IMG}/${sketch.src}.webp`}
-                            alt={sketch.alt}
+                            src={`${IMG}/quiz-school-type.webp`}
+                            alt="Final quiz screen: What type of school are you attending?"
                             fill
                             sizes="(min-width: 1280px) 300px, 40vw"
                             className="object-cover"
                           />
                         </div>
                       </LightboxTrigger>
-                    ))}
-                  </div>
-                </CaseStudyMedia>
-                <CaseStudyMedia aspect="901/717">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <LightboxTrigger
-                      src={`${IMG}/quiz-school-type.webp`}
-                      alt="Final quiz screen: What type of school are you attending?"
-                      className="relative h-[84%] overflow-hidden rounded-[12%/5.5%] bg-white"
-                    >
-                      <div className="relative h-full" style={{ aspectRatio: "393/852" }}>
-                        <Image
-                          src={`${IMG}/quiz-school-type.webp`}
-                          alt="Final quiz screen: What type of school are you attending?"
-                          fill
-                          sizes="(min-width: 1280px) 300px, 40vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    </LightboxTrigger>
-                  </div>
-                </CaseStudyMedia>
-                <CaseStudyMedia aspect="901/717">
-                  <LightboxTrigger
-                    src={`${IMG}/sketch-sheet.webp`}
-                    alt="Hand-drawn wireframe sketches of every screen"
-                    className="absolute left-1/2 top-1/2 aspect-[2037/1299] w-[85%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-card bg-white"
+                    </div>
+                  </CaseStudyMedia>
+                  <p
+                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    style={wdth}
                   >
-                    <Image
+                    The final version of a quiz question: a short list of choices, no icons.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <CaseStudyMedia aspect="901/717">
+                    <LightboxTrigger
                       src={`${IMG}/sketch-sheet.webp`}
                       alt="Hand-drawn wireframe sketches of every screen"
-                      fill
-                      sizes="(min-width: 1280px) 500px, 85vw"
-                      className="object-cover"
-                    />
-                  </LightboxTrigger>
-                </CaseStudyMedia>
-                <CaseStudyMedia aspect="901/717">
-                  <LightboxTrigger
-                    src={`${IMG}/screens-grid.webp`}
-                    alt="Final Avail screens in sequence"
-                    className="absolute inset-x-[10%] inset-y-[8%]"
+                      className="absolute left-1/2 top-1/2 aspect-[2037/1299] w-[85%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-card bg-white"
+                    >
+                      <Image
+                        src={`${IMG}/sketch-sheet.webp`}
+                        alt="Hand-drawn wireframe sketches of every screen"
+                        fill
+                        sizes="(min-width: 1280px) 500px, 85vw"
+                        className="object-cover"
+                      />
+                    </LightboxTrigger>
+                  </CaseStudyMedia>
+                  <p
+                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    style={wdth}
                   >
-                    <Image
+                    Hand-drawn wireframes covering every screen, the starting point for the final designs.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <CaseStudyMedia aspect="901/717">
+                    <LightboxTrigger
                       src={`${IMG}/screens-grid.webp`}
                       alt="Final Avail screens in sequence"
-                      fill
-                      sizes="(min-width: 1280px) 500px, 80vw"
-                      className="object-contain"
-                    />
-                  </LightboxTrigger>
-                </CaseStudyMedia>
+                      className="absolute inset-x-[10%] inset-y-[8%]"
+                    >
+                      <Image
+                        src={`${IMG}/screens-grid.webp`}
+                        alt="Final Avail screens in sequence"
+                        fill
+                        sizes="(min-width: 1280px) 500px, 80vw"
+                        className="object-contain"
+                      />
+                    </LightboxTrigger>
+                  </CaseStudyMedia>
+                  <p
+                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    style={wdth}
+                  >
+                    The final Avail screens in order, for comparison with the early sketches.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -553,77 +583,105 @@ export default function AvailCaseStudy() {
                   paragraphs={[
                     "The design rests on four decisions. First, Avail positions itself as a discovery tool, not an eligibility checker, welcome copy and \"likely eligible\" badges make that distinction visible on screen rather than buried in fine print. Second, onboarding stays minimal: a 5-question quiz, under 2 minutes, no account required. Third, results appear in three ways depending on how deep a user wants to go, top 3 on Home, a filterable Benefits list, and a detail page with eligibility, how to apply, and a source link. Fourth, the Ask Avail chat opens with guided prompts instead of a blank search bar, since an unfamiliar AI feature already causes hesitation, and not knowing where to start would just make it worse.",
                     "Beyond the UX, a few technical calls changed what was possible. Claude handled benefit matching since no unified government API exists to integrate against, Sonnet ran matching where accuracy mattered most, Haiku ran the cheaper, faster chat. Everything lives in local AsyncStorage, no backend, keeping sensitive fields like immigration status on-device.",
-                    "The Ask Avail chat's guided prompts needed their own adjustments as well. The first version referenced a specific benefit and condition directly, \"What's the deadline for the BC Access Grant?\", \"Do I qualify if I'm part-time?\" Fine if that's what a user matched with, confusing if it wasn't.",
+                    "The Ask Avail chat's guided prompts needed their own adjustments as well. The first version referenced a specific benefit and condition directly, \"What's the deadline for the BC Access Grant?\", \"Do I qualify if I'm part-time?\" fine if that's what a user matched with, confusing if it wasn't.",
                   ]}
                 />
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-9">
-                <div className="mx-auto w-fit rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
-                  <div
-                    className="relative w-[220px] overflow-hidden rounded-[26px] sm:w-[260px] sm:rounded-[31px]"
-                    style={{ aspectRatio: "393/852" }}
-                  >
-                    <LightboxTrigger
-                      src={`${IMG}/ask-avail.webp`}
-                      alt="Ask Avail chat screen with the original guided prompts highlighted"
-                      className="absolute inset-0"
+                <div className="flex flex-col gap-3">
+                  <div className="flex w-full flex-1 items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+                    <div
+                      className="relative w-[220px] overflow-hidden rounded-[26px] sm:w-[260px] sm:rounded-[31px]"
+                      style={{ aspectRatio: "393/852" }}
                     >
-                      <Image
+                      <LightboxTrigger
                         src={`${IMG}/ask-avail.webp`}
                         alt="Ask Avail chat screen with the original guided prompts highlighted"
-                        fill
-                        sizes="260px"
-                        className="object-cover object-top"
-                      />
-                    </LightboxTrigger>
+                        className="absolute inset-0"
+                      >
+                        <Image
+                          src={`${IMG}/ask-avail.webp`}
+                          alt="Ask Avail chat screen with the original guided prompts highlighted"
+                          fill
+                          sizes="260px"
+                          className="object-cover object-top"
+                        />
+                      </LightboxTrigger>
+                    </div>
                   </div>
+                  <p
+                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    style={wdth}
+                  >
+                    The original Ask Avail screen, with the first set of
+                    guided prompts highlighted.
+                  </p>
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-6">
-                  <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                      <p
+                        className="text-[13px] font-bold text-black/60 sm:text-[14px]"
+                        style={wdth}
+                      >
+                        Before
+                      </p>
+                      <div className="flex flex-col gap-3">
+                        {[
+                          "What's the deadline for the BC Access Grant?",
+                          "Do I qualify if I'm part-time?",
+                          "Which benefit gives me the most money?",
+                        ].map((prompt) => (
+                          <p
+                            key={prompt}
+                            className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[16px]"
+                            style={wdth}
+                          >
+                            {prompt}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                     <p
-                      className="text-[13px] font-bold text-black/60 sm:text-[14px]"
+                      className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
                       style={wdth}
                     >
-                      Before
+                      Each prompt named a specific benefit or condition, so it
+                      only made sense if that&rsquo;s what you had matched with.
                     </p>
-                    <div className="flex flex-col gap-3">
-                      {[
-                        "What's the deadline for the BC Access Grant?",
-                        "Do I qualify if I'm part-time?",
-                        "Which benefit gives me the most money?",
-                      ].map((prompt) => (
-                        <p
-                          key={prompt}
-                          className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[16px]"
-                          style={wdth}
-                        >
-                          {prompt}
-                        </p>
-                      ))}
-                    </div>
                   </div>
-                  <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                      <p
+                        className="text-[13px] font-bold text-black/60 sm:text-[14px]"
+                        style={wdth}
+                      >
+                        After
+                      </p>
+                      <div className="flex flex-col gap-3">
+                        {[
+                          "Which benefit gives me the most money?",
+                          "How do I apply for my matched benefits?",
+                          "What documents do I need to apply?",
+                        ].map((prompt) => (
+                          <p
+                            key={prompt}
+                            className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[16px]"
+                            style={wdth}
+                          >
+                            {prompt}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                     <p
-                      className="text-[13px] font-bold text-black/60 sm:text-[14px]"
+                      className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
                       style={wdth}
                     >
-                      After
+                      These work for any user, whichever benefits they matched
+                      with. One prompt from before stayed, because it applies
+                      to everyone.
                     </p>
-                    <div className="flex flex-col gap-3">
-                      {[
-                        "Which benefit gives me the most money?",
-                        "How do I apply for my matched benefits?",
-                        "What documents do I need to apply?",
-                      ].map((prompt) => (
-                        <p
-                          key={prompt}
-                          className="rounded-2xl bg-[#E0F4F4] px-5 py-4 text-[13px] text-[#0a6b6b] sm:text-[16px]"
-                          style={wdth}
-                        >
-                          {prompt}
-                        </p>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </div>
@@ -640,7 +698,7 @@ export default function AvailCaseStudy() {
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
             >
               <div className="flex flex-col gap-6">
-                <CaseStudyHeading>The Screens</CaseStudyHeading>
+                <CaseStudyHeading>The Screens.</CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
                     "The full flow, frame by frame: onboarding through to a matched benefit, browsing, chat, and profile.",
