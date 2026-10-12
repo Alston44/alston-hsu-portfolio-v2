@@ -54,7 +54,7 @@ export default function Header() {
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="text-[16px] leading-[21px] text-black/60 transition-colors duration-300 ease-out hover:text-black/80"
+                className="text-[16px] leading-[21px] text-black/75 transition-colors duration-300 ease-out hover:text-black"
                 style={{ fontVariationSettings: '"wdth" 100' }}
               >
                 {label}
@@ -107,7 +107,7 @@ export default function Header() {
                     target={external ? "_blank" : undefined}
                     rel={external ? "noopener noreferrer" : undefined}
                     onClick={() => setOpen(false)}
-                    className="text-xl text-black/60"
+                    className="text-xl text-black/75"
                     style={{ fontVariationSettings: '"wdth" 100' }}
                   >
                     {label}

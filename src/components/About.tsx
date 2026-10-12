@@ -47,8 +47,8 @@ const EDUCATION = [
 ];
 
 const bodyText =
-  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/60 md:text-[18px]";
-const metaText = "text-[11px] leading-[1.6] text-black/80 md:text-sm";
+  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/75 md:text-[18px]";
+const metaText = "text-[11px] leading-[1.6] text-black md:text-sm";
 
 function AboutEntry({
   title,
@@ -86,7 +86,7 @@ export default function About() {
         <div className="flex w-full flex-1 flex-col gap-10">
           <div className="flex flex-col gap-4">
             <h1
-              className="font-serif text-[32px] leading-[1.4] text-black/60 sm:text-[36px] md:text-[46px]"
+              className="font-serif text-[32px] leading-[1.4] text-black/75 sm:text-[36px] md:text-[46px]"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
               Hi, I&rsquo;m Alston.
@@ -102,7 +102,7 @@ export default function About() {
                 </p>
               ))}
               <p
-                className="font-serif text-[20px] leading-[1.3] font-normal text-black/60 sm:text-[23px] md:text-[29px]"
+                className="font-serif text-[20px] leading-[1.3] font-normal text-black/75 sm:text-[23px] md:text-[29px]"
                 style={{ fontVariationSettings: '"wdth" 100' }}
               >
                 My Story

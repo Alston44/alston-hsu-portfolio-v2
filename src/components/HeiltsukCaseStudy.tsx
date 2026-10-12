@@ -32,7 +32,7 @@ function MetaColumn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px] xl:min-w-0">
+    <div className="flex w-full flex-col gap-1.5 text-black/75 sm:w-auto sm:min-w-[120px] xl:min-w-0">
       <p
         className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
@@ -180,13 +180,13 @@ export default function HeiltsukCaseStudy() {
             <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
               <div className="flex flex-col gap-4 xl:gap-6">
                 {/* <p
-                  className="text-[14px] font-medium tracking-[0.4px] text-black/60 sm:text-[18px] md:text-[22px]"
+                  className="text-[14px] font-medium tracking-[0.4px] text-black/75 sm:text-[18px] md:text-[22px]"
                   style={wdth}
                 >
                   Burst! Creative Group
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   Building Heiltsuk Nation&rsquo;s site to grow, not just to be
@@ -337,7 +337,7 @@ export default function HeiltsukCaseStudy() {
                   className="group flex w-fit items-center gap-0.5 self-end"
                 >
                   <span
-                    className="text-[13px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
+                    className="text-[13px] font-medium tracking-[-0.48px] text-black/75 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
                     style={wdth}
                   >
                     Jump to final designs
@@ -554,7 +554,7 @@ export default function HeiltsukCaseStudy() {
                   className="p-4 sm:p-6 xl:p-9"
                 />
                 <p
-                  className="text-[11px] leading-[1.6] text-black/60 md:text-sm"
+                  className="text-[11px] leading-[1.6] text-black/75 md:text-sm"
                   style={wdth}
                 >
                   The figure above displays how the side bar will fit into the content pages. The content column allows

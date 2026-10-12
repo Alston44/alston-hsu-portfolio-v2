@@ -52,8 +52,8 @@ export function MediaSlider({
               aria-pressed={i === index}
               className={`rounded-full px-3 py-1 text-[11px] font-medium tracking-[-0.2px] transition-colors sm:text-[13px] ${
                 i === index
-                  ? "bg-white text-black/80 shadow-sm"
-                  : "text-black/45 hover:text-black/70"
+                  ? "bg-white text-black shadow-sm"
+                  : "text-black/65 hover:text-black/90"
               }`}
               style={wdth}
             >
@@ -106,7 +106,7 @@ export function MediaSlider({
               type="button"
               aria-label="Previous slide"
               onClick={() => go(-1)}
-              className="absolute top-1/2 left-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-black/60 shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-colors hover:bg-white sm:left-3 sm:size-9"
+              className="absolute top-1/2 left-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-black/75 shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-colors hover:bg-white sm:left-3 sm:size-9"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -124,7 +124,7 @@ export function MediaSlider({
               type="button"
               aria-label="Next slide"
               onClick={() => go(1)}
-              className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-black/60 shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-colors hover:bg-white sm:right-3 sm:size-9"
+              className="absolute top-1/2 right-2 flex size-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-black/75 shadow-[0_2px_8px_rgba(0,0,0,0.15)] transition-colors hover:bg-white sm:right-3 sm:size-9"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -143,7 +143,7 @@ export function MediaSlider({
       </div>
 
       <p
-        className="text-[11px] leading-[1.6] text-black/60 md:text-sm"
+        className="text-[11px] leading-[1.6] text-black/75 md:text-sm"
         style={wdth}
       >
         {slide.caption}

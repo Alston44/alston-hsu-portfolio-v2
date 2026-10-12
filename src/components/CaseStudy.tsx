@@ -8,13 +8,13 @@ import { LightboxTrigger } from "./Lightbox";
 export const wdth = { fontVariationSettings: '"wdth" 100' } as const;
 
 export const caseStudyBodyText =
-  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/60 2xl:text-[18px]";
+  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/75 2xl:text-[18px]";
 
 const eyebrowClass =
   "text-[13px] font-semibold leading-none text-black 2xl:text-[14px]";
 
 const headingClass =
-  "font-serif text-[26px] leading-[1.1] text-black/60 sm:text-[32px] md:text-[36px] 2xl:text-[41px]";
+  "font-serif text-[26px] leading-[1.1] text-black/75 sm:text-[32px] md:text-[36px] 2xl:text-[41px]";
 
 export function CaseStudyEyebrow({ children }: { children: ReactNode }) {
   return (
@@ -222,7 +222,7 @@ export function CaseStudyToc({
           className="-rotate-90 transition-transform duration-300 ease-out group-hover:-translate-x-0.5"
         />
         <span
-          className="text-[18px] tracking-[-0.25px] text-black/60"
+          className="text-[18px] tracking-[-0.25px] text-black/75"
           style={wdth}
         >
           Back
@@ -237,8 +237,8 @@ export function CaseStudyToc({
               href={href}
               className={`text-[16px] transition-colors ${
                 isActive
-                  ? "font-bold text-black/80"
-                  : "text-black/60 hover:text-black/80"
+                  ? "font-bold text-black"
+                  : "text-black/75 hover:text-black"
               }`}
               style={wdth}
             >

@@ -117,7 +117,7 @@ function MetaColumn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px] xl:min-w-0 xl:shrink-0">
+    <div className="flex w-full flex-col gap-1.5 text-black/75 sm:w-auto sm:min-w-[120px] xl:min-w-0 xl:shrink-0">
       <p
         className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
@@ -184,7 +184,7 @@ export default function FirewatchCaseStudy() {
             <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
               <div className="flex flex-col gap-4 xl:gap-6">
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   A wildfire alert app built to guide action, not just relay
@@ -223,14 +223,14 @@ export default function FirewatchCaseStudy() {
             >
               <figure className="flex max-w-[900px] flex-col gap-3 border-l-4 border-black/70 pl-6">
                 <blockquote
-                  className="font-serif text-[22px] leading-[1.4] text-black/80 sm:text-[26px]"
+                  className="font-serif text-[22px] leading-[1.4] text-black sm:text-[26px]"
                   style={wdth}
                 >
                   &ldquo;It took me a whole day to actually know there was a
                   wildfire.&rdquo;
                 </blockquote>
                 <figcaption
-                  className="text-[14px] leading-[1.4] text-black/60 sm:text-[16px]"
+                  className="text-[14px] leading-[1.4] text-black/75 sm:text-[16px]"
                   style={wdth}
                 >
                   BC resident, interview
@@ -257,7 +257,7 @@ export default function FirewatchCaseStudy() {
                     className="group flex w-fit items-center gap-0.5"
                   >
                     <span
-                      className="text-[13px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
+                      className="text-[13px] font-medium tracking-[-0.48px] text-black/75 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
                       style={wdth}
                     >
                       Jump to final designs
@@ -341,13 +341,13 @@ export default function FirewatchCaseStudy() {
                 ].map(({ stat, label }) => (
                   <div key={label} className="flex flex-col gap-1">
                     <p
-                      className="text-[32px] leading-none font-bold text-black/80 sm:text-[36px]"
+                      className="text-[32px] leading-none font-bold text-black sm:text-[36px]"
                       style={wdth}
                     >
                       {stat}
                     </p>
                     <p
-                      className="max-w-[160px] text-[14px] leading-[1.4] text-black/60 sm:text-[16px]"
+                      className="max-w-[160px] text-[14px] leading-[1.4] text-black/75 sm:text-[16px]"
                       style={wdth}
                     >
                       {label}
@@ -387,7 +387,7 @@ export default function FirewatchCaseStudy() {
                       &ldquo;
                     </p>
                     <p
-                      className="text-[14px] leading-[1.5] text-black/70 sm:text-[15px]"
+                      className="text-[14px] leading-[1.5] text-black/90 sm:text-[15px]"
                       style={wdth}
                     >
                       {quote}
@@ -469,7 +469,7 @@ export default function FirewatchCaseStudy() {
                 paragraphs={[
                   <Fragment key="ideation-principles">
                     Four principles kept coming up as we worked:{" "}
-                    <strong className="font-semibold text-black/80">
+                    <strong className="font-semibold text-black">
                       contrast and emphasis, simplicity, accessibility, and
                       consistency
                     </strong>
@@ -505,13 +505,13 @@ export default function FirewatchCaseStudy() {
                     className="flex flex-col gap-2 border-b border-black/10 pb-6"
                   >
                     <p
-                      className="font-serif text-[20px] text-black/80 sm:text-[22px]"
+                      className="font-serif text-[20px] text-black sm:text-[22px]"
                       style={wdth}
                     >
                       {title}
                     </p>
                     <p
-                      className="text-[14px] leading-[1.5] text-black/60 sm:text-[15px]"
+                      className="text-[14px] leading-[1.5] text-black/75 sm:text-[15px]"
                       style={wdth}
                     >
                       {body}
@@ -585,13 +585,13 @@ export default function FirewatchCaseStudy() {
                     </div>
                     <div className="flex flex-col gap-1">
                       <p
-                        className="text-[15px] font-semibold text-black/80 sm:text-[16px]"
+                        className="text-[15px] font-semibold text-black sm:text-[16px]"
                         style={wdth}
                       >
                         {title}
                       </p>
                       <p
-                        className="text-[14px] leading-[1.5] text-black/60 sm:text-[15px]"
+                        className="text-[14px] leading-[1.5] text-black/75 sm:text-[15px]"
                         style={wdth}
                       >
                         {desc}
@@ -652,13 +652,13 @@ export default function FirewatchCaseStudy() {
                     </div>
                     <div className="flex flex-col gap-1">
                       <p
-                        className="text-[15px] font-semibold text-black/80 sm:text-[16px]"
+                        className="text-[15px] font-semibold text-black sm:text-[16px]"
                         style={wdth}
                       >
                         {title}
                       </p>
                       <p
-                        className="text-[14px] leading-[1.5] text-black/60 sm:text-[15px]"
+                        className="text-[14px] leading-[1.5] text-black/75 sm:text-[15px]"
                         style={wdth}
                       >
                         {desc}
@@ -693,7 +693,7 @@ export default function FirewatchCaseStudy() {
                           className="flex flex-col gap-3 border-b border-black/10 pb-6 last:border-b-0 last:pb-0"
                         >
                           <p
-                            className="text-[14px] leading-[1.4] text-black/70"
+                            className="text-[14px] leading-[1.4] text-black/90"
                             style={wdth}
                           >
                             {task}
@@ -706,13 +706,13 @@ export default function FirewatchCaseStudy() {
                             ].map(({ label, value }) => (
                               <div key={label} className="flex flex-col gap-0.5">
                                 <p
-                                  className="text-[11px] text-black/50"
+                                  className="text-[11px] text-black/70"
                                   style={wdth}
                                 >
                                   {label}
                                 </p>
                                 <p
-                                  className="text-[18px] font-semibold text-black/80"
+                                  className="text-[18px] font-semibold text-black"
                                   style={wdth}
                                 >
                                   {value}
@@ -732,7 +732,7 @@ export default function FirewatchCaseStudy() {
                             (col, i) => (
                               <th
                                 key={col}
-                                className={`py-3 text-[15px] font-semibold text-black/80 ${i === 0 ? "text-left" : "text-right"}`}
+                                className={`py-3 text-[15px] font-semibold text-black ${i === 0 ? "text-left" : "text-right"}`}
                                 style={wdth}
                               >
                                 {col}
@@ -745,25 +745,25 @@ export default function FirewatchCaseStudy() {
                         {results.map(({ task, success, dropoff, misclick }) => (
                           <tr key={task} className="border-b border-black/10">
                             <td
-                              className="max-w-[220px] py-5 pr-4 text-[15px] leading-[1.4] text-black/70"
+                              className="max-w-[220px] py-5 pr-4 text-[15px] leading-[1.4] text-black/90"
                               style={wdth}
                             >
                               {task}
                             </td>
                             <td
-                              className="py-5 text-right text-[20px] font-semibold text-black/80"
+                              className="py-5 text-right text-[20px] font-semibold text-black"
                               style={wdth}
                             >
                               {success}
                             </td>
                             <td
-                              className="py-5 text-right text-[20px] font-semibold text-black/80"
+                              className="py-5 text-right text-[20px] font-semibold text-black"
                               style={wdth}
                             >
                               {dropoff}
                             </td>
                             <td
-                              className="py-5 text-right text-[20px] font-semibold text-black/80"
+                              className="py-5 text-right text-[20px] font-semibold text-black"
                               style={wdth}
                             >
                               {misclick}
@@ -819,13 +819,13 @@ export default function FirewatchCaseStudy() {
                 ].map(({ title, desc }) => (
                   <div key={title} className="flex flex-col gap-1">
                     <p
-                      className="text-[15px] font-semibold text-black/80 sm:text-[16px]"
+                      className="text-[15px] font-semibold text-black sm:text-[16px]"
                       style={wdth}
                     >
                       {title}
                     </p>
                     <p
-                      className="text-[14px] leading-[1.5] text-black/60 sm:text-[15px]"
+                      className="text-[14px] leading-[1.5] text-black/75 sm:text-[15px]"
                       style={wdth}
                     >
                       {desc}
@@ -906,7 +906,7 @@ export default function FirewatchCaseStudy() {
                           </LightboxTrigger>
                         </div>
                         <p
-                          className="text-center text-[11px] leading-[1.3] text-black/60 md:text-sm"
+                          className="text-center text-[11px] leading-[1.3] text-black/75 md:text-sm"
                           style={wdth}
                         >
                           {label}
@@ -915,7 +915,7 @@ export default function FirewatchCaseStudy() {
                     ))}
                   </div>
                   <p
-                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                     style={wdth}
                   >
                     {caption}
@@ -946,7 +946,7 @@ export default function FirewatchCaseStudy() {
                       />
                     </LightboxTrigger>
                     <p
-                      className="text-center text-[11px] leading-[1.3] text-black/60 md:text-sm"
+                      className="text-center text-[11px] leading-[1.3] text-black/75 md:text-sm"
                       style={wdth}
                     >
                       {caption}
@@ -972,7 +972,7 @@ export default function FirewatchCaseStudy() {
                         style={{ aspectRatio: "840/1816" }}
                       />
                       <p
-                        className="text-center text-[11px] leading-[1.3] text-black/60 md:text-sm"
+                        className="text-center text-[11px] leading-[1.3] text-black/75 md:text-sm"
                         style={wdth}
                       >
                         {label}
@@ -981,7 +981,7 @@ export default function FirewatchCaseStudy() {
                   ))}
                 </div>
                 <p
-                  className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                  className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                   style={wdth}
                 >
                   The same flow in the original design (left) and the redesign

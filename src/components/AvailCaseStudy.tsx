@@ -51,7 +51,7 @@ function MetaColumn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-col gap-1.5 text-black/60 sm:w-auto sm:min-w-[120px] xl:min-w-0">
+    <div className="flex w-full flex-col gap-1.5 text-black/75 sm:w-auto sm:min-w-[120px] xl:min-w-0">
       <p
         className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
@@ -188,13 +188,13 @@ export default function AvailCaseStudy() {
             <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
               <div className="flex flex-col gap-4 xl:gap-6">
                 {/* <p
-                  className="text-[14px] font-medium tracking-[0.4px] text-black/60 sm:text-[18px] md:text-[22px]"
+                  className="text-[14px] font-medium tracking-[0.4px] text-black/75 sm:text-[18px] md:text-[22px]"
                   style={wdth}
                 >
                   Avail
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/60 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   Creating an app that helps BC Students Claim the Benefits
@@ -248,7 +248,7 @@ export default function AvailCaseStudy() {
                     className="group flex w-fit items-center gap-0.5"
                   >
                     <span
-                      className="text-[13px] font-medium tracking-[-0.48px] text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
+                      className="text-[13px] font-medium tracking-[-0.48px] text-black/75 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline sm:text-[14px] md:text-[16px]"
                       style={wdth}
                     >
                       Jump to final designs
@@ -483,7 +483,7 @@ export default function AvailCaseStudy() {
                     </div>
                   </CaseStudyMedia>
                   <p
-                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                     style={wdth}
                   >
                     Two early sketches of the quiz answers: an icon grid (left) and a plain list (right). Income brackets and immigration status have no obvious icon, which is why the list won.
@@ -510,7 +510,7 @@ export default function AvailCaseStudy() {
                     </div>
                   </CaseStudyMedia>
                   <p
-                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                     style={wdth}
                   >
                     The final version of a quiz question: a short list of choices, no icons.
@@ -533,7 +533,7 @@ export default function AvailCaseStudy() {
                     </LightboxTrigger>
                   </CaseStudyMedia>
                   <p
-                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                     style={wdth}
                   >
                     Hand-drawn wireframes covering every screen, the starting point for the final designs.
@@ -556,7 +556,7 @@ export default function AvailCaseStudy() {
                     </LightboxTrigger>
                   </CaseStudyMedia>
                   <p
-                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                     style={wdth}
                   >
                     The final Avail screens in order, for comparison with the early sketches.
@@ -610,7 +610,7 @@ export default function AvailCaseStudy() {
                     </div>
                   </div>
                   <p
-                    className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                    className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                     style={wdth}
                   >
                     The original Ask Avail screen, with the first set of
@@ -621,7 +621,7 @@ export default function AvailCaseStudy() {
                   <div className="flex flex-col gap-3">
                     <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                       <p
-                        className="text-[13px] font-bold text-black/60 sm:text-[14px]"
+                        className="text-[13px] font-bold text-black/75 sm:text-[14px]"
                         style={wdth}
                       >
                         Before
@@ -643,7 +643,7 @@ export default function AvailCaseStudy() {
                       </div>
                     </div>
                     <p
-                      className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                      className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                       style={wdth}
                     >
                       Each prompt named a specific benefit or condition, so it
@@ -653,7 +653,7 @@ export default function AvailCaseStudy() {
                   <div className="flex flex-col gap-3">
                     <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                       <p
-                        className="text-[13px] font-bold text-black/60 sm:text-[14px]"
+                        className="text-[13px] font-bold text-black/75 sm:text-[14px]"
                         style={wdth}
                       >
                         After
@@ -675,7 +675,7 @@ export default function AvailCaseStudy() {
                       </div>
                     </div>
                     <p
-                      className="text-[13px] leading-[1.5] text-black/60 sm:text-[14px]"
+                      className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
                       style={wdth}
                     >
                       These work for any user, whichever benefits they matched
@@ -727,7 +727,7 @@ export default function AvailCaseStudy() {
                       />
                     </LightboxTrigger>
                     <p
-                      className="text-center text-[11px] leading-[1.3] text-black/60 md:text-sm"
+                      className="text-center text-[11px] leading-[1.3] text-black/75 md:text-sm"
                       style={wdth}
                     >
                       {caption}

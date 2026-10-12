@@ -24,7 +24,7 @@ export default function Footer() {
             <Logo />
           </Link>
           <div
-            className="text-[16px] leading-[1.55] text-black/60 sm:text-[18px] sm:leading-[27.9px] xl:text-[16px] xl:leading-[1.55] 2xl:text-[18px] 2xl:leading-[27.9px]"
+            className="text-[16px] leading-[1.55] text-black/75 sm:text-[18px] sm:leading-[27.9px] xl:text-[16px] xl:leading-[1.55] 2xl:text-[18px] 2xl:leading-[27.9px]"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             <p>© Alston Hsu</p>
@@ -40,7 +40,7 @@ export default function Footer() {
                 href={href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="font-inter text-[14px] leading-[21px] text-black/60 transition-colors duration-300 ease-out hover:text-black/80"
+                className="font-inter text-[14px] leading-[21px] text-black/75 transition-colors duration-300 ease-out hover:text-black"
               >
                 {label}
               </Link>

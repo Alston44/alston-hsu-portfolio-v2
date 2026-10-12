@@ -24,7 +24,7 @@ export default function ArrowLink({
       {...props}
     >
       <span
-        className={`text-black/60 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline ${textClassName}`}
+        className={`text-black/75 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-active:underline ${textClassName}`}
         style={{ fontVariationSettings: '"wdth" 100' }}
       >
         {children}
