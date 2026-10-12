@@ -47,7 +47,7 @@ const EDUCATION = [
 ];
 
 const bodyText =
-  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/75 md:text-[18px]";
+  "text-[16px] leading-[1.7] tracking-[-0.25px] text-black/75 2xl:text-[18px]";
 const metaText = "text-[11px] leading-[1.6] text-black md:text-sm";
 
 function AboutEntry({
@@ -80,7 +80,7 @@ function AboutEntry({
 export default function About() {
   return (
     <section className="px-6 pt-16 pb-24 sm:px-8 sm:pt-32 sm:pb-32 xl:px-16">
-      <div className="flex flex-col gap-16 md:flex-row md:items-start">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-16 md:flex-row md:items-start">
         <AboutPhotoGallery />
 
         <div className="flex w-full flex-1 flex-col gap-10">

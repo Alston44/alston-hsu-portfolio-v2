@@ -72,7 +72,7 @@ const OTHER_WORKS = [
   {
     href: "/work/avail",
     title:
-      "Creating an app that helps BC Students Claim the Benefits they're unaware of.",
+      "An app that helps BC Students Claim the Benefits they're unaware of.",
     company: "Avail",
     tags: ["2026", "BCIT", "School Project"],
     background: "linear-gradient(to bottom, #d6f4f5, #caf2df)",
@@ -127,7 +127,7 @@ const OTHER_WORKS = [
   {
     href: "/#work",
     title:
-      "Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff.",
+      "Building FLUI's landing page to hand off cleanly, not just look polished.",
     company: "FLUI Hackathon",
     tags: ["2026", "Hackathon", "Web Design"],
     background: "linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)",
@@ -146,7 +146,7 @@ const OTHER_WORKS = [
 
 export function HeiltsukHero() {
   return (
-    <div className="mx-auto w-full max-w-[1920px] px-6 sm:px-8 xl:px-16">
+    <div className="mx-auto w-full max-w-[1280px] px-6 sm:px-8 xl:px-16">
       <div className="relative mx-auto w-full max-w-[min(900px,58vw)] 2xl:max-w-[1160px]">
         <div
           className="relative w-full overflow-hidden rounded-card shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
@@ -169,7 +169,7 @@ export function HeiltsukHero() {
 export default function HeiltsukCaseStudy() {
   return (
     <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
-      <div className="page-fade-in relative mx-auto flex max-w-[1920px] flex-col gap-16 sm:gap-20 xl:gap-24">
+      <div className="page-fade-in relative mx-auto flex max-w-[1280px] flex-col gap-16 sm:gap-20 xl:gap-24">
         {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
         <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir={IMG} links={TOC_LINKS} />

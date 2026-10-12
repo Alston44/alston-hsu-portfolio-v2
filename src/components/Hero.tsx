@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="relative px-6 pt-40 pb-10 sm:px-8 sm:pt-56 xl:px-16">
       <HeroShaderBackground />
-      <div className="mx-auto flex max-w-[1920px] flex-col gap-2">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-2">
         <h1
           className="font-serif text-[52px] leading-[1.4] text-black/75 sm:text-[64px] md:text-[75px]"
           style={{ fontVariationSettings: '"wdth" 100' }}
@@ -14,7 +14,7 @@ export default function Hero() {
         </h1>
         <div className="grid grid-cols-1 gap-x-16 gap-y-6 sm:gap-y-9 lg:grid-cols-2 lg:items-start">
           <p
-            className="max-w-[1112px] text-[16px] leading-[1.4] text-black opacity-66 md:text-[20px] lg:max-w-[692px] xl:text-[18px] 2xl:text-[20px]"
+            className="max-w-[1112px] text-[16px] leading-[1.4] text-black opacity-66 md:text-[18px] lg:max-w-[692px] 2xl:text-[20px]"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             An aspiring product designer from Vancouver, bringing a background in 

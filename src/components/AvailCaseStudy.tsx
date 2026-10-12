@@ -136,7 +136,7 @@ const OTHER_WORKS = [
   {
     href: "#",
     title:
-      "Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff.",
+      "Building FLUI's landing page to hand off cleanly, not just look polished.",
     company: "FLUI Hackathon",
     tags: ["2026", "Hackathon", "Web Design"],
     background: "linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)",
@@ -177,7 +177,7 @@ export function AvailHero() {
 export default function AvailCaseStudy() {
   return (
     <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
-      <div className="page-fade-in relative mx-auto flex max-w-[1920px] flex-col gap-16 sm:gap-20 xl:gap-24">
+      <div className="page-fade-in relative mx-auto flex max-w-[1280px] flex-col gap-16 sm:gap-20 xl:gap-24">
         {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
         <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
@@ -197,7 +197,7 @@ export default function AvailCaseStudy() {
                   className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
-                  Creating an app that helps BC Students Claim the Benefits
+                  An app that helps BC Students Claim the Benefits
                   they&rsquo;re unaware of.
                 </h1>
               </div>

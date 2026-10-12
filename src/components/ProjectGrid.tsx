@@ -4,7 +4,7 @@ import { FramedScreenshot, Triptych } from "./ProjectMedia";
 export default function ProjectGrid() {
   return (
     <section id="work" className="px-6 pt-6 pb-24 sm:px-8 sm:pb-32 xl:px-16">
-      <div className="mx-auto grid max-w-[1920px] grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
         <ProjectCard
           href="/work/heiltsuk"
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."
@@ -24,7 +24,7 @@ export default function ProjectGrid() {
         />
         <ProjectCard
           href="/work/avail"
-          title="Creating an app that helps BC Students Claim the Benefits they're unaware of."
+          title="An app that helps BC Students Claim the Benefits they're unaware of."
           company="Avail"
           tags={["2026", "BCIT", "School Project"]}
           background="linear-gradient(to bottom, #d6f4f5, #caf2df)"
@@ -68,7 +68,7 @@ export default function ProjectGrid() {
         />
         <ProjectCard
           href="#"
-          title="Designed FLUI's landing page in high fidelity and caught inconsistencies before developer handoff."
+          title="Building FLUI's landing page to hand off cleanly, not just look polished."
           company="FLUI Hackathon"
           tags={["2026", "Hackathon", "Web Design"]}
           background="linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)"

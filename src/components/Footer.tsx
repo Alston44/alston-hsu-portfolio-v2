@@ -17,21 +17,12 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-white px-6 py-[10px] sm:px-8 xl:px-16">
-      <div className="mx-auto flex w-full max-w-[1920px] flex-col items-center justify-between gap-6 py-2 sm:flex-row">
+    <footer className="bg-white px-6 pb-[10px] sm:px-8 xl:px-16">
+      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-6 border-t border-black/10 pt-[18px] pb-2 sm:flex-row">
         <div className="flex flex-1 items-center gap-4">
           <Link href="/" aria-label="Alston Hsu, home">
             <Logo />
           </Link>
-          <div
-            className="text-[16px] leading-[1.55] text-black/75 sm:text-[18px] sm:leading-[27.9px] xl:text-[16px] xl:leading-[1.55] 2xl:text-[18px] 2xl:leading-[27.9px]"
-            style={{ fontVariationSettings: '"wdth" 100' }}
-          >
-            <p>© Alston Hsu</p>
-            <p className="hidden sm:block">
-              Designed in Figma &amp; Developed with code
-            </p>
-          </div>
         </div>
         <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 sm:gap-x-[60px]">
           {FOOTER_LINKS.map(({ label, href, external }) => (

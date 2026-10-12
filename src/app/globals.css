@@ -19,7 +19,7 @@
    (rounded-card). Change it here to restyle them all at once. Phone/device
    shapes use their own percentage radii, and buttons stay rounded-full. */
 @theme static {
-  --radius-card: 4px;
+  --radius-card: 12px;
 }
 
 body {
