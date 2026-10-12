@@ -18,11 +18,11 @@ const BIO_PARAGRAPHS = [
 ];
 
 const EXPERIENCE = [
-  { title: "UI Support", 
+  { title: "UI/UX Designer", 
     date: "Jul 2026 – Present", 
     org: "FLUI" },
   {
-    title: "Product Designer",
+    title: "Product Design Intern",
     date: "May 2026 – Jul 2026",
     org: "Burst! Creative Group",
   },
