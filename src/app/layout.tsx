@@ -14,9 +14,16 @@ const sourceSerif4 = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Alston Hsu",
+  title: { default: "Alston Hsu", template: "%s | Alston Hsu" },
   description:
     "An aspiring product designer from Vancouver, formerly psychology and commerce, now designing UI/UX with both in mind.",
+  openGraph: {
+    title: "Alston Hsu",
+    description:
+      "An aspiring product designer from Vancouver, formerly psychology and commerce, now designing UI/UX with both in mind.",
+    type: "website",
+    siteName: "Alston Hsu",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

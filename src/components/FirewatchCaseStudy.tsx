@@ -7,6 +7,7 @@ import {
   CaseStudyEyebrow,
   CaseStudyHeading,
   CaseStudyToc,
+  MetaColumn,
   wdth,
 } from "./CaseStudy";
 import { LightboxTrigger } from "./Lightbox";
@@ -108,31 +109,6 @@ const OTHER_WORKS = [
     ),
   },
 ];
-
-function MetaColumn({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex w-full flex-col gap-1.5 text-black/75 sm:w-auto sm:min-w-[120px] xl:min-w-0 xl:shrink-0">
-      <p
-        className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
-        style={wdth}
-      >
-        {label}
-      </p>
-      <div
-        className="flex flex-col gap-0.5 text-[16px] leading-[1.3] tracking-[-0.25px] 2xl:text-[18px]"
-        style={wdth}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
 
 export function FirewatchHero() {
   return (
