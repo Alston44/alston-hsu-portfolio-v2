@@ -72,6 +72,10 @@ export default function ProjectCard({
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
       >
+        <div
+          aria-hidden
+          className="card-grain pointer-events-none absolute inset-0 opacity-[0.2]"
+        />
         {media}
         {/* Cursor-follow pill hidden for now — restore the hovering state and pass it as `visible` to re-enable. */}
         <HoverPill

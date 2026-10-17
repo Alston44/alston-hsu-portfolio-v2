@@ -13,6 +13,7 @@ import {
 } from "./CaseStudy";
 import { LightboxTrigger } from "./Lightbox";
 import { MediaSlider } from "./MediaSlider";
+import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
 
 const IMG = "/images/projects/heiltsuk";
 
@@ -51,7 +52,7 @@ const OTHER_WORKS = [
       "An app that helps BC Students Claim the Benefits they're unaware of.",
     company: "Avail",
     tags: ["2026", "BCIT", "School Project"],
-    background: "linear-gradient(to bottom, #d6f4f5, #caf2df)",
+    background: CARD_BACKGROUNDS.avail,
     pillLabel: "View project",
     pillColor: "#0e9090",
     media: (
@@ -78,7 +79,7 @@ const OTHER_WORKS = [
       "A wildfire alert app built to guide action, not just relay information.",
     company: "Firewatch BC",
     tags: ["2026", "BCIT", "School Project"],
-    background: "linear-gradient(33deg, rgb(246, 229, 207) 23%, rgb(245, 224, 199) 101%)",
+    background: CARD_BACKGROUNDS.firewatch,
     pillLabel: "View project",
     pillColor: "#fa9f00",
     media: (
@@ -106,7 +107,7 @@ const OTHER_WORKS = [
       "Building FLUI's landing page to hand off cleanly, not just look polished.",
     company: "FLUI Hackathon",
     tags: ["2026", "Hackathon", "Web Design"],
-    background: "linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)",
+    background: CARD_BACKGROUNDS.flui,
     pillLabel: "Coming soon",
     pillColor: "#0063c7",
     comingSoon: true,

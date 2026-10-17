@@ -11,6 +11,7 @@ import {
   wdth,
 } from "./CaseStudy";
 import { LightboxTrigger } from "./Lightbox";
+import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
 
 const TOC_LINKS = [
   { label: "Overview", href: "#overview" },
@@ -52,7 +53,7 @@ const OTHER_WORKS = [
       "Building Heiltsuk Nation's site to grow, not just to be patched together.",
     company: "Burst! Creative Group",
     tags: ["2026", "Internship", "Web Design"],
-    background: "linear-gradient(-48deg, rgb(250, 194, 197) 1%, rgb(247, 228, 228) 100%)",
+    background: CARD_BACKGROUNDS.heiltsuk,
     pillLabel: "View project",
     pillColor: "#b8373d",
     media: (
@@ -69,7 +70,7 @@ const OTHER_WORKS = [
       "An app that helps BC Students Claim the Benefits they're unaware of.",
     company: "Avail",
     tags: ["2026", "BCIT", "School Project"],
-    background: "linear-gradient(to bottom, #d6f4f5, #caf2df)",
+    background: CARD_BACKGROUNDS.avail,
     pillLabel: "View project",
     pillColor: "#0e9090",
     media: (
@@ -96,7 +97,7 @@ const OTHER_WORKS = [
       "Building FLUI's landing page to hand off cleanly, not just look polished.",
     company: "FLUI Hackathon",
     tags: ["2026", "Hackathon", "Web Design"],
-    background: "linear-gradient(-49deg, rgb(174, 255, 255) 33%, rgb(224, 255, 255) 73%)",
+    background: CARD_BACKGROUNDS.flui,
     pillLabel: "Coming soon",
     pillColor: "#0063c7",
     comingSoon: true,
