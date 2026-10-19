@@ -34,6 +34,42 @@ export function FramedScreenshot({
   );
 }
 
+/** A single phone-shaped, muted looping screen recording centred in a card. */
+export function PhoneVideo({
+  src,
+  label,
+  aspect,
+  poster,
+}: {
+  src: string;
+  label: string;
+  /** The video's width/height, so the phone keeps its proportions. */
+  aspect: string;
+  /** Still shown until the first frame is ready. */
+  poster?: string;
+}) {
+  return (
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div
+        className="relative h-[86%] overflow-hidden rounded-[12%/5.5%] bg-black transition-transform duration-300 ease-out group-hover:scale-[1.025]"
+        style={{ aspectRatio: aspect }}
+      >
+        <video
+          src={src}
+          poster={poster}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-label={label}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+    </div>
+  );
+}
+
 type TriptychImage = {
   src: string;
   alt: string;

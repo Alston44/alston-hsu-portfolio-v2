@@ -13,6 +13,8 @@ import {
   wdth,
 } from "./CaseStudy";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
+import { FLUI_COMPANY, SHOW_FLUI_CARD } from "@/lib/featureFlags";
+import { SEND_IN_THEIR_TIME_CARD } from "@/lib/sendInTheirTimeCard";
 
 const IMG = "/images/projects/avail";
 
@@ -82,6 +84,7 @@ const OTHER_WORKS = [
       />
     ),
   },
+  SEND_IN_THEIR_TIME_CARD,
   {
     href: "/work/firewatch",
     title:
@@ -136,8 +139,8 @@ export function AvailHero() {
     // Shrinks fluidly between the xl and 2xl breakpoints (same approach as
     // HeiltsukHero's box) so the title below isn't pushed below the fold on
     // 1280-1535px laptop screens; restores to the full size at 2xl+.
-    <div className="relative h-[300px] w-full sm:h-[420px] xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]">
-      <div className="pointer-events-none absolute inset-x-0 -top-[100px] bottom-0">
+    <div className="relative h-75 w-full sm:h-105 xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]">
+      <div className="pointer-events-none absolute inset-x-0 -top-25 bottom-0">
         <Image
           src={`${IMG}/case-hero-v4.webp`}
           alt="Avail app hero"
@@ -153,16 +156,16 @@ export function AvailHero() {
 
 export default function AvailCaseStudy() {
   return (
-    <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
-      <div className="page-fade-in relative mx-auto flex max-w-[1280px] flex-col gap-16 sm:gap-20 xl:gap-24">
+    <div className="relative -mt-6 bg-white px-6 pt-15 pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
+      <div className="page-fade-in relative mx-auto flex max-w-320 flex-col gap-16 sm:gap-20 xl:gap-24">
         {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
         <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
         </div>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-[736px] 2xl:max-w-[832px]">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-184 2xl:max-w-208">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
-            <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
+            <div className="flex flex-col gap-[75px] sm:gap-23.5 xl:gap-29.5">
               <div className="flex flex-col gap-4 xl:gap-6">
                 {/* <p
                   className="text-[14px] font-medium tracking-[0.4px] text-black/75 sm:text-[18px] md:text-[22px]"
@@ -171,7 +174,7 @@ export default function AvailCaseStudy() {
                   Avail
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   An app that helps BC Students Claim the Benefits
@@ -241,7 +244,7 @@ export default function AvailCaseStudy() {
                 </div>
               </div>
 
-              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
                 <div
                   className="relative w-[min(300px,100%,calc((100svh-200px)*0.4613))] overflow-hidden rounded-[12%/5.5%] sm:w-[min(380px,calc((100svh-232px)*0.4613))] md:w-[min(440px,calc((100svh-232px)*0.4613))]"
                   style={{ aspectRatio: "393/852" }}
@@ -498,7 +501,7 @@ export default function AvailCaseStudy() {
                     <LightboxTrigger
                       src={`${IMG}/sketch-sheet.webp`}
                       alt="Hand-drawn wireframe sketches of every screen"
-                      className="absolute left-1/2 top-1/2 aspect-[2037/1299] w-[85%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-card bg-white"
+                      className="absolute left-1/2 top-1/2 aspect-2037/1299 w-[85%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-card bg-white"
                     >
                       <Image
                         src={`${IMG}/sketch-sheet.webp`}
@@ -566,9 +569,9 @@ export default function AvailCaseStudy() {
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-9">
                 <div className="flex flex-col gap-3">
-                  <div className="flex w-full flex-1 items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+                  <div className="flex w-full flex-1 items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
                     <div
-                      className="relative w-[220px] overflow-hidden rounded-[26px] sm:w-[260px] sm:rounded-[31px]"
+                      className="relative w-55 overflow-hidden rounded-[26px] sm:w-65 sm:rounded-[31px]"
                       style={{ aspectRatio: "393/852" }}
                     >
                       <LightboxTrigger
@@ -596,7 +599,7 @@ export default function AvailCaseStudy() {
                 </div>
                 <div className="flex flex-col gap-4 sm:gap-6">
                   <div className="flex flex-col gap-3">
-                    <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                    <div className="flex flex-col gap-2 rounded-card bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                       <p
                         className="text-[13px] font-bold text-black/75 sm:text-[14px]"
                         style={wdth}
@@ -628,7 +631,7 @@ export default function AvailCaseStudy() {
                     </p>
                   </div>
                   <div className="flex flex-col gap-3">
-                    <div className="flex flex-col gap-2 rounded-card bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
+                    <div className="flex flex-col gap-2 rounded-card bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-8 py-10 sm:px-10 sm:py-12">
                       <p
                         className="text-[13px] font-bold text-black/75 sm:text-[14px]"
                         style={wdth}
@@ -687,13 +690,13 @@ export default function AvailCaseStudy() {
                 alt="Avail site map: intake, personalization, matching and Ask Avail stages"
                 aspect="372/286"
               />
-              <div className="grid w-full grid-cols-3 gap-3 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
+              <div className="grid w-full grid-cols-3 gap-3 rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
                 {SCREENS.map(({ file, alt, caption }) => (
                   <div key={file} className="flex flex-col gap-1.5 sm:gap-2">
                     <LightboxTrigger
                       src={`${IMG}/${file}.webp`}
                       alt={alt}
-                      className="relative block aspect-[393/852] w-full overflow-hidden rounded-[5%/2.3%] bg-white"
+                      className="relative block aspect-393/852 w-full overflow-hidden rounded-[5%/2.3%] bg-white"
                     >
                       <Image
                         src={`${IMG}/${file}.webp`}
@@ -738,10 +741,12 @@ export default function AvailCaseStudy() {
               {/* Row of 3 that scrolls sideways once the cards would drop below min width. */}
               <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
                 <div className="flex w-full gap-6 sm:gap-8">
-                  {OTHER_WORKS.map((work) => (
+                  {OTHER_WORKS.filter(
+                    (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
+                  ).map((work) => (
                     <div
                       key={work.company}
-                      className="w-[280px] shrink-0 grow basis-[280px] xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
+                      className="w-70 shrink-0 grow basis-70 xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
                     >
                       <ProjectCard {...work} />
                     </div>

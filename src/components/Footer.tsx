@@ -8,8 +8,8 @@ const FOOTER_LINKS = [
     external: true,
   },
   {
-    label: "Contact",
-    href: "mailto:alstonhsu88@gmail.com",
+    label: "X",
+    href: "https://x.com/alston_h2u",
     external: true,
   },
   { label: "Work", href: "/#work" },
@@ -17,14 +17,14 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-6 pb-[10px] sm:px-8 xl:px-16">
-      <div className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-between gap-6 border-t border-black/10 pt-[18px] pb-2 sm:flex-row">
+    <footer className="bg-white px-6 pb-2.5 sm:px-8 xl:px-16">
+      <div className="mx-auto flex w-full max-w-320 flex-col items-center justify-between gap-6 border-t border-black/10 pt-4.5 pb-2 sm:flex-row">
         <div className="flex flex-1 items-center gap-4">
           <Link href="/" aria-label="Alston Hsu, home">
             <Logo />
           </Link>
         </div>
-        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 sm:gap-x-[60px]">
+        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 sm:gap-x-15">
           {FOOTER_LINKS.map(({ label, href, external }) => (
             <li key={label}>
               <Link

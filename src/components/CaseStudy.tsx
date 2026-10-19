@@ -53,7 +53,7 @@ export function MetaColumn({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex w-full flex-col gap-1.5 text-black/75 sm:w-auto sm:min-w-[120px] xl:min-w-0">
+    <div className="flex w-full flex-col gap-1.5 text-black/75 sm:w-auto sm:min-w-30 xl:min-w-0">
       <p
         className="text-[16px] font-bold leading-[1.4] 2xl:text-[18px]"
         style={wdth}
@@ -84,7 +84,7 @@ export function CaseStudyMedia({
   const bg =
     tone === "dark"
       ? "bg-[#e6e6e6]"
-      : "bg-gradient-to-b from-[#ededed] to-[#e5e5e5]";
+      : "bg-linear-to-b from-[#ededed] to-[#e5e5e5]";
   return (
     <div
       className={`relative w-full overflow-hidden rounded-card border border-black/5 ${bg} ${className ?? ""}`}
@@ -178,7 +178,7 @@ export function ContainBox({
       <LightboxTrigger
         src={src}
         alt={alt}
-        className="absolute inset-0 p-3 sm:p-4 xl:p-[10px]"
+        className="absolute inset-0 p-3 sm:p-4 xl:p-2.5"
       >
         <div className="relative h-full w-full overflow-hidden rounded-card">
           <Image
@@ -234,7 +234,7 @@ export function CaseStudyToc({
   }, [links]);
 
   return (
-    <div className="sticky top-28 hidden w-[140px] shrink-0 flex-col items-start gap-6 self-start xl:flex">
+    <div className="sticky top-28 hidden w-35 shrink-0 flex-col items-start gap-6 self-start xl:flex">
       <Link
         href="/#work"
         className="group flex items-center gap-2.5"
@@ -254,7 +254,7 @@ export function CaseStudyToc({
           Back
         </span>
       </Link>
-      <nav className="flex flex-col items-start gap-[22px]">
+      <nav className="flex flex-col items-start gap-5.5">
         {links.map(({ label, href }) => {
           const isActive = activeId === href.slice(1);
           return (

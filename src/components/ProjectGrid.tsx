@@ -1,11 +1,13 @@
 import ProjectCard from "./ProjectCard";
 import { FramedScreenshot, Triptych } from "./ProjectMedia";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
+import { SHOW_FLUI_CARD } from "@/lib/featureFlags";
+import { SEND_IN_THEIR_TIME_CARD } from "@/lib/sendInTheirTimeCard";
 
 export default function ProjectGrid() {
   return (
     <section id="work" className="px-6 pt-6 pb-24 sm:px-8 sm:pb-32 xl:px-16">
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-320 grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
         <ProjectCard
           href="/work/heiltsuk"
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."
@@ -49,6 +51,7 @@ export default function ProjectGrid() {
             />
           }
         />
+        <ProjectCard {...SEND_IN_THEIR_TIME_CARD} />
         <ProjectCard
           href="/work/firewatch"
           title="A wildfire alert app built to guide action, not just relay information."
@@ -67,23 +70,25 @@ export default function ProjectGrid() {
             />
           }
         />
-        <ProjectCard
-          href="#"
-          title="Building FLUI's landing page to hand off cleanly, not just look polished."
-          company="FLUI Hackathon"
-          tags={["2026", "Hackathon", "Web Design"]}
-          background={CARD_BACKGROUNDS.flui}
-          pillLabel="Coming soon"
-          pillColor="#0063c7"
-          comingSoon
-          media={
-            <FramedScreenshot
-              src="/images/projects/flui-hackathon.webp"
-              alt="FLUI Design Jam landing page"
-              size="sm"
-            />
-          }
-        />
+        {SHOW_FLUI_CARD && (
+          <ProjectCard
+            href="#"
+            title="Building FLUI's landing page to hand off cleanly, not just look polished."
+            company="FLUI Hackathon"
+            tags={["2026", "Hackathon", "Web Design"]}
+            background={CARD_BACKGROUNDS.flui}
+            pillLabel="Coming soon"
+            pillColor="#0063c7"
+            comingSoon
+            media={
+              <FramedScreenshot
+                src="/images/projects/flui-hackathon.webp"
+                alt="FLUI Design Jam landing page"
+                size="sm"
+              />
+            }
+          />
+        )}
       </div>
     </section>
   );

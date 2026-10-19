@@ -14,6 +14,8 @@ import {
 import { LightboxTrigger } from "./Lightbox";
 import { MediaSlider } from "./MediaSlider";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
+import { FLUI_COMPANY, SHOW_FLUI_CARD } from "@/lib/featureFlags";
+import { SEND_IN_THEIR_TIME_CARD } from "@/lib/sendInTheirTimeCard";
 
 const IMG = "/images/projects/heiltsuk";
 
@@ -73,6 +75,7 @@ const OTHER_WORKS = [
       />
     ),
   },
+  SEND_IN_THEIR_TIME_CARD,
   {
     href: "/work/firewatch",
     title:
@@ -123,8 +126,8 @@ const OTHER_WORKS = [
 
 export function HeiltsukHero() {
   return (
-    <div className="mx-auto w-full max-w-[1280px] px-6 sm:px-8 xl:px-16">
-      <div className="relative mx-auto w-full max-w-[min(900px,58vw)] 2xl:max-w-[1160px]">
+    <div className="mx-auto w-full max-w-320 px-6 sm:px-8 xl:px-16">
+      <div className="relative mx-auto w-full max-w-[min(900px,58vw)] 2xl:max-w-290">
         <div
           className="relative w-full overflow-hidden rounded-card shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
           style={{ aspectRatio: "1120/637" }}
@@ -145,16 +148,16 @@ export function HeiltsukHero() {
 
 export default function HeiltsukCaseStudy() {
   return (
-    <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
-      <div className="page-fade-in relative mx-auto flex max-w-[1280px] flex-col gap-16 sm:gap-20 xl:gap-24">
+    <div className="relative -mt-6 bg-white px-6 pt-15 pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
+      <div className="page-fade-in relative mx-auto flex max-w-320 flex-col gap-16 sm:gap-20 xl:gap-24">
         {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
         <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir={IMG} links={TOC_LINKS} />
         </div>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-[736px] 2xl:max-w-[832px]">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-184 2xl:max-w-208">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
-            <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
+            <div className="flex flex-col gap-[75px] sm:gap-23.5 xl:gap-29.5">
               <div className="flex flex-col gap-4 xl:gap-6">
                 {/* <p
                   className="text-[14px] font-medium tracking-[0.4px] text-black/75 sm:text-[18px] md:text-[22px]"
@@ -163,7 +166,7 @@ export default function HeiltsukCaseStudy() {
                   Burst! Creative Group
                 </p> */}
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   Building Heiltsuk Nation&rsquo;s site to grow, not just to be
@@ -231,7 +234,7 @@ export default function HeiltsukCaseStudy() {
                       key={src}
                       src={src}
                       alt={alt}
-                      className="relative block aspect-[470/437] w-full overflow-hidden rounded-card"
+                      className="relative block aspect-470/437 w-full overflow-hidden rounded-card"
                     >
                       <Image
                         src={src}
@@ -252,7 +255,7 @@ export default function HeiltsukCaseStudy() {
               </div>
               <div className="flex flex-col gap-5 sm:gap-6">
                 <div
-                  className="relative overflow-hidden rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
+                  className="relative overflow-hidden rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5]"
                   style={{ aspectRatio: "1916/878" }}
                 >
                   <div
@@ -418,7 +421,7 @@ export default function HeiltsukCaseStudy() {
                 />
               </div>
               <div
-                className="relative w-full overflow-hidden rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5]"
+                className="relative w-full overflow-hidden rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5]"
                 style={{ aspectRatio: "1429/598" }}
               >
                 <div
@@ -639,7 +642,7 @@ export default function HeiltsukCaseStudy() {
                   ]}
                 />
               </div>
-              <div className="flex items-center justify-center gap-6 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:gap-10 sm:px-10 sm:py-14 xl:gap-[58px]">
+              <div className="flex items-center justify-center gap-6 rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:gap-10 sm:px-10 sm:py-14 xl:gap-14.5">
                 {[
                   {
                     src: `${IMG}/mobile-1.webp`,
@@ -652,7 +655,7 @@ export default function HeiltsukCaseStudy() {
                 ].map(({ src, alt }) => (
                   <div
                     key={src}
-                    className="relative w-[38%] max-w-[300px]"
+                    className="relative w-[38%] max-w-75"
                     style={{ aspectRatio: "416.346/849.038" }}
                   >
                     <div
@@ -714,10 +717,12 @@ export default function HeiltsukCaseStudy() {
               {/* Row of 3 that scrolls sideways once the cards would drop below min width. */}
               <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
                 <div className="flex w-full gap-6 sm:gap-8">
-                  {OTHER_WORKS.map((work) => (
+                  {OTHER_WORKS.filter(
+                    (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
+                  ).map((work) => (
                     <div
                       key={work.company}
-                      className="w-[280px] shrink-0 grow basis-[280px] xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
+                      className="w-70 shrink-0 grow basis-70 xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
                     >
                       <ProjectCard {...work} />
                     </div>

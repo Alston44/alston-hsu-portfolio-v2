@@ -35,7 +35,7 @@ export function MediaSlider({
   const bg =
     tone === "dark"
       ? "bg-[#e6e6e6]"
-      : "bg-gradient-to-b from-[#ededed] to-[#e5e5e5]";
+      : "bg-linear-to-b from-[#ededed] to-[#e5e5e5]";
 
   const go = (delta: number) =>
     setIndex((i) => (i + delta + slides.length) % slides.length);

@@ -63,7 +63,7 @@ export default function ProjectCard({
   const content = (
     <>
       <div
-        className={`relative aspect-[624/455] w-full overflow-hidden rounded-card shadow-none ${
+        className={`relative aspect-624/455 w-full overflow-hidden rounded-card shadow-none ${
           comingSoon
             ? ""
             : "transition-shadow duration-300 ease-out group-hover:shadow-[0_10px_20px_-12px_rgba(0,0,0,0.18)]"
@@ -74,7 +74,7 @@ export default function ProjectCard({
       >
         <div
           aria-hidden
-          className="card-grain pointer-events-none absolute inset-0 opacity-[0.2]"
+          className="card-grain pointer-events-none absolute inset-0 opacity-20"
         />
         {media}
         {/* Cursor-follow pill hidden for now — restore the hovering state and pass it as `visible` to re-enable. */}

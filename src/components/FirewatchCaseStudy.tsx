@@ -12,6 +12,8 @@ import {
 } from "./CaseStudy";
 import { LightboxTrigger } from "./Lightbox";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
+import { FLUI_COMPANY, SHOW_FLUI_CARD } from "@/lib/featureFlags";
+import { SEND_IN_THEIR_TIME_CARD } from "@/lib/sendInTheirTimeCard";
 
 const TOC_LINKS = [
   { label: "Overview", href: "#overview" },
@@ -91,6 +93,7 @@ const OTHER_WORKS = [
       />
     ),
   },
+  SEND_IN_THEIR_TIME_CARD,
   {
     href: "/#work",
     title:
@@ -121,7 +124,7 @@ export function FirewatchHero() {
     // AvailHero/HeiltsukHero) so the title below isn't pushed below the fold
     // on 1280-1535px laptop screens; restores to the full size at 2xl+.
     <div
-      className="relative h-[300px] w-full sm:h-[420px] xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]"
+      className="relative h-75 w-full sm:h-105 xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]"
       style={{ backgroundColor: "#f7f3ed" }}
     >
       {/* Capped at (roughly) the source photo's native width so it never gets
@@ -133,7 +136,7 @@ export function FirewatchHero() {
           2100px and still asked for a full 100vw (doubled again on Retina)
           below that, which is what was still blurry on ordinary large
           screens. */}
-      <div className="pointer-events-none absolute -top-[100px] bottom-0 left-1/2 w-full max-w-[2100px] -translate-x-1/2">
+      <div className="pointer-events-none absolute -top-25 bottom-0 left-1/2 w-full max-w-525 -translate-x-1/2">
         <Image
           src="/images/projects/firewatch/hero-main.webp"
           alt="A hand holding a phone running Firewatch BC in a park, showing an active fire alert for Pacific Spirit Regional Park"
@@ -149,19 +152,19 @@ export function FirewatchHero() {
 
 export default function FirewatchCaseStudy() {
   return (
-    <div className="relative -mt-6 bg-white px-6 pt-[60px] pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
-      <div className="page-fade-in relative mx-auto flex max-w-[1280px] flex-col gap-16 sm:gap-20 xl:gap-24">
+    <div className="relative -mt-6 bg-white px-6 pt-15 pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
+      <div className="page-fade-in relative mx-auto flex max-w-320 flex-col gap-16 sm:gap-20 xl:gap-24">
         {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
         <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
           <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
         </div>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-[736px] 2xl:max-w-[832px]">
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-184 2xl:max-w-208">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
-            <div className="flex flex-col gap-[75px] sm:gap-[94px] xl:gap-[118px]">
+            <div className="flex flex-col gap-[75px] sm:gap-23.5 xl:gap-29.5">
               <div className="flex flex-col gap-4 xl:gap-6">
                 <h1
-                  className="font-serif max-w-[1428px] text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
                   style={wdth}
                 >
                   A wildfire alert app built to guide action, not just relay
@@ -198,7 +201,7 @@ export default function FirewatchCaseStudy() {
               id="overview"
               className="scroll-mt-28 flex flex-col gap-8 sm:gap-10 xl:gap-14"
             >
-              <figure className="flex max-w-[900px] flex-col gap-3 border-l-4 border-black/70 pl-6">
+              <figure className="flex max-w-225 flex-col gap-3 border-l-4 border-black/70 pl-6">
                 <blockquote
                   className="font-serif text-[22px] leading-[1.4] text-black sm:text-[26px]"
                   style={wdth}
@@ -249,7 +252,7 @@ export default function FirewatchCaseStudy() {
                   </a>
                 </div>
               </div>
-              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
                 <div
                   className="relative w-[min(300px,100%,calc((100svh-200px)*0.4613))] overflow-hidden rounded-[12%/5.5%] sm:w-[min(380px,calc((100svh-232px)*0.4613))] md:w-[min(440px,calc((100svh-232px)*0.4613))]"
                   style={{ aspectRatio: "393/852" }}
@@ -324,7 +327,7 @@ export default function FirewatchCaseStudy() {
                       {stat}
                     </p>
                     <p
-                      className="max-w-[160px] text-[14px] leading-[1.4] text-black/75 sm:text-[16px]"
+                      className="max-w-40 text-[14px] leading-[1.4] text-black/75 sm:text-[16px]"
                       style={wdth}
                     >
                       {label}
@@ -389,11 +392,11 @@ export default function FirewatchCaseStudy() {
                 ]}
               />
 
-              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-6 sm:p-10 xl:p-14">
+              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] p-6 sm:p-10 xl:p-14">
                 <LightboxTrigger
                   src="/images/projects/firewatch/discovery-journey-map.webp"
                   alt="User journey map for checking wildfire information during a smokey day, showing goals, actions, thoughts, pain points, emotions, and opportunities across five stages"
-                  className="relative block aspect-[809/649] w-full max-w-[600px] overflow-hidden rounded-card"
+                  className="relative block aspect-809/649 w-full max-w-150 overflow-hidden rounded-card"
                 >
                   <Image
                     src="/images/projects/firewatch/discovery-journey-map.webp"
@@ -426,11 +429,11 @@ export default function FirewatchCaseStudy() {
                 />
               </div>
 
-              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:p-6 xl:p-9">
+              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:p-6 xl:p-9">
                 <LightboxTrigger
                   src="/images/projects/firewatch/ideation-sketches.webp"
                   alt="Six hand-drawn sketches from a Crazy 8s session: three app-concept wireframes and three paper prototypes for shelter and resource screens"
-                  className="relative block aspect-[798/808] w-full max-w-[600px] overflow-hidden rounded-card bg-white"
+                  className="relative block aspect-798/808 w-full max-w-150 overflow-hidden rounded-card bg-white"
                 >
                   <Image
                     src="/images/projects/firewatch/ideation-sketches.webp"
@@ -722,7 +725,7 @@ export default function FirewatchCaseStudy() {
                         {results.map(({ task, success, dropoff, misclick }) => (
                           <tr key={task} className="border-b border-black/10">
                             <td
-                              className="max-w-[220px] py-5 pr-4 text-[15px] leading-[1.4] text-black/90"
+                              className="max-w-55 py-5 pr-4 text-[15px] leading-[1.4] text-black/90"
                               style={wdth}
                             >
                               {task}
@@ -850,7 +853,7 @@ export default function FirewatchCaseStudy() {
                 },
               ].map(({ key, cellAspect, cellRadius, oldAlt, newAlt, caption }) => (
                 <div key={key} className="flex flex-col gap-4">
-                  <div className="grid grid-cols-2 gap-3 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
+                  <div className="grid grid-cols-2 gap-3 rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
                     {[
                       {
                         src: `compare-${key}-old`,
@@ -906,13 +909,13 @@ export default function FirewatchCaseStudy() {
                 ]}
               />
 
-              <div className="grid w-full grid-cols-3 gap-3 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
+              <div className="grid w-full grid-cols-3 gap-3 rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
                 {SCREENS.map(({ file, alt, caption }) => (
                   <div key={file} className="flex flex-col gap-1.5 sm:gap-2">
                     <LightboxTrigger
                       src={`/images/projects/firewatch/${file}.webp`}
                       alt={alt}
-                      className="relative block aspect-[393/852] w-full overflow-hidden rounded-[5%/2.3%] bg-white"
+                      className="relative block aspect-393/852 w-full overflow-hidden rounded-[5%/2.3%] bg-white"
                     >
                       <Image
                         src={`/images/projects/firewatch/${file}.webp`}
@@ -933,7 +936,7 @@ export default function FirewatchCaseStudy() {
               </div>
 
               <div className="flex flex-col gap-4">
-                <div className="grid grid-cols-2 gap-3 rounded-card border border-black/5 bg-gradient-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
+                <div className="grid grid-cols-2 gap-3 rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] p-3 sm:gap-6 sm:p-6 xl:gap-9 xl:p-9">
                   {[
                     { src: "redesign-old", label: "Before" },
                     { src: "redesign-new", label: "After" },
@@ -945,7 +948,7 @@ export default function FirewatchCaseStudy() {
                         playsInline
                         preload="metadata"
                         aria-label={`${label}: walkthrough of the app`}
-                        className="w-full max-w-[320px] rounded-[5%/2.3%] bg-white"
+                        className="w-full max-w-80 rounded-[5%/2.3%] bg-white"
                         style={{ aspectRatio: "840/1816" }}
                       />
                       <p
@@ -991,10 +994,12 @@ export default function FirewatchCaseStudy() {
               <CaseStudyHeading>Other works</CaseStudyHeading>
               <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
                 <div className="flex w-full gap-6 sm:gap-8">
-                  {OTHER_WORKS.map((work) => (
+                  {OTHER_WORKS.filter(
+                    (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
+                  ).map((work) => (
                     <div
                       key={work.company}
-                      className="w-[280px] shrink-0 grow basis-[280px] xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
+                      className="w-70 shrink-0 grow basis-70 xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
                     >
                       <ProjectCard {...work} />
                     </div>
