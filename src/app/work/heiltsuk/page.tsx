@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Header from "@/components/Header";
 import HeiltsukCaseStudy, {
   HeiltsukHero,
@@ -19,21 +18,7 @@ export default function HeiltsukPage() {
     <LightboxProvider>
       <div className="relative flex flex-1 flex-col">
         <Header />
-        <div className="relative">
-          <div className="pointer-events-none absolute inset-x-0 -top-25 bottom-0">
-            <Image
-              src="/images/projects/heiltsuk/hero-bg.webp"
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover opacity-14"
-              priority
-            />
-          </div>
-          <div className="relative pt-10 sm:pt-14 xl:pt-16">
-            <HeiltsukHero />
-          </div>
-        </div>
+        <HeiltsukHero />
         <main className="no-stagger route-transition-slide-only flex flex-1 flex-col">
           <HeiltsukCaseStudy />
         </main>

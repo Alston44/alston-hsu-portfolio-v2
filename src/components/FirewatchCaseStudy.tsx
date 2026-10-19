@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import ProjectCard from "./ProjectCard";
+import ProjectStack from "./ProjectStack";
 import { FramedScreenshot, Triptych } from "./ProjectMedia";
 import {
   CaseStudyBody,
@@ -9,6 +10,7 @@ import {
   CaseStudyToc,
   MetaColumn,
   wdth,
+  CaseStudyHeroFrame,
 } from "./CaseStudy";
 import { LightboxTrigger } from "./Lightbox";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
@@ -116,55 +118,32 @@ const OTHER_WORKS = [
 
 export function FirewatchHero() {
   return (
-    // Same fixed-height-per-breakpoint approach as AvailHero, capped so it
-    // never grows taller than this no matter how wide the screen gets
-    // (unlike a plain aspect-ratio box, which keeps growing with viewport
-    // width and was pushing the title below the fold on wide screens).
-    // Shrinks fluidly between the xl and 2xl breakpoints (same approach as
-    // AvailHero/HeiltsukHero) so the title below isn't pushed below the fold
-    // on 1280-1535px laptop screens; restores to the full size at 2xl+.
-    <div
-      className="relative h-75 w-full sm:h-105 xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]"
-      style={{ backgroundColor: "#f7f3ed" }}
-    >
-      {/* Capped at (roughly) the source photo's native width so it never gets
-          scaled up past its own resolution on wide screens, which is what
-          was causing the visible grain. Past that width the matching cream
-          background shows instead of stretching the image further. sizes
-          uses min() so the cap applies below 2100px too — a plain media
-          query like "(min-width: 2100px) 2100px, 100vw" only kicked in past
-          2100px and still asked for a full 100vw (doubled again on Retina)
-          below that, which is what was still blurry on ordinary large
-          screens. */}
-      <div className="pointer-events-none absolute -top-25 bottom-0 left-1/2 w-full max-w-525 -translate-x-1/2">
-        <Image
-          src="/images/projects/firewatch/hero-main.webp"
-          alt="A hand holding a phone running Firewatch BC in a park, showing an active fire alert for Pacific Spirit Regional Park"
-          fill
-          sizes="min(2100px, 100vw)"
-          className="object-cover object-[75%_75%]"
-          priority
-        />
-      </div>
-    </div>
+    <CaseStudyHeroFrame style={{ backgroundColor: "#f7f3ed" }}>
+      <Image
+        src="/images/projects/firewatch/hero-main.webp"
+        alt="A hand holding a phone running Firewatch BC in a park, showing an active fire alert for Pacific Spirit Regional Park"
+        fill
+        sizes="(min-width: 832px) 768px, 100vw"
+        className="object-cover object-[75%_75%]"
+        priority
+      />
+    </CaseStudyHeroFrame>
   );
 }
 
 export default function FirewatchCaseStudy() {
   return (
-    <div className="relative -mt-6 bg-white px-6 pt-15 pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
+    <div className="relative bg-white px-6 pt-15 pb-6 sm:px-8 sm:pb-8 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-320 flex-col gap-16 sm:gap-20 xl:gap-24">
-        {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
-        <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
-          <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
-        </div>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-184 2xl:max-w-208">
+        {/* Section pill: floats at the bottom centre of the screen (see CaseStudyToc). */}
+        <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
+        <div className="relative mx-auto flex w-full max-w-3xl flex-col gap-16">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
             <div className="flex flex-col gap-[75px] sm:gap-23.5 xl:gap-29.5">
               <div className="flex flex-col gap-4 xl:gap-6">
                 <h1
-                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[36px]"
                   style={wdth}
                 >
                   A wildfire alert app built to guide action, not just relay
@@ -990,22 +969,15 @@ export default function FirewatchCaseStudy() {
             </div>
 
             {/* Other works */}
-            <div className="flex flex-col gap-8 sm:gap-10">
+            <div className="flex flex-col gap-14">
               <CaseStudyHeading>Other works</CaseStudyHeading>
-              <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
-                <div className="flex w-full gap-6 sm:gap-8">
-                  {OTHER_WORKS.filter(
-                    (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
-                  ).map((work) => (
-                    <div
-                      key={work.company}
-                      className="w-70 shrink-0 grow basis-70 xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
-                    >
-                      <ProjectCard {...work} />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <ProjectStack>
+                {OTHER_WORKS.filter(
+                  (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
+                ).map((work) => (
+                  <ProjectCard key={work.company} {...work} />
+                ))}
+              </ProjectStack>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { LightboxTrigger } from "./Lightbox";
 
 export const wdth = { fontVariationSettings: '"wdth" 100' } as const;
@@ -14,7 +15,7 @@ const eyebrowClass =
   "text-[13px] font-semibold leading-none text-black 2xl:text-[14px]";
 
 const headingClass =
-  "font-serif text-[26px] leading-[1.1] text-black/75 sm:text-[32px] md:text-[36px] 2xl:text-[41px]";
+  "font-serif text-[26px] leading-[1.1] text-black/75 sm:text-[32px] md:text-[36px]";
 
 export function CaseStudyEyebrow({ children }: { children: ReactNode }) {
   return (
@@ -63,6 +64,33 @@ export function MetaColumn({
       <div
         className="flex flex-col gap-0.5 text-[16px] leading-[1.3] tracking-[-0.25px] 2xl:text-[18px]"
         style={wdth}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Rounded hero rectangle that sits in the same 768px column as the page content
+ * (same side gutters as the case study body), just under the header pill.
+ */
+export function CaseStudyHeroFrame({
+  aspect = "aspect-4/3 sm:aspect-video",
+  className = "",
+  style,
+  children,
+}: {
+  aspect?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  children: ReactNode;
+}) {
+  return (
+    <div className="px-6 pt-2 sm:px-8 sm:pt-4 xl:px-16">
+      <div
+        className={`relative mx-auto w-full max-w-3xl overflow-hidden rounded-card ${aspect} ${className}`}
+        style={style}
       >
         {children}
       </div>
@@ -211,7 +239,12 @@ export function CaseStudyToc({
   iconDir: string;
   links?: TocLink[];
 }) {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  // The first section counts as current until you scroll past it, so a tick is always lit.
+  const [activeId, setActiveId] = useState<string | null>(links[0]?.href.slice(1) ?? null);
+  const [mounted, setMounted] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const sections = links.map(({ href }) =>
@@ -233,46 +266,81 @@ export function CaseStudyToc({
     return () => observer.disconnect();
   }, [links]);
 
-  return (
-    <div className="sticky top-28 hidden w-35 shrink-0 flex-col items-start gap-6 self-start xl:flex">
+  // Step out of the way when the footer comes into view, so the two pills never stack.
+  useEffect(() => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    const observer = new IntersectionObserver(([entry]) => setFooterInView(entry.isIntersecting));
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  const activeLabel = links.find(({ href }) => href.slice(1) === activeId)?.label ?? "";
+
+  // A floating pill at the bottom centre of the screen, in the same frosted style as the
+  // header: a back arrow, one tick per section (the current one is taller and darker; hover
+  // one for its name) and the current section's name. It is portalled to <body> because the
+  // page's entrance animation would otherwise anchor "fixed" to the animated wrapper.
+  if (!mounted) return null;
+  return createPortal(
+    <nav
+      aria-label="Case study sections"
+      className={`fixed bottom-5 left-1/2 z-40 hidden -translate-x-1/2 items-center gap-1 rounded-full border border-white/80 bg-white/90 py-1 pr-5 pl-1.5 shadow-[0_6px_24px_-10px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md transition duration-300 ease-out md:flex ${
+        footerInView ? "pointer-events-none translate-y-4 opacity-0" : ""
+      }`}
+    >
       <Link
         href="/#work"
-        className="group flex items-center gap-2.5"
         aria-label="Back to work"
+        className="group/back flex size-9 items-center justify-center rounded-full transition-colors duration-300 hover:bg-black/5"
       >
         <Image
           src={`${iconDir}/icon-back-arrow.svg`}
           alt=""
           width={14}
           height={16}
-          className="-rotate-90 transition-transform duration-300 ease-out group-hover:-translate-x-0.5"
+          className="-rotate-90 opacity-60 transition duration-300 ease-out group-hover/back:-translate-x-0.5 group-hover/back:opacity-100"
         />
-        <span
-          className="text-[18px] tracking-[-0.25px] text-black/75"
-          style={wdth}
-        >
-          Back
-        </span>
       </Link>
-      <nav className="flex flex-col items-start gap-5.5">
+      <span aria-hidden className="mx-1 h-4 w-px bg-black/10" />
+      <ul className="flex items-center">
         {links.map(({ label, href }) => {
           const isActive = activeId === href.slice(1);
           return (
-            <a
-              key={label}
-              href={href}
-              className={`text-[16px] transition-colors ${
-                isActive
-                  ? "font-bold text-black"
-                  : "text-black/75 hover:text-black"
-              }`}
-              style={wdth}
-            >
-              {label}
-            </a>
+            <li key={label}>
+              <a
+                href={href}
+                aria-label={label}
+                aria-current={isActive ? "location" : undefined}
+                className="group/item relative flex h-9 w-4 items-center justify-center"
+              >
+                <span
+                  className={`block w-0.5 rounded-full transition-all duration-300 ease-out ${
+                    isActive
+                      ? "h-5 bg-black"
+                      : "h-3 bg-black/25 group-hover/item:h-4 group-hover/item:bg-black/60"
+                  }`}
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 translate-y-1 rounded-full bg-white px-2.5 py-1 text-[12px] whitespace-nowrap text-black/75 opacity-0 shadow-[0_4px_14px_-6px_rgba(0,0,0,0.25)] ring-1 ring-black/5 transition duration-200 ease-out group-hover/item:translate-y-0 group-hover/item:opacity-100"
+                  style={wdth}
+                >
+                  {label}
+                </span>
+              </a>
+            </li>
           );
         })}
-      </nav>
-    </div>
+      </ul>
+      <span
+        aria-hidden
+        className="ml-2 w-24 truncate text-[13px] text-black/75"
+        style={wdth}
+      >
+        {activeLabel}
+      </span>
+    </nav>,
+    document.body,
   );
 }

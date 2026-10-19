@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import ProjectStack from "./ProjectStack";
 import { FramedScreenshot, Triptych } from "./ProjectMedia";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
 import { SHOW_FLUI_CARD } from "@/lib/featureFlags";
@@ -6,8 +7,8 @@ import { SEND_IN_THEIR_TIME_CARD } from "@/lib/sendInTheirTimeCard";
 
 export default function ProjectGrid() {
   return (
-    <section id="work" className="px-6 pt-6 pb-24 sm:px-8 sm:pb-32 xl:px-16">
-      <div className="mx-auto grid max-w-320 grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-2">
+    <section id="work" className="scroll-mt-19 px-6 pt-10 pb-6 sm:px-8 sm:pb-8 xl:px-16">
+      <ProjectStack>
         <ProjectCard
           href="/work/heiltsuk"
           title="Building Heiltsuk Nation's site to grow, not just to be patched together."
@@ -89,7 +90,7 @@ export default function ProjectGrid() {
             }
           />
         )}
-      </div>
+      </ProjectStack>
     </section>
   );
 }

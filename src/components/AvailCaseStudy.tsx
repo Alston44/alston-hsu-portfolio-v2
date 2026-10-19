@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProjectCard from "./ProjectCard";
+import ProjectStack from "./ProjectStack";
 import { LightboxTrigger } from "./Lightbox";
 import { FramedScreenshot, Triptych } from "./ProjectMedia";
 import {
@@ -11,6 +12,7 @@ import {
   ContainBox,
   MetaColumn,
   wdth,
+  CaseStudyHeroFrame,
 } from "./CaseStudy";
 import { CARD_BACKGROUNDS } from "@/lib/cardBackgrounds";
 import { FLUI_COMPANY, SHOW_FLUI_CARD } from "@/lib/featureFlags";
@@ -135,34 +137,26 @@ const OTHER_WORKS = [
 
 export function AvailHero() {
   return (
-    // xl height matches HeiltsukHero: pt-16 + a max-1160px-wide 1120/637 card.
-    // Shrinks fluidly between the xl and 2xl breakpoints (same approach as
-    // HeiltsukHero's box) so the title below isn't pushed below the fold on
-    // 1280-1535px laptop screens; restores to the full size at 2xl+.
-    <div className="relative h-75 w-full sm:h-105 xl:h-[calc(64px+min(820px,58vw)*0.5688)] 2xl:h-[calc(64px+min(1160px,100vw-128px)*0.5688)]">
-      <div className="pointer-events-none absolute inset-x-0 -top-25 bottom-0">
-        <Image
-          src={`${IMG}/case-hero-v4.webp`}
-          alt="Avail app hero"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-          priority
-        />
-      </div>
-    </div>
+    <CaseStudyHeroFrame>
+      <Image
+        src={`${IMG}/case-hero-v4.webp`}
+        alt="Avail app hero"
+        fill
+        sizes="(min-width: 832px) 768px, 100vw"
+        className="object-cover object-center"
+        priority
+      />
+    </CaseStudyHeroFrame>
   );
 }
 
 export default function AvailCaseStudy() {
   return (
-    <div className="relative -mt-6 bg-white px-6 pt-15 pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
+    <div className="relative bg-white px-6 pt-15 pb-6 sm:px-8 sm:pb-8 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-320 flex-col gap-16 sm:gap-20 xl:gap-24">
-        {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
-        <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
-          <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
-        </div>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-184 2xl:max-w-208">
+        {/* Section pill: floats at the bottom centre of the screen (see CaseStudyToc). */}
+        <CaseStudyToc iconDir="/images/projects/heiltsuk" links={TOC_LINKS} />
+        <div className="relative mx-auto flex w-full max-w-3xl flex-col gap-16">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
             <div className="flex flex-col gap-[75px] sm:gap-23.5 xl:gap-29.5">
@@ -174,7 +168,7 @@ export default function AvailCaseStudy() {
                   Avail
                 </p> */}
                 <h1
-                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[36px]"
                   style={wdth}
                 >
                   An app that helps BC Students Claim the Benefits
@@ -736,23 +730,15 @@ export default function AvailCaseStudy() {
             </div>
 
             {/* Other works */}
-            <div className="flex flex-col gap-8 sm:gap-10">
+            <div className="flex flex-col gap-14">
               <CaseStudyHeading>Other works</CaseStudyHeading>
-              {/* Row of 3 that scrolls sideways once the cards would drop below min width. */}
-              <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
-                <div className="flex w-full gap-6 sm:gap-8">
-                  {OTHER_WORKS.filter(
-                    (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
-                  ).map((work) => (
-                    <div
-                      key={work.company}
-                      className="w-70 shrink-0 grow basis-70 xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
-                    >
-                      <ProjectCard {...work} />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <ProjectStack>
+                {OTHER_WORKS.filter(
+                  (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
+                ).map((work) => (
+                  <ProjectCard key={work.company} {...work} />
+                ))}
+              </ProjectStack>
             </div>
           </div>
         </div>

@@ -78,13 +78,18 @@ type TriptychImage = {
   stretch?: { height: string; top: string };
 };
 
+/**
+ * Three phone screens side by side. Each is sized from the card's height and keeps the
+ * proportions of the app screenshots (393:852, an iPhone screen), so the screens never get cropped or stretched when the card's shape
+ * changes (a short window, a wide card, a narrow one).
+ */
 export function Triptych({ images }: { images: TriptychImage[] }) {
   return (
     <div className="absolute inset-0 flex items-center justify-center gap-[3%] px-[9%]">
       {images.map(({ src, alt, fit = "cover", stretch }) => (
         <div
           key={src}
-          className="relative h-[75%] flex-1 overflow-hidden rounded-card transition-transform duration-300 ease-out group-hover:scale-[1.025]"
+          className="relative aspect-393/852 h-[75%] flex-none overflow-hidden rounded-card transition-transform duration-300 ease-out group-hover:scale-[1.025]"
         >
           {stretch ? (
             // eslint-disable-next-line @next/next/no-img-element -- needs a manual size/offset outside next/image's fill+object-fit model

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ProjectCard from "./ProjectCard";
+import ProjectStack from "./ProjectStack";
 import { FramedScreenshot, Triptych } from "./ProjectMedia";
 import {
   CaseStudyBody,
@@ -10,6 +11,7 @@ import {
   CoverBox,
   MetaColumn,
   wdth,
+  CaseStudyHeroFrame,
 } from "./CaseStudy";
 import { LightboxTrigger } from "./Lightbox";
 import { MediaSlider } from "./MediaSlider";
@@ -126,35 +128,26 @@ const OTHER_WORKS = [
 
 export function HeiltsukHero() {
   return (
-    <div className="mx-auto w-full max-w-320 px-6 sm:px-8 xl:px-16">
-      <div className="relative mx-auto w-full max-w-[min(900px,58vw)] 2xl:max-w-290">
-        <div
-          className="relative w-full overflow-hidden rounded-card shadow-[0_3px_20px_rgba(0,0,0,0.4)]"
-          style={{ aspectRatio: "1120/637" }}
-        >
-          <Image
-            src={`${IMG}/hero-main.webp`}
-            alt="Heiltsuk Nation homepage redesign"
-            fill
-            sizes="(min-width: 1536px) 1160px, 64vw"
-            className="object-cover object-top"
-            priority
-          />
-        </div>
-      </div>
-    </div>
+    <CaseStudyHeroFrame>
+      <Image
+        src={`${IMG}/hero-main.webp`}
+        alt="Heiltsuk Nation homepage redesign"
+        fill
+        sizes="(min-width: 832px) 768px, 100vw"
+        className="object-cover object-top"
+        priority
+      />
+    </CaseStudyHeroFrame>
   );
 }
 
 export default function HeiltsukCaseStudy() {
   return (
-    <div className="relative -mt-6 bg-white px-6 pt-15 pb-24 sm:-mt-8 sm:px-8 sm:pb-32 xl:-mt-10 xl:px-16">
+    <div className="relative bg-white px-6 pt-15 pb-6 sm:px-8 sm:pb-8 xl:px-16">
       <div className="page-fade-in relative mx-auto flex max-w-320 flex-col gap-16 sm:gap-20 xl:gap-24">
-        {/* Same left edge as the header logo: this wrapper and the header nav share the same max-width and side padding. */}
-        <div className="absolute top-0 bottom-0 left-0 hidden xl:block">
-          <CaseStudyToc iconDir={IMG} links={TOC_LINKS} />
-        </div>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 xl:max-w-184 2xl:max-w-208">
+        {/* Section pill: floats at the bottom centre of the screen (see CaseStudyToc). */}
+        <CaseStudyToc iconDir={IMG} links={TOC_LINKS} />
+        <div className="relative mx-auto flex w-full max-w-3xl flex-col gap-16">
           <div className="flex w-full flex-col gap-16 sm:gap-20 xl:gap-24">
             {/* Title + metadata */}
             <div className="flex flex-col gap-[75px] sm:gap-23.5 xl:gap-29.5">
@@ -166,7 +159,7 @@ export default function HeiltsukCaseStudy() {
                   Burst! Creative Group
                 </p> */}
                 <h1
-                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[41px] xl:text-[41px] 2xl:text-[46px]"
+                  className="font-serif max-w-357 text-[32px] leading-[1.1] text-black/75 sm:text-[36px]"
                   style={wdth}
                 >
                   Building Heiltsuk Nation&rsquo;s site to grow, not just to be
@@ -712,23 +705,15 @@ export default function HeiltsukCaseStudy() {
             </div>
 
             {/* Other works */}
-            <div className="flex flex-col gap-8 sm:gap-10">
+            <div className="flex flex-col gap-14">
               <CaseStudyHeading>Other works</CaseStudyHeading>
-              {/* Row of 3 that scrolls sideways once the cards would drop below min width. */}
-              <div className="w-0 min-w-full overflow-x-auto pt-1 pb-4">
-                <div className="flex w-full gap-6 sm:gap-8">
-                  {OTHER_WORKS.filter(
-                    (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
-                  ).map((work) => (
-                    <div
-                      key={work.company}
-                      className="w-70 shrink-0 grow basis-70 xl:w-auto xl:min-w-0 xl:shrink xl:basis-0"
-                    >
-                      <ProjectCard {...work} />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <ProjectStack>
+                {OTHER_WORKS.filter(
+                  (work) => SHOW_FLUI_CARD || work.company !== FLUI_COMPANY,
+                ).map((work) => (
+                  <ProjectCard key={work.company} {...work} />
+                ))}
+              </ProjectStack>
             </div>
           </div>
         </div>

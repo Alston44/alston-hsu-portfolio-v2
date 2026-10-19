@@ -63,6 +63,7 @@ export default function ProjectCard({
   const content = (
     <>
       <div
+        data-card-media
         className={`relative aspect-624/455 w-full overflow-hidden rounded-card shadow-none ${
           comingSoon
             ? ""
@@ -97,7 +98,7 @@ export default function ProjectCard({
       </div>
       <div className="flex w-full flex-col gap-3">
         <h3
-          className="font-serif text-[16px] leading-[1.4] font-medium tracking-[-0.72px] text-black/75 md:text-[18px] 2xl:text-[20px]"
+          className="font-serif text-[16px] leading-[1.4] font-medium tracking-[-0.72px] text-black/75 md:text-[18px]"
           style={{ fontVariationSettings: '"wdth" 100' }}
         >
           {title}
