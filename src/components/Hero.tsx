@@ -3,24 +3,24 @@ import HeroShaderBackground from "./HeroShaderBackground"; // experimental — t
 
 export default function Hero() {
   return (
-    <section className="relative px-6 pt-40 pb-10 sm:px-8 sm:pt-56 xl:px-16">
+    <section className="relative px-6 pt-24 pb-10 sm:px-8 sm:pt-32 xl:px-16">
       <HeroShaderBackground />
-      <div className="mx-auto flex max-w-320 flex-col gap-2">
+      <div className="mx-auto flex max-w-3xl flex-col gap-2">
         <h1
-          className="font-serif text-[52px] leading-[1.4] text-black/75 sm:text-[64px] md:text-[75px]"
+          className="font-serif text-[36px] leading-[1.4] text-black/75"
           style={{ fontVariationSettings: '"wdth" 100' }}
         >
           Alston Hsu
         </h1>
-        <div className="grid grid-cols-1 gap-x-16 gap-y-6 sm:gap-y-9 lg:grid-cols-2 lg:items-start">
+        <div className="flex flex-col gap-6 sm:gap-9">
           <p
-            className="max-w-278 text-[16px] leading-[1.4] text-black opacity-66 md:text-[18px] lg:max-w-173 2xl:text-[20px]"
+            className="text-[16px] leading-[1.4] text-black opacity-66 md:text-[18px]"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             An aspiring product designer from Vancouver, bringing a background in 
             psychology and commerce to design effortless UI/UX experiences.
           </p>
-          <div className="flex flex-wrap items-center gap-4 lg:flex-col lg:flex-nowrap lg:items-start lg:gap-[17px]">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             <ArrowLink
               href="https://www.linkedin.com/in/alston-hsu88/"
               target="_blank"

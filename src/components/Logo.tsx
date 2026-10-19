@@ -26,7 +26,7 @@ export default function Logo({
   return (
     <svg
       viewBox="0 0 160 160"
-      className={`size-14 shrink-0 ${animate ? "logo-draw-on" : ""} ${className ?? ""}`}
+      className={`shrink-0 ${className ?? "size-14"} ${animate ? "logo-draw-on" : ""}`}
       role="img"
       aria-label="Alston Hsu"
     >
