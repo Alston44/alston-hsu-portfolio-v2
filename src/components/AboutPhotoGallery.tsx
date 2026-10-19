@@ -61,6 +61,15 @@ const DumbbellIcon = (
   </svg>
 );
 
+const VSCodeLogo = (
+  <svg viewBox="0 0 24 24" className="size-full" aria-hidden>
+    <path
+      fill="#007ACC"
+      d="M23.15 2.587 18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.276.057L.327 7.261A1 1 0 0 0 .326 8.74L3.899 12 .326 15.26a1 1 0 0 0 .001 1.479L1.65 17.94a.999.999 0 0 0 1.276.057l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.942-2.377A1.5 1.5 0 0 0 24 20.06V3.939a1.5 1.5 0 0 0-.85-1.352zm-5.146 14.861L10.826 12l7.178-5.448v10.896z"
+    />
+  </svg>
+);
+
 // A simplified Claude spark: twelve rounded rays of slightly different lengths.
 const ClaudeLogo = (
   <svg viewBox="0 0 24 24" className="size-full" aria-hidden>
@@ -92,8 +101,8 @@ const BasketballIcon = (
   </svg>
 );
 
-// Poker chips tossed on the table beside the fan: soft pink, blue, orange and dark, each
-// with an icon in the middle (Figma, a dumbbell, Claude, a basketball). Mostly decorative:
+// Poker chips tossed on the table beside the fan: soft pink, blue, orange, dark and white,
+// each with an icon in the middle (Figma, a dumbbell, Claude, a basketball, VS Code). Mostly decorative:
 // they sit on top of the fan's lower corners. Click one and it hops, spins a little and settles
 // back. `left` / `top` are shares of the row's width / height.
 const CHIPS: {
@@ -102,16 +111,29 @@ const CHIPS: {
   top: string;
   rotate: number;
   name: string; // for the button's label
+  stripe?: string; // edge stripes (white by default); a light chip needs darker ones to show
+  ring?: string; // dashed ring and centre outline (white by default)
   drift: number; // px: how far sideways it starts, so the chips don't all fall down the same line
   logo: ReactNode;
 }[] = [
   { color: "#f2a3c0", left: "79%", top: "62%", rotate: 14, drift: -36, name: "Figma", logo: FigmaLogo },
-  { color: "#3d7ff2", left: "86%", top: "73%", rotate: -9, drift: 28, name: "dumbbell", logo: DumbbellIcon },
-  { color: "#e8702a", left: "3%", top: "70%", rotate: 22, drift: 34, name: "Claude", logo: ClaudeLogo },
+  { color: "#3d7ff2", left: "3%", top: "70%", rotate: 22, drift: 34, name: "dumbbell", logo: DumbbellIcon },
+  { color: "#e8702a", left: "86%", top: "73%", rotate: -9, drift: 28, name: "Claude", logo: ClaudeLogo },
   { color: "#23262b", left: "9%", top: "80%", rotate: -16, drift: -30, name: "basketball", logo: BasketballIcon },
+  {
+    color: "#ffffff",
+    stripe: "#c9ccd1",
+    ring: "#c9ccd1",
+    left: "75.5%",
+    top: "75%",
+    rotate: 11,
+    drift: -24,
+    name: "VS Code",
+    logo: VSCodeLogo,
+  },
 ];
 const CHIPS_START = 2000; // ms: after the fan has opened
-const CHIPS_STEP = 260; // ms between chips: each one lands before the next is well under way
+const CHIPS_STEP = 220; // ms between chips: each one lands before the next is well under way
 
 // A click makes a chip hop: up with a little spin, back down with a small bounce, then settled
 // where it started. Played with the Web Animations API so it layers over the fall-in animation.
@@ -260,7 +282,7 @@ export default function AboutPhotoGallery() {
           </button>
         );
       })}
-      {CHIPS.map(({ color, left, top, rotate, drift, name, logo }, i) => (
+      {CHIPS.map(({ color, stripe, ring, left, top, rotate, drift, name, logo }, i) => (
         <button
           key={i}
           type="button"
@@ -272,6 +294,8 @@ export default function AboutPhotoGallery() {
               left,
               top,
               "--chip": color,
+              ...(stripe ? { "--stripe": stripe } : {}),
+              ...(ring ? { "--ring": ring } : {}),
               "--r": `${rotate}deg`,
               "--fall-x": `${drift}px`,
               animationDelay: `${CHIPS_START + i * CHIPS_STEP}ms`,
