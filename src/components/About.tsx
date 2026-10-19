@@ -80,13 +80,13 @@ function AboutEntry({
 export default function About() {
   return (
     <section className="px-6 pt-16 pb-24 sm:px-8 sm:pt-32 sm:pb-32 xl:px-16">
-      <div className="mx-auto flex max-w-320 flex-col gap-16 md:flex-row md:items-start">
+      <div className="mx-auto flex max-w-3xl flex-col gap-12 sm:gap-16">
         <AboutPhotoGallery />
 
-        <div className="flex w-full flex-1 flex-col gap-10">
+        <div className="flex w-full flex-col gap-10">
           <div className="flex flex-col gap-4">
             <h1
-              className="font-serif text-[32px] leading-[1.4] text-black/75 sm:text-[36px] md:text-[46px]"
+              className="font-serif text-[32px] leading-[1.4] text-black/75 sm:text-[36px]"
               style={{ fontVariationSettings: '"wdth" 100' }}
             >
               Hi, I&rsquo;m Alston.
