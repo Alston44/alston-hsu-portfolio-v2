@@ -20,7 +20,7 @@ export default function ArrowLink({
 
   return (
     <Link
-      className={`group flex items-center gap-[2px] ${className ?? ""}`}
+      className={`group flex items-center gap-0.5 ${className ?? ""}`}
       {...props}
     >
       <span

@@ -37,8 +37,8 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/10 px-6 py-[10px] backdrop-blur-md sm:px-8 xl:px-16">
-      <nav className="mx-auto flex w-full max-w-[1280px] items-center justify-between py-3">
+    <header className="sticky top-0 z-50 bg-white/10 px-6 py-2.5 backdrop-blur-md sm:px-8 xl:px-16">
+      <nav className="mx-auto flex w-full max-w-320 items-center justify-between py-3">
         <Link
           href="/"
           aria-label="Alston Hsu, home"
@@ -47,7 +47,7 @@ export default function Header() {
           <Logo animate />
         </Link>
 
-        <ul className="hidden items-center gap-[60px] md:flex">
+        <ul className="hidden items-center gap-15 md:flex">
           {NAV_LINKS.map(({ label, href, external }) => (
             <li key={label}>
               <Link
@@ -71,10 +71,10 @@ export default function Header() {
           aria-label={open ? "Close menu" : "Open menu"}
           className="flex size-10 shrink-0 items-center justify-center md:hidden"
         >
-          <span className="relative flex h-[14px] w-6 flex-col gap-1">
+          <span className="relative flex h-3.5 w-6 flex-col gap-1">
             <span
               className={`h-0.5 w-full bg-black/60 transition-transform duration-200 ${
-                open ? "translate-y-[6px] rotate-45" : ""
+                open ? "translate-y-1.5 rotate-45" : ""
               }`}
             />
             <span
@@ -84,7 +84,7 @@ export default function Header() {
             />
             <span
               className={`h-0.5 w-full bg-black/60 transition-transform duration-200 ${
-                open ? "-translate-y-[6px] -rotate-45" : ""
+                open ? "-translate-y-1.5 -rotate-45" : ""
               }`}
             />
           </span>

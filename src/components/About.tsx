@@ -80,7 +80,7 @@ function AboutEntry({
 export default function About() {
   return (
     <section className="px-6 pt-16 pb-24 sm:px-8 sm:pt-32 sm:pb-32 xl:px-16">
-      <div className="mx-auto flex max-w-[1280px] flex-col gap-16 md:flex-row md:items-start">
+      <div className="mx-auto flex max-w-320 flex-col gap-16 md:flex-row md:items-start">
         <AboutPhotoGallery />
 
         <div className="flex w-full flex-1 flex-col gap-10">
@@ -91,7 +91,7 @@ export default function About() {
             >
               Hi, I&rsquo;m Alston.
             </h1>
-            <div className="flex max-w-[1400px] flex-col gap-6">
+            <div className="flex max-w-350 flex-col gap-6">
               {BIO_PARAGRAPHS_INTRO.map((paragraph) => (
                 <p
                   key={paragraph}
@@ -138,7 +138,7 @@ export default function About() {
             </ArrowLink>
           </div>
 
-          <div className="flex max-w-[1400px] flex-col gap-6">
+          <div className="flex max-w-350 flex-col gap-6">
             <p className={bodyText} style={{ fontVariationSettings: '"wdth" 100' }}>
               Experience
             </p>
@@ -147,7 +147,7 @@ export default function About() {
             ))}
           </div>
 
-          <div className="flex max-w-[1400px] flex-col gap-6">
+          <div className="flex max-w-350 flex-col gap-6">
             <p className={bodyText} style={{ fontVariationSettings: '"wdth" 100' }}>
               Education
             </p>

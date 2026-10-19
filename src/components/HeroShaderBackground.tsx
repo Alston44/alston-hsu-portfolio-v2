@@ -41,7 +41,7 @@ export default function HeroShaderBackground() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-x-0 -top-[100px] -bottom-[220px] -z-10 opacity-[0.17] sm:opacity-[0.3]"
+      className="pointer-events-none absolute inset-x-0 -top-25 -bottom-55 -z-10 opacity-17 sm:opacity-30"
       style={{
         maskImage:
           "linear-gradient(to bottom, black 0%, black 50%, transparent 92%)",

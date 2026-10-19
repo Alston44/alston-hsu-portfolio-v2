@@ -42,7 +42,7 @@ const SCATTERED_PHOTOS = [
 
 export default function AboutPhotoGallery() {
   return (
-    <div className="flex w-full shrink-0 flex-col gap-8 md:w-[29%] md:max-w-[560px]">
+    <div className="flex w-full shrink-0 flex-col gap-8 md:w-[29%] md:max-w-140">
       <div className="main-photo-fade-in relative aspect-square w-full overflow-hidden rounded-card">
         <Image
           src="/images/about/profile.webp"
@@ -53,7 +53,7 @@ export default function AboutPhotoGallery() {
           priority
         />
       </div>
-      <div className="relative aspect-[416/449] w-full">
+      <div className="relative aspect-416/449 w-full">
         {SCATTERED_PHOTOS.map(({ src, alt, left, top, width, height, rotate }, index) => (
           <div
             key={src}

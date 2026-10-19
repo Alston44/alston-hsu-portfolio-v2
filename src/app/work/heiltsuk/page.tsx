@@ -20,13 +20,13 @@ export default function HeiltsukPage() {
       <div className="relative flex flex-1 flex-col">
         <Header />
         <div className="relative">
-          <div className="pointer-events-none absolute inset-x-0 -top-[100px] bottom-0">
+          <div className="pointer-events-none absolute inset-x-0 -top-25 bottom-0">
             <Image
               src="/images/projects/heiltsuk/hero-bg.webp"
               alt=""
               fill
               sizes="100vw"
-              className="object-cover opacity-[0.14]"
+              className="object-cover opacity-14"
               priority
             />
           </div>
