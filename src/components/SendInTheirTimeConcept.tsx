@@ -310,6 +310,30 @@ export default function SendInTheirTimeConcept() {
               </figure>
             </div>
 
+            {/* The screen recording, up near the top where people will see it. Same gray as the
+                other case study image boxes. */}
+            <div className="relative aspect-5/6 w-full overflow-hidden rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] sm:aspect-4/3">
+              <div className="absolute inset-0 flex items-center justify-center py-8 sm:py-10">
+                <div
+                  className="relative h-full overflow-hidden rounded-[12%/5.5%] bg-black shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
+                  style={{ aspectRatio: "1180/2556" }}
+                >
+                  {/* Same file as the hero, so the browser reuses it instead of downloading it twice. */}
+                  <video
+                    src={`${IMG}/prototype-card.mp4`}
+                    poster={`${IMG}/screen-03.webp`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    aria-label="Screen recording of the Send in Their Time prototype scheduling a message"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
             {/* The gap */}
             <div
               id="gap"
