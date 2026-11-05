@@ -5,6 +5,7 @@ import { LightboxTrigger } from "./Lightbox";
 import { FramedScreenshot, Triptych } from "./ProjectMedia";
 import {
   CaseStudyBody,
+  caseStudyBodyText,
   CaseStudyEyebrow,
   CaseStudyHeading,
   CaseStudyMedia,
@@ -52,19 +53,19 @@ const SCREENS = [
 const REFLECTIONS = [
   {
     heading: "Build the design system before dividing screens.",
-    body: "I used auto-layout from the start, not just at handoff. The Design System section shows the token structure that came out of it. It kept the team consistent, and it's what let the Expo build the developer created match the Figma file with little back-and-forth. That clean handoff also meant more of the four weeks went into getting the matching logic right.",
+    body: "I used auto-layout from the start, not just at handoff. The ideation section shows the token structure that came out of it. It kept the team consistent, and let the developer's Expo build match the Figma file with little back-and-forth.",
   },
   {
-    heading: "A confident first scope is often the wrong one.",
-    body: "The original proposal covered all of Canada. One piece of outside feedback showed that ambition without a real data source just produces answers you can't back up. Narrowing to BC students was the version we could actually execute under limited time.",
+    heading: "A confident first draft may require a second opinion",
+    body: "The original proposal covered all of Canada. Outside feedback showed there was no centralized data source to build on. Narrowing to BC students gave us a set of programs we could curate by hand, a version we could actually execute in four weeks.",
   },
   {
     heading: "Testing your own product catches problems fast, and has limits.",
-    body: "Walking through the Ask screen ourselves caught prompts that only worked for one kind of match. Cheap and fast, but not a substitute for testing with people who didn't build it, which this project hasn't had yet. If this continued past the course, the next step is putting the quiz and chat in front of 5 to 10 BC students and seeing where the guided prompts still miss what they'd ask.",
+    body: "Our team may have asked predictable questions since we were the ones building the app. However, if this continued past the course, we would have gathered 5 to 10 BC students outside of our program to test this app to obtain more accurate data.",
   },
   {
     heading: "AI matching is only as trustworthy as what you check it against.",
-    body: "Claude's matching was validated against the eligibility criteria we hand-checked, not against edge cases we didn't think to test. With more time, that's where I'd focus next: stress-testing matches against messier student situations before trusting the output.",
+    body: "Claude's matching only draws on trustworthy sources: the official program information we curated by hand. It was validated against the eligibility criteria we hand-checked, not against edge cases we didn't think to test. With more time, that's where I'd focus next: stress-testing matches against messier student situations before trusting the output.",
   },
 ];
 
@@ -214,9 +215,24 @@ export default function AvailCaseStudy() {
                 <div className="flex flex-col gap-5 sm:gap-6">
                   <CaseStudyBody
                     paragraphs={[
-                      "Avail walks a student through a short quiz, matches them with BC benefit programs using AI, and provides results they can browse, filter, apply, or ask follow-up questions through Ask Avail, an in-app AI chat assistant. The app is functional, not just a static prototype, and runs on Expo. The demo below is what the running app looks like.",
+                      "Avail walks a student through a short quiz, matches them with BC benefit programs using Ask Avail, an in-app AI, that provides results users can browse, filter, apply, or ask follow-up questions. The app is functional, not just a static prototype, and runs on Expo.",
                     ]}
                   />
+                  <div className={caseStudyBodyText} style={wdth}>
+                    <p className="mb-4">Four decisions shaped the design:</p>
+                    <ol className="flex list-decimal flex-col gap-3 pl-6 marker:text-black/40">
+                      {[
+                        ["A discovery tool, not an eligibility checker.", "Welcome copy and “likely eligible” badges make that clear on screen instead of burying it in fine print."],
+                        ["Minimal onboarding.", "A 5-question quiz, under 2 minutes, no account required."],
+                        ["Results at three depths.", "Top 3 on Home, a filterable Benefits list, and a detail page with eligibility, how to apply, and a source link."],
+                        ["Guided prompts in Ask Avail.", "The chat opens with suggestions instead of a blank search bar, because an unfamiliar AI feature already causes hesitation."],
+                      ].map(([lead, rest]) => (
+                        <li key={lead}>
+                          <strong className="font-semibold">{lead}</strong> {rest}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                   <a
                     href="#final-design"
                     className="group flex w-fit items-center gap-0.5"
@@ -238,20 +254,28 @@ export default function AvailCaseStudy() {
                 </div>
               </div>
 
-              <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
-                <div
-                  className="relative w-[min(300px,100%,calc((100svh-200px)*0.4613))] overflow-hidden rounded-[12%/5.5%] sm:w-[min(380px,calc((100svh-232px)*0.4613))] md:w-[min(440px,calc((100svh-232px)*0.4613))]"
-                  style={{ aspectRatio: "393/852" }}
-                >
-                  <video
-                    src={`${IMG}/avail-demo.mp4`}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 h-full w-full object-cover object-top"
-                  />
+              <div className="flex flex-col gap-3">
+                <div className="flex w-full items-center justify-center rounded-card border border-black/5 bg-linear-to-b from-[#ededed] to-[#e5e5e5] px-6 py-10 sm:px-10 sm:py-14">
+                  <div
+                    className="relative w-[min(300px,100%,calc((100svh-200px)*0.4613))] overflow-hidden rounded-[12%/5.5%] sm:w-[min(380px,calc((100svh-232px)*0.4613))] md:w-[min(440px,calc((100svh-232px)*0.4613))]"
+                    style={{ aspectRatio: "393/852" }}
+                  >
+                    <video
+                      src={`${IMG}/avail-demo.mp4`}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="absolute inset-0 h-full w-full object-cover object-top"
+                    />
+                  </div>
                 </div>
+                <p
+                  className="text-[13px] leading-[1.5] text-black/75 sm:text-[14px]"
+                  style={wdth}
+                >
+                  This demo video shows the app in use.
+                </p>
               </div>
             </div>
 
@@ -281,25 +305,20 @@ export default function AvailCaseStudy() {
                 >
                   <p>
                     Canada&rsquo;s Parliamentary Budget Officer found benefits
-                    missed by people who don&rsquo;t file taxes add up to
+                    missed by Canadians who don&rsquo;t file taxes add up to
                     about $9 billion over five years, roughly $1.7&ndash;1.9B
-                    a year. People aren&rsquo;t ineligible, they just
-                    don&rsquo;t know the programs exist, the gap Avail&rsquo;s
-                    matching and explanation screens are built to close.
+                    a year. 
                   </p>
                   <p>
-                    Existing tools cover parts of this.{" "}
-                    <strong className="font-semibold">
-                      Canada.ca&rsquo;s Benefits Finder
-                    </strong>{" "}
-                    is a web checklist with no explanation of why a result
-                    matches. <strong className="font-semibold">KOHO</strong>{" "}
-                    speeds up access to benefits you&rsquo;re already
-                    approved for, like early CRA payment access, it
-                    doesn&rsquo;t help you discover ones you haven&rsquo;t
-                    applied for. Avail combines discovery with reasoning:
-                    mobile, student-specific, and explains why each match
-                    applies.
+                    While existing tools, such as Canada&rsquo;s Benefits
+                    Finder, provide general information about available
+                    government benefits, Avail aims to take this step further
+                    by identifying benefits users specifically qualify for and
+                    breaking down eligibility requirements and application
+                    procedures into clear, actionable steps. By making
+                    benefits easier to discover and understand, Avail helps
+                    bridge the gap between available financial assistance and
+                    the Canadian students who need it.
                   </p>
                 </div>
               </div>
@@ -314,13 +333,12 @@ export default function AvailCaseStudy() {
                 <div className="flex flex-col gap-3">
                   <CaseStudyEyebrow>Discovery</CaseStudyEyebrow>
                   <CaseStudyHeading>
-                    Feedback from government contacts, reached through user
-                    research, forced us to rethink who this was actually for.
+                    Early feedback from professionals working at the Federal and Provincial levels of government challenged our initial project scope.
                   </CaseStudyHeading>
                 </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "Our original proposal covered federal and provincial benefits for all Canadians. During our brainstorming phase, our instructor took the proposal to contacts in government for feedback, helping direct us to a more achievable outcome in a shorter time frame, as we only had 4 weeks until the deadline.",
+                    "Our original proposal covered federal and provincial benefits for all Canadians. During our brainstorming phase, our instructor took the proposal to contacts in the government sector for feedback, helping direct us to a more achievable outcome in a shorter time frame, as we only had 4 weeks until the deadline.",
                   ]}
                 />
               </div>
@@ -343,17 +361,8 @@ export default function AvailCaseStudy() {
               </div>
               <CaseStudyBody
                 paragraphs={[
-                  "The response flagged a problem we'd missed: federal and provincial benefits come from separate systems with no existing shared API. Matching across both in 4 weeks meant giving answers we couldn't verify. The closest thing to a real data source turned out to be province-only, and even that took stitching together separate open datasets.",
-                  <span key="pivot">
-                    With this new information, we pivoted to focusing on only
-                    BC student benefits: <strong className="font-semibold">one province</strong>,{" "}
-                    <strong className="font-semibold">one population</strong>,
-                    a{" "}
-                    <strong className="font-semibold">
-                      defined set of programs with public eligibility data
-                    </strong>
-                    . This helped simplify our project scope.
-                  </span>,
+                  "Their feedback flagged a problem we'd missed: there's no centralized data source for federal and provincial benefits. Consolidating information across separate government websites and turning their varying eligibility rules into reliable recommendations was more than our four-week timeline allowed.",
+                  "So we narrowed our scope to BC students. That gave us a manageable set of programs we could curate by hand from official sources, so we could put our effort into making the eligibility matching accurate.",
                 ]}
               />
             </div>
@@ -373,7 +382,7 @@ export default function AvailCaseStudy() {
                 </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "With two designers splitting screens and one developer waiting to build, there wasn't room for our styles to drift apart mid-project and get corrected later. Before splitting screens with my co-designer, I built the token system: colour, type, spacing, states. One source, so neither of us had to reconcile our own version later.",
+                    "With two designers working on separate screens that would eventually be handed off to the developer as one cohesive product, it was important to maintain consistency across our designs. Before splitting screens with my co-designer, I built the token system: colour, type, spacing, states. One source, so neither of us had to reconcile our own version later.",
                   ]}
                 />
               </div>
@@ -409,20 +418,28 @@ export default function AvailCaseStudy() {
               </div>
               <CaseStudyBody
                 paragraphs={[
-                  "Spacing is named by where it's used rather than by scale number: tightest between an icon and its label, small between filter pills or quiz options, larger between cards, largest between sections.",
+                  "Spacing is determined by where it's used rather than by scale number: tightest between an icon and its label, small between filter pills or quiz options, larger between cards, largest between sections.",
                 ]}
               />
             </div>
 
             {/* An early direction we dropped */}
-            <div className="flex flex-col gap-8 sm:gap-10">
+            <div
+              id="decisions"
+              className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
+            >
               <div className="flex flex-col gap-6">
-                <CaseStudyHeading>
-                  An early direction we dropped.
-                </CaseStudyHeading>
+                <div className="flex flex-col gap-3">
+                  <CaseStudyEyebrow>Decisions</CaseStudyEyebrow>
+                  <CaseStudyHeading>
+                    An early direction we dropped.
+                  </CaseStudyHeading>
+                </div>
                 <CaseStudyBody
                   paragraphs={[
-                    "In some of our early iterations, we explored an icon grid. However, we felt like icons couldn't show the same nuance these answers really needed. For instance, income brackets or immigration status don't really have an icon or symbol to represent them. We also cut the number of options per screen, aiming for four to five choices at most, since having more than seven was too much for the user to hold in mind. The final version favours a shorter list over an icon grid.",
+                    "In our early iterations, we explored using an icon grid for answer options to make the process feel simpler and more approachable. However, we found that reducing complex information to icons and brief descriptions could create ambiguity, increasing the risk of users misinterpreting options and receiving inaccurate benefit recommendations.",
+
+                    "To address this, we reduced the number of answer options per screen and introduced more targeted questions to progressively narrow down users' eligibility. Our final design included 5 questionnaires, prioritizing simple but focused questions with brief explanations for each option, making the process easier to navigate while maintaining accuracy.",
                   ]}
                 />
               </div>
@@ -539,25 +556,20 @@ export default function AvailCaseStudy() {
               </div>
             </div>
 
-            {/* Decisions */}
-            <div
-              id="decisions"
-              className="scroll-mt-28 flex flex-col gap-8 sm:gap-10"
-            >
+            {/* Decisions, continued */}
+            <div className="flex flex-col gap-8 sm:gap-10">
               <div className="flex flex-col gap-6">
-                <div className="flex flex-col gap-3">
-                  <CaseStudyEyebrow>Decisions</CaseStudyEyebrow>
-                  <CaseStudyHeading>
-                    Onboarding and results stayed simple by design. The chat
-                    prompts didn&rsquo;t, until we noticed they only worked
-                    for some users.
-                  </CaseStudyHeading>
-                </div>
+                <CaseStudyHeading>
+                Overly specific AI prompts limited benefit discovery.
+                </CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
-                    "The design rests on four decisions. First, Avail positions itself as a discovery tool, not an eligibility checker, welcome copy and \"likely eligible\" badges make that distinction visible on screen rather than buried in fine print. Second, onboarding stays minimal: a 5-question quiz, under 2 minutes, no account required. Third, results appear in three ways depending on how deep a user wants to go, top 3 on Home, a filterable Benefits list, and a detail page with eligibility, how to apply, and a source link. Fourth, the Ask Avail chat opens with guided prompts instead of a blank search bar, since an unfamiliar AI feature already causes hesitation, and not knowing where to start would just make it worse.",
-                    "Beyond the UX, a few technical calls changed what was possible. Claude handled benefit matching since no unified government API exists to integrate against, Sonnet ran matching where accuracy mattered most, Haiku ran the cheaper, faster chat. Everything lives in local AsyncStorage, no backend, keeping sensitive fields like immigration status on-device.",
-                    "The Ask Avail chat's guided prompts needed their own adjustments as well. The first version referenced a specific benefit and condition directly, \"What's the deadline for the BC Access Grant?\", \"Do I qualify if I'm part-time?\" fine if that's what a user matched with, confusing if it wasn't.",
+                    "The user is tasked with answering 5 questions to help the AI match them with the relevant benefits. Once this initial onboarding is complete, the user can explore the benefits themselves, or they can go the Ask Avail chat to learn more about the benefits they actually matched with.",
+
+                    "Our initial AI-generated prompts focused on specific benefits and eligibility conditions too early in the conversation. The first version referenced a specific benefit and condition directly, such as, \"What's the deadline for the BC Access Grant?\", \"Do I qualify if I'm part-time?\", which narrowed down the users search options before they got to learn more about other benefits.", 
+                    
+                    "We redesigned the prompts to focus on broader questions first, allowing users to explore their matched benefits without being directed toward a particular program from the start.",
+
                   ]}
                 />
               </div>
@@ -659,11 +671,6 @@ export default function AvailCaseStudy() {
                   </div>
                 </div>
               </div>
-              <CaseStudyBody
-                paragraphs={[
-                  "We rewrote the suggested prompts to match regardless of which benefits a user actually matched with: \"Which benefit gives me the most money?\", \"How do I apply for my matched benefits?\", \"What documents do I need to apply?\" Moreover, the user is already matched with the benefits based on their selection on the home, benefits page, and details page, so they will have a good idea on what they may want to ask Avail's chat already.",
-                ]}
-              />
             </div>
 
             {/* The Screens */}
