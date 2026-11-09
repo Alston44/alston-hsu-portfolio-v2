@@ -97,12 +97,12 @@ export default function ProjectCard({
         )}
       </div>
       <div className="flex w-full flex-col gap-3">
-        <h3
+        <h2
           className="font-serif text-[16px] leading-[1.4] font-medium tracking-[-0.72px] text-black/75 md:text-[18px]"
           style={{ fontVariationSettings: '"wdth" 100' }}
         >
           {title}
-        </h3>
+        </h2>
         <div className="flex w-full flex-col gap-2 @[440px]:flex-row @[440px]:items-center @[440px]:justify-between">
           <span
             className="text-[14px] font-medium text-black/75 md:text-base"

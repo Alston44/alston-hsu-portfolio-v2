@@ -97,6 +97,18 @@ export default function ProjectStack({ children }: { children: ReactNode }) {
     if (!frame.current) frame.current = requestAnimationFrame(tick);
   }, [tick]);
 
+  // Tabbing onto a card the next one has slid over would leave focus on something you can't
+  // see, so scroll back up until the next card is clear of it again. The wrapper's top is
+  // the next card's natural position (the card itself may be pinned).
+  const reveal = useCallback((i: number) => {
+    const card = cards.current[i];
+    const nextWrap = wraps.current[i + 1];
+    if (!card || !nextWrap) return;
+    const start = BASE_TOP + i * PEEK + card.offsetHeight + GAP;
+    const overlap = start - nextWrap.getBoundingClientRect().top;
+    if (overlap > 0) window.scrollBy({ top: -overlap, behavior: "auto" });
+  }, []);
+
   // How far to stretch each card's wrapper below it so every card releases PEEK above the
   // next one: the last card's natural bottom, minus its distance from the end of the stack.
   const measure = useCallback(() => {
@@ -163,6 +175,7 @@ export default function ProjectStack({ children }: { children: ReactNode }) {
               cards.current[i] = node;
             }}
             style={{ top: BASE_TOP + i * PEEK }}
+            onFocus={() => reveal(i)}
             className="sticky origin-top rounded-card bg-white will-change-transform [&_[data-card-media]]:max-h-[max(300px,calc(100svh-340px))]"
           >
             {child}
