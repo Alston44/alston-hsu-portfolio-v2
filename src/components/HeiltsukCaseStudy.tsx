@@ -542,9 +542,26 @@ export default function HeiltsukCaseStudy() {
                 <CaseStudyHeading>The mega-menu concept.</CaseStudyHeading>
                 <CaseStudyBody
                   paragraphs={[
-
                     "A standard dropdown would have worked fine, but it felt plain. It didn't show off what the client had to offer, like their beautiful land and culture. This wasn't something they asked for, but we saw an opportunity. Our lead threw in an idea: what if we replaced the dropdown with images instead? Sustainability and a thriving future are central to the client's mission, so showcasing their land and community felt like a natural fit.",
-
+                  ]}
+                />
+                <div className="flex flex-col gap-3">
+                  <CoverBox
+                    src={`${IMG}/heiltsuk-land-and-culture.webp`}
+                    alt="A collage of Heiltsuk imagery: a carved panel held up in the Big House, a sea lion in the water, ceremonial dancers around a fire, a carved totem pole, and the painted house front"
+                    aspect="2000/1987"
+                    tone="dark"
+                  />
+                  <p
+                    className="text-[11px] leading-[1.6] text-black/75 md:text-sm"
+                    style={wdth}
+                  >
+                    The Heiltsuk&rsquo;s land and culture, from the coastline and wildlife to the carved poles, painted
+                    house fronts and ceremony, are the imagery the menu set out to showcase.
+                  </p>
+                </div>
+                <CaseStudyBody
+                  paragraphs={[
                     "I went ahead and designed what it could look like. I worked out the overall layout, where the text would sit on each image, and how the hover effects would feel. I also tried to pick images that represented each navigation heading. Thankfully, I was met with positive responses from the clients, and they decided to move forward with it.",
 
                     "That said, the image-based menu came with trade-offs. It wouldn't scale well past six main sections, every section needed its own unique image, and the imagery could pull attention away from the navigation itself. We walked the client through all of this, and they were comfortable accepting those trade-offs for the experience it created for their website.",
