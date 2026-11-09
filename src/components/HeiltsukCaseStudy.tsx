@@ -355,6 +355,7 @@ export default function HeiltsukCaseStudy() {
                   loop
                   muted
                   playsInline
+                  aria-label="The old Heiltsuk Nation homepage, a single long-scrolling page"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </CaseStudyMedia>

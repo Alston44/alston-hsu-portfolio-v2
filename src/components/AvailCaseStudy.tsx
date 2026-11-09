@@ -266,6 +266,7 @@ export default function AvailCaseStudy() {
                       loop
                       muted
                       playsInline
+                      aria-label="Screen recording of the Avail app being used to find and explore student benefits"
                       className="absolute inset-0 h-full w-full object-cover object-top"
                     />
                   </div>

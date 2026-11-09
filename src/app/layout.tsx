@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import PageTransition from "@/components/PageTransition";
 import "./globals.css";
@@ -39,6 +40,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       >
         <PageTransition>{children}</PageTransition>
       </body>
+      {/* Production only, so local dev traffic isn't counted. */}
+      {process.env.NODE_ENV === "production" && <GoogleAnalytics gaId="G-0RM0PPJ31R" />}
     </html>
   );
 }
